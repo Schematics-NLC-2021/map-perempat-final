@@ -1,0 +1,13 @@
+{
+	"name": "Z_Ordering",
+	"plugin-id": "Sprite",
+	"sid": 890662051361093,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"Pos",
+		"Decorations",
+		"Player"
+	]
+}

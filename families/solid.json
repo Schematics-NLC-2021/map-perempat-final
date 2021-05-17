@@ -1,0 +1,18 @@
+{
+	"name": "solid",
+	"plugin-id": "Sprite",
+	"sid": 846901927341462,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "solid",
+			"name": "Solid",
+			"sid": 134041280411938
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"Pos",
+		"Decorations"
+	]
+}

@@ -1,0 +1,489 @@
+{
+	"name": "Event sheet 1",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "link",
+			"type": "string",
+			"initialValue": "",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 846226766339612
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 997171498868514
+				}
+			],
+			"actions": [
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 136272948763776,
+					"parameters": {
+						"layer": "\"konfirmasi\"",
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 739529776739155,
+					"parameters": {
+						"layer": "\"iframe\"",
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 165140421116656,
+					"parameters": {
+						"layer": "\"Game\"",
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 557797404144058,
+					"parameters": {
+						"layer": "\"UI\"",
+						"visibility": "visible"
+					}
+				}
+			],
+			"sid": 856959149988460
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "for-each-ordered",
+					"objectClass": "System",
+					"sid": 243781560512296,
+					"parameters": {
+						"object": "Z_Ordering",
+						"expression": "Z_Ordering.Y",
+						"order": "ascending"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "move-to-top",
+					"objectClass": "Z_Ordering",
+					"sid": 204292444268266
+				}
+			],
+			"sid": 958526299508821
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "layer-is-visible",
+					"objectClass": "System",
+					"sid": 872598584259559,
+					"parameters": {
+						"layer": "\"konfirmasi\""
+					},
+					"isInverted": true
+				},
+				{
+					"id": "layer-is-visible",
+					"objectClass": "System",
+					"sid": 202971252773716,
+					"parameters": {
+						"layer": "\"iframe\""
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [],
+			"sid": 974047040245529,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 400140476903358,
+							"parameters": {
+								"key": 87
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Player",
+							"sid": 777195835679616,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"control": "up"
+							}
+						}
+					],
+					"sid": 150690932272957
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 857768210734755,
+							"parameters": {
+								"key": 83
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Player",
+							"sid": 339079567995622,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"control": "down"
+							}
+						}
+					],
+					"sid": 672741620923029
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 364864024510944,
+							"parameters": {
+								"key": 65
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Player",
+							"sid": 705663764019110,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"control": "left"
+							}
+						}
+					],
+					"sid": 280853536191525
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 631947445942815,
+							"parameters": {
+								"key": 68
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Player",
+							"sid": 986197461981804,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"control": "right"
+							}
+						}
+					],
+					"sid": 421943414296717
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 425945699673436,
+					"parameters": {
+						"key": 32
+					}
+				}
+			],
+			"actions": [],
+			"sid": 101946982377014,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "layer-is-visible",
+							"objectClass": "System",
+							"sid": 719207231710834,
+							"parameters": {
+								"layer": "\"konfirmasi\""
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-overlapping-at-offset",
+							"objectClass": "Player",
+							"sid": 908824241640465,
+							"parameters": {
+								"object": "Pos",
+								"offset-x": "0",
+								"offset-y": "-20"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 663026879124753,
+							"parameters": {
+								"layer": "\"konfirmasi\"",
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 811052608117713,
+							"parameters": {
+								"variable": "link",
+								"value": "Pos.game"
+							}
+						}
+					],
+					"sid": 621631110311017,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-comparison",
+									"objectClass": "System",
+									"sid": 835757739145027,
+									"parameters": {
+										"object": "UI",
+										"expression": "UI.id",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "UI",
+									"sid": 134806199051438,
+									"parameters": {
+										"text": "\"Mau main game pos \"&Pos.id+1&\"?\""
+									}
+								}
+							],
+							"sid": 597007181950271
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 573340063325385,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "button"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 717763172638030,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-animation-frame",
+							"objectClass": "button",
+							"sid": 570163472345594,
+							"parameters": {
+								"comparison": 0,
+								"number": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 766574714332935,
+							"parameters": {
+								"layer": "\"iframe\"",
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "navigate-url",
+							"objectClass": "Iframe",
+							"sid": 805449569333732,
+							"parameters": {
+								"url": "link"
+							}
+						}
+					],
+					"sid": 247645882186827
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-animation-frame",
+							"objectClass": "button",
+							"sid": 866072303612650,
+							"parameters": {
+								"comparison": 0,
+								"number": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 580812175464417,
+							"parameters": {
+								"layer": "\"konfirmasi\"",
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 774454218493969
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-animation-frame",
+							"objectClass": "button",
+							"sid": 217507413022922,
+							"parameters": {
+								"comparison": 0,
+								"number": "2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 926053257350485,
+							"parameters": {
+								"layer": "\"iframe\"",
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 230372216607493,
+							"parameters": {
+								"layer": "\"konfirmasi\"",
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 172588856130765,
+							"parameters": {
+								"variable": "link",
+								"value": "\"\""
+							}
+						},
+						{
+							"id": "navigate-url",
+							"objectClass": "Iframe",
+							"sid": 213633926035371,
+							"parameters": {
+								"url": "link"
+							}
+						}
+					],
+					"sid": 619849596924546
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 260193643053450,
+					"parameters": {
+						"first-value": "Player.8Direction.VectorX",
+						"comparison": 4,
+						"second-value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-mirrored",
+					"objectClass": "Player",
+					"sid": 834157839376798,
+					"parameters": {
+						"state": "not-mirrored"
+					}
+				}
+			],
+			"sid": 949645639233295
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 630840133701049,
+					"parameters": {
+						"first-value": "Player.8Direction.VectorX",
+						"comparison": 2,
+						"second-value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-mirrored",
+					"objectClass": "Player",
+					"sid": 880294488934347,
+					"parameters": {
+						"state": "mirrored"
+					}
+				}
+			],
+			"sid": 725749927069627
+		}
+	],
+	"sid": 249019606169262
+}

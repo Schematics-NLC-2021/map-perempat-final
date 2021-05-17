@@ -1,0 +1,27 @@
+{
+	"name": "UI",
+	"plugin-id": "Spritefont2",
+	"sid": 140458660869424,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "id",
+			"type": "number",
+			"desc": "",
+			"sid": 354166885822564
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"image": {
+		"width": 128,
+		"height": 256,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "png",
+		"exportQuality": 0.8,
+		"imageSpriteId": 4525135,
+		"useCollisionPoly": true
+	}
+}

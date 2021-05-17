@@ -1,0 +1,62 @@
+{
+	"name": "Pos",
+	"plugin-id": "Sprite",
+	"sid": 260195017558359,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "id",
+			"type": "number",
+			"desc": "",
+			"sid": 772159950258612
+		},
+		{
+			"name": "game",
+			"type": "string",
+			"desc": "",
+			"sid": 389506096819872
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 250,
+						"height": 250,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6016277,
+						"collisionPoly": {
+							"points": [
+								0,
+								0.6880000000000002,
+								1,
+								0.6880000000000002,
+								1,
+								1,
+								0,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 618239222128193,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}
