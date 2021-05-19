@@ -1,52 +1,49 @@
 {
-	"name": "Player",
+	"name": "BG",
 	"plugin-id": "Sprite",
-	"sid": 671040111196394,
+	"sid": 301373872964800,
 	"isGlobal": false,
 	"instanceVariables": [],
-	"behaviorTypes": [
-		{
-			"behaviorId": "EightDir",
-			"name": "8Direction",
-			"sid": 615594171626003
-		},
-		{
-			"behaviorId": "scrollto",
-			"name": "ScrollTo",
-			"sid": 881563463771295
-		}
-	],
+	"behaviorTypes": [],
 	"effectTypes": [],
 	"animations": {
 		"items": [
 			{
 				"frames": [
 					{
-						"width": 32,
-						"height": 64,
+						"width": 1440,
+						"height": 1080,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 7499672,
+						"imageSpriteId": 7494417,
 						"collisionPoly": {
 							"points": [
-								0.015625,
-								0.6796875,
-								1,
-								0.6796875,
-								1,
-								1,
 								0,
-								1
+								0,
+								0.5,
+								0,
+								0.9993055555555556,
+								0,
+								0.9993055555555556,
+								0.5,
+								0.9993055555555556,
+								0.9990740740740741,
+								0.5,
+								0.9990740740740741,
+								0,
+								0.9990740740740741,
+								0,
+								0.5
 							]
 						},
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 940462901079609,
+				"sid": 161896445104474,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,
