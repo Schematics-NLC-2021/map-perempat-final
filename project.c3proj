@@ -1,7 +1,7 @@
 {
 	"projectFormatVersion": 1,
-	"savedWithRelease": 24100,
-	"name": "nyobaEmbed",
+	"savedWithRelease": 26000,
+	"name": "game-perempat",
 	"runtime": "c3",
 	"useWorker": "auto",
 	"bundleAddons": false,
@@ -11,7 +11,7 @@
 			"id": "iframe",
 			"name": "iframe",
 			"author": "Scirra",
-			"version": "r241",
+			"version": "r260",
 			"bundled": false
 		},
 		{
@@ -19,7 +19,7 @@
 			"id": "Sprite",
 			"name": "Sprite",
 			"author": "Scirra",
-			"version": "r241",
+			"version": "r260",
 			"bundled": false
 		},
 		{
@@ -27,7 +27,7 @@
 			"id": "Spritefont2",
 			"name": "Sprite font",
 			"author": "Scirra",
-			"version": "r241",
+			"version": "r260",
 			"bundled": false
 		},
 		{
@@ -35,7 +35,7 @@
 			"id": "Keyboard",
 			"name": "Keyboard",
 			"author": "Scirra",
-			"version": "r241",
+			"version": "r260",
 			"bundled": false
 		},
 		{
@@ -43,7 +43,15 @@
 			"id": "Mouse",
 			"name": "Mouse",
 			"author": "Scirra",
-			"version": "r241",
+			"version": "r260",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "NinePatch",
+			"name": "9-patch",
+			"author": "Scirra",
+			"version": "r260",
 			"bundled": false
 		},
 		{
@@ -51,7 +59,7 @@
 			"id": "EightDir",
 			"name": "8 Direction",
 			"author": "Scirra",
-			"version": "r241",
+			"version": "r260",
 			"bundled": false
 		},
 		{
@@ -59,7 +67,15 @@
 			"id": "scrollto",
 			"name": "Scroll To",
 			"author": "Scirra",
-			"version": "r241",
+			"version": "r260",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Tween",
+			"name": "Tween",
+			"author": "Scirra",
+			"version": "r260",
 			"bundled": false
 		},
 		{
@@ -67,7 +83,7 @@
 			"id": "solid",
 			"name": "Solid",
 			"author": "Scirra",
-			"version": "r241",
+			"version": "r260",
 			"bundled": false
 		}
 	],
@@ -78,11 +94,13 @@
 			"Player",
 			"Decorations",
 			"Pos",
-			"UI",
+			"UiText",
 			"Keyboard",
 			"button",
 			"Mouse",
-			"BG"
+			"BG",
+			"StoryText",
+			"confirmBackground"
 		],
 		"subfolders": []
 	},
@@ -97,13 +115,15 @@
 	},
 	"layouts": {
 		"items": [
-			"Layout 1"
+			"Game",
+			"Story"
 		],
 		"subfolders": []
 	},
 	"eventSheets": {
 		"items": [
-			"Event sheet 1"
+			"Game_ES",
+			"Story_ES"
 		],
 		"subfolders": []
 	},
@@ -234,23 +254,21 @@
 			1,
 			0
 		],
-		"useHighDpi": true,
 		"orientations": "landscape",
-		"enableWebGL": true,
 		"gpuPreference": "high-performance",
 		"scriptsType": "module",
 		"framerateMode": "vsync",
 		"compositingMode": "standard",
 		"sampling": "trilinear",
 		"downscaling": "medium",
+		"renderingMode": "auto",
+		"anisotropicFiltering": "auto",
 		"maxSpriteSheetSize": 2048,
 		"loaderStyle": "splash",
 		"preloadSounds": true,
-		"clearBackground": true,
-		"enhancedAccelerationPrecision": true,
 		"cordovaiOSScheme": "app"
 	},
 	"viewportWidth": 1280,
 	"viewportHeight": 720,
-	"firstLayout": null
+	"firstLayout": "Story"
 }
