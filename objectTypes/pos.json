@@ -15,6 +15,12 @@
 			"type": "string",
 			"desc": "",
 			"sid": 389506096819872
+		},
+		{
+			"name": "posGame",
+			"type": "boolean",
+			"desc": "",
+			"sid": 564500648978802
 		}
 	],
 	"behaviorTypes": [],

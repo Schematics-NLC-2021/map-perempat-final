@@ -100,7 +100,8 @@
 			"Mouse",
 			"BG",
 			"StoryText",
-			"confirmBackground"
+			"confirmBackground",
+			"soalText"
 		],
 		"subfolders": []
 	},
