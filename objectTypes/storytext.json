@@ -1,0 +1,26 @@
+{
+	"name": "StoryText",
+	"plugin-id": "Spritefont2",
+	"sid": 880613143794630,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 719229415829391
+		}
+	],
+	"effectTypes": [],
+	"image": {
+		"width": 128,
+		"height": 256,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "png",
+		"exportQuality": 0.8,
+		"imageSpriteId": 2473074,
+		"useCollisionPoly": true
+	}
+}

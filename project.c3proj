@@ -3,7 +3,7 @@
 	"savedWithRelease": 26000,
 	"name": "game-perempat",
 	"runtime": "c3",
-	"useWorker": "auto",
+	"useWorker": "dom",
 	"bundleAddons": false,
 	"usedAddons": [
 		{
@@ -55,6 +55,14 @@
 			"bundled": false
 		},
 		{
+			"type": "plugin",
+			"id": "AJAX",
+			"name": "AJAX",
+			"author": "Scirra",
+			"version": "r260",
+			"bundled": false
+		},
+		{
 			"type": "behavior",
 			"id": "EightDir",
 			"name": "8 Direction",
@@ -90,7 +98,7 @@
 	"uniqueId": "rdjsfacqpgg",
 	"objectTypes": {
 		"items": [
-			"Iframe",
+			"game",
 			"Player",
 			"Decorations",
 			"Pos",
@@ -101,7 +109,8 @@
 			"BG",
 			"StoryText",
 			"confirmBackground",
-			"soalText"
+			"soal",
+			"AJAX"
 		],
 		"subfolders": []
 	},
@@ -211,7 +220,13 @@
 			"subfolders": []
 		},
 		"general": {
-			"items": [],
+			"items": [
+				{
+					"name": "soal.html",
+					"type": "text/html",
+					"sid": 299754220958813
+				}
+			],
 			"subfolders": []
 		}
 	},

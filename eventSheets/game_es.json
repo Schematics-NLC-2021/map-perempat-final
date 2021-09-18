@@ -1,0 +1,857 @@
+{
+	"name": "Game_ES",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "link",
+			"type": "string",
+			"initialValue": "",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 846226766339612
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 997171498868514
+				},
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 748048608097123
+				}
+			],
+			"actions": [
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 136272948763776,
+					"parameters": {
+						"layer": "\"konfirmasi\"",
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 764436748132147,
+					"parameters": {
+						"layer": "\"soalGame\"",
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 845255149122372,
+					"parameters": {
+						"layer": "\"soal\"",
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 165140421116656,
+					"parameters": {
+						"layer": "\"Game\"",
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 557797404144058,
+					"parameters": {
+						"layer": "\"UI\"",
+						"visibility": "visible"
+					}
+				}
+			],
+			"sid": 856959149988460
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "for-each-ordered",
+					"objectClass": "System",
+					"sid": 243781560512296,
+					"parameters": {
+						"object": "Z_Ordering",
+						"expression": "Z_Ordering.Y",
+						"order": "ascending"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "move-to-top",
+					"objectClass": "Z_Ordering",
+					"sid": 204292444268266
+				}
+			],
+			"sid": 958526299508821
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-on-layer",
+					"objectClass": "UiText",
+					"sid": 614285995657924,
+					"parameters": {
+						"layer": "\"Game\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "move-to-top",
+					"objectClass": "UiText",
+					"sid": 405382742550148
+				}
+			],
+			"sid": 852648102446676
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "layer-is-visible",
+					"objectClass": "System",
+					"sid": 872598584259559,
+					"parameters": {
+						"layer": "\"konfirmasi\""
+					},
+					"isInverted": true
+				},
+				{
+					"id": "layer-is-visible",
+					"objectClass": "System",
+					"sid": 944845186399965,
+					"parameters": {
+						"layer": "\"soalGame\""
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [],
+			"sid": 974047040245529,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 400140476903358,
+							"parameters": {
+								"key": 87
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Player",
+							"sid": 777195835679616,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"control": "up"
+							}
+						}
+					],
+					"sid": 150690932272957
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 857768210734755,
+							"parameters": {
+								"key": 83
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Player",
+							"sid": 339079567995622,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"control": "down"
+							}
+						}
+					],
+					"sid": 672741620923029
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 364864024510944,
+							"parameters": {
+								"key": 65
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Player",
+							"sid": 705663764019110,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"control": "left"
+							}
+						}
+					],
+					"sid": 280853536191525
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 631947445942815,
+							"parameters": {
+								"key": 68
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Player",
+							"sid": 986197461981804,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"control": "right"
+							}
+						}
+					],
+					"sid": 421943414296717
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 425945699673436,
+					"parameters": {
+						"key": 32
+					}
+				}
+			],
+			"actions": [],
+			"sid": 101946982377014,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "layer-is-visible",
+							"objectClass": "System",
+							"sid": 719207231710834,
+							"parameters": {
+								"layer": "\"konfirmasi\""
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-overlapping-at-offset",
+							"objectClass": "Player",
+							"sid": 908824241640465,
+							"parameters": {
+								"object": "Pos",
+								"offset-x": "0",
+								"offset-y": "-20"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 767056425493317,
+							"parameters": {
+								"layer": "\"konfirmasi\"",
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 621631110311017,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "Pos",
+									"sid": 822116374889176,
+									"parameters": {
+										"instance-variable": "posGame"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 797152653929268,
+									"parameters": {
+										"variable": "link",
+										"value": "Pos.game"
+									}
+								}
+							],
+							"sid": 810881409941323
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "Pos",
+									"sid": 672878982151485,
+									"parameters": {
+										"instance-variable": "posGame"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 812820496596753,
+									"parameters": {
+										"variable": "link",
+										"value": "\"\""
+									}
+								}
+							],
+							"sid": 201152129904411
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-comparison",
+									"objectClass": "System",
+									"sid": 835757739145027,
+									"parameters": {
+										"object": "UiText",
+										"expression": "UiText.id",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "UiText",
+									"sid": 439015252827518,
+									"parameters": {
+										"text": "\"Mau \" & (Pos.posGame ? \"main game\" : \"mengerjakan soal\") & \" pos \"&Pos.id&\"?\""
+									}
+								}
+							],
+							"sid": 597007181950271
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 573340063325385,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "button"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-cursor-style",
+					"objectClass": "Mouse",
+					"sid": 647281320984863,
+					"parameters": {
+						"cursor-style": "normal"
+					}
+				}
+			],
+			"sid": 717763172638030,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "layer-is-visible",
+							"objectClass": "System",
+							"sid": 279561055427685,
+							"parameters": {
+								"layer": "\"soalGame\""
+							}
+						},
+						{
+							"id": "compare-animation-frame",
+							"objectClass": "button",
+							"sid": 217507413022922,
+							"parameters": {
+								"comparison": 0,
+								"number": "2"
+							}
+						},
+						{
+							"id": "is-on-layer",
+							"objectClass": "button",
+							"sid": 555557829332992,
+							"parameters": {
+								"layer": "\"soalGame\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 988824017874664,
+							"parameters": {
+								"layer": "\"soalGame\"",
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 172588856130765,
+							"parameters": {
+								"variable": "link",
+								"value": "\"\""
+							}
+						},
+						{
+							"id": "navigate-url",
+							"objectClass": "game",
+							"sid": 213633926035371,
+							"parameters": {
+								"url": "link"
+							}
+						}
+					],
+					"sid": 619849596924546
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "layer-is-visible",
+							"objectClass": "System",
+							"sid": 481705868757590,
+							"parameters": {
+								"layer": "\"soal\""
+							}
+						},
+						{
+							"id": "compare-animation-frame",
+							"objectClass": "button",
+							"sid": 416348839163924,
+							"parameters": {
+								"comparison": 0,
+								"number": "2"
+							}
+						},
+						{
+							"id": "is-on-layer",
+							"objectClass": "button",
+							"sid": 222684180183917,
+							"parameters": {
+								"layer": "\"soal\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 692814818163588,
+							"parameters": {
+								"layer": "\"soal\"",
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 105865883433855
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "layer-is-visible",
+							"objectClass": "System",
+							"sid": 835982587371382,
+							"parameters": {
+								"layer": "\"konfirmasi\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 389728565333762,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-animation-frame",
+									"objectClass": "button",
+									"sid": 688958244834696,
+									"parameters": {
+										"comparison": 0,
+										"number": "0"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 118661332944780,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 812828633899746,
+											"parameters": {
+												"variable": "link",
+												"comparison": 1,
+												"value": "\"\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-layer-visible",
+											"objectClass": "System",
+											"sid": 472261317525294,
+											"parameters": {
+												"layer": "\"soalGame\"",
+												"visibility": "visible"
+											}
+										},
+										{
+											"id": "set-layer-visible",
+											"objectClass": "System",
+											"sid": 228840507589168,
+											"parameters": {
+												"layer": "\"konfirmasi\"",
+												"visibility": "invisible"
+											}
+										},
+										{
+											"id": "navigate-url",
+											"objectClass": "game",
+											"sid": 111701399816902,
+											"parameters": {
+												"url": "link"
+											}
+										}
+									],
+									"sid": 391896200416041
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 934673905943320,
+											"parameters": {
+												"variable": "link",
+												"comparison": 0,
+												"value": "\"\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 119781070553465,
+											"parameters": {
+												"seconds": "0.01"
+											}
+										},
+										{
+											"id": "set-layer-visible",
+											"objectClass": "System",
+											"sid": 712034200654621,
+											"parameters": {
+												"layer": "\"soal\"",
+												"visibility": "visible"
+											}
+										},
+										{
+											"id": "set-layer-visible",
+											"objectClass": "System",
+											"sid": 885735333538332,
+											"parameters": {
+												"layer": "\"konfirmasi\"",
+												"visibility": "invisible"
+											}
+										},
+										{
+											"callFunction": "showSoal",
+											"sid": 912200695591190
+										}
+									],
+									"sid": 473287512800895
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-animation-frame",
+									"objectClass": "button",
+									"sid": 813375157698905,
+									"parameters": {
+										"comparison": 0,
+										"number": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 442321204267922,
+									"parameters": {
+										"layer": "\"konfirmasi\"",
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 943112936814637
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 260193643053450,
+					"parameters": {
+						"first-value": "Player.8Direction.VectorX",
+						"comparison": 4,
+						"second-value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-mirrored",
+					"objectClass": "Player",
+					"sid": 834157839376798,
+					"parameters": {
+						"state": "not-mirrored"
+					}
+				}
+			],
+			"sid": 949645639233295
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 630840133701049,
+					"parameters": {
+						"first-value": "Player.8Direction.VectorX",
+						"comparison": 2,
+						"second-value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-mirrored",
+					"objectClass": "Player",
+					"sid": 880294488934347,
+					"parameters": {
+						"state": "mirrored"
+					}
+				}
+			],
+			"sid": 725749927069627
+		},
+		{
+			"functionName": "showSoal",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "display-html-string",
+					"objectClass": "soal",
+					"sid": 435451108534697,
+					"parameters": {
+						"html": "soalHtmlContent"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 435961800641834,
+					"parameters": {
+						"seconds": "0.05"
+					}
+				},
+				{
+					"type": "script",
+					"script": "const soal = \"contoh pertanyaan safkhdslk safsahlk saf\";\n\nsoalFrame.contentWindow.setSoal(soal);"
+				}
+			],
+			"sid": 333854763167478
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "cursor-is-over-object",
+					"objectClass": "Mouse",
+					"sid": 444578467542072,
+					"parameters": {
+						"object": "button"
+					}
+				},
+				{
+					"id": "layer-is-visible",
+					"objectClass": "System",
+					"sid": 323653916698861,
+					"parameters": {
+						"layer": "button.LayerName"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-cursor-style",
+					"objectClass": "Mouse",
+					"sid": 742610856483107,
+					"parameters": {
+						"cursor-style": "hand"
+					}
+				}
+			],
+			"sid": 232520218456183
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "cursor-is-over-object",
+					"objectClass": "Mouse",
+					"sid": 408791740991680,
+					"parameters": {
+						"object": "button"
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "set-cursor-style",
+					"objectClass": "Mouse",
+					"sid": 791690060973156,
+					"parameters": {
+						"cursor-style": "normal"
+					}
+				}
+			],
+			"sid": 263618549314257
+		},
+		{
+			"functionName": "sendAnswer",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "jawaban",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 139856208919589
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"type": "script",
+					"script": "console.log(localVars.jawaban);\nconsole.log(\"jawaban diterima\");"
+				}
+			],
+			"sid": 771383412548228
+		},
+		{
+			"functionName": "sendScore",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "score",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 180077909724544
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"type": "script",
+					"script": "console.log(localVars.score)\nconsole.log(\"score diterima\")"
+				}
+			],
+			"sid": 340690638768288
+		}
+	],
+	"sid": 249019606169262
+}
