@@ -22,6 +22,16 @@
 			"sid": 461220372893342
 		},
 		{
+			"eventType": "variable",
+			"name": "endTime",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 190864612744742
+		},
+		{
 			"functionName": "fadeIn",
 			"functionDescription": "",
 			"functionCategory": "fade",
@@ -451,6 +461,37 @@
 					"parameters": {
 						"variable": "soalHtmlContent",
 						"value": "AJAX.LastData"
+					}
+				},
+				{
+					"id": "request-project-file",
+					"objectClass": "AJAX",
+					"sid": 678706805590380,
+					"parameters": {
+						"tag": "\"config\"",
+						"file": "config.json"
+					}
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 404963311143175
+				},
+				{
+					"id": "load",
+					"objectClass": "config",
+					"sid": 125315841389297,
+					"parameters": {
+						"json": "AJAX.LastData"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 492132566795466,
+					"parameters": {
+						"variable": "endTime",
+						"value": "Date.Parse(config.Get(\"end-time\"))"
 					}
 				}
 			],

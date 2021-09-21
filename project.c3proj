@@ -63,6 +63,30 @@
 			"bundled": false
 		},
 		{
+			"type": "plugin",
+			"id": "Dictionary",
+			"name": "Dictionary",
+			"author": "Scirra",
+			"version": "r260",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Date",
+			"name": "Date",
+			"author": "Scirra",
+			"version": "r260",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Browser",
+			"name": "Browser",
+			"author": "Scirra",
+			"version": "r260",
+			"bundled": false
+		},
+		{
 			"type": "behavior",
 			"id": "EightDir",
 			"name": "8 Direction",
@@ -110,7 +134,10 @@
 			"StoryText",
 			"confirmBackground",
 			"soal",
-			"AJAX"
+			"AJAX",
+			"config",
+			"Date",
+			"Browser"
 		],
 		"subfolders": []
 	},
@@ -225,6 +252,11 @@
 					"name": "soal.html",
 					"type": "text/html",
 					"sid": 299754220958813
+				},
+				{
+					"name": "config.json",
+					"type": "application/json",
+					"sid": 843590598385249
 				}
 			],
 			"subfolders": []

@@ -18,11 +18,6 @@
 					"id": "on-start-of-layout",
 					"objectClass": "System",
 					"sid": 997171498868514
-				},
-				{
-					"id": "every-tick",
-					"objectClass": "System",
-					"sid": 748048608097123
 				}
 			],
 			"actions": [
@@ -72,7 +67,56 @@
 					}
 				}
 			],
-			"sid": 856959149988460
+			"sid": 856959149988460,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for",
+							"objectClass": "System",
+							"sid": 943623929989019,
+							"parameters": {
+								"name": "\"i\"",
+								"start-index": "1",
+								"end-index": "5"
+							}
+						},
+						{
+							"id": "pick-by-comparison",
+							"objectClass": "System",
+							"sid": 660980300002145,
+							"parameters": {
+								"object": "Pos",
+								"expression": "Pos.id",
+								"comparison": 0,
+								"value": "loopindex(\"i\")"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Pos",
+							"sid": 416770743373087,
+							"parameters": {
+								"instance-variable": "game",
+								"value": "config.Get(\"game-\"&loopindex(\"i\"))"
+							}
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 726561713584438,
+							"parameters": {
+								"type": "log",
+								"message": "config.Get(\"game-\"&loopindex(\"i\"))"
+							}
+						}
+					],
+					"sid": 763251942292179
+				}
+			]
 		},
 		{
 			"eventType": "block",
