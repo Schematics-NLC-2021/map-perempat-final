@@ -104,6 +104,14 @@
 		},
 		{
 			"type": "behavior",
+			"id": "Timer",
+			"name": "Timer",
+			"author": "Scirra",
+			"version": "r260",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
 			"id": "Tween",
 			"name": "Tween",
 			"author": "Scirra",
@@ -137,7 +145,11 @@
 			"AJAX",
 			"config",
 			"Date",
-			"Browser"
+			"Browser",
+			"Sprite",
+			"slowGround",
+			"slipperyGround",
+			"freezeTrap"
 		],
 		"subfolders": []
 	},

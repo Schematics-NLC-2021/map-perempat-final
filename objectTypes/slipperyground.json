@@ -1,0 +1,50 @@
+{
+	"name": "slipperyGround",
+	"plugin-id": "Sprite",
+	"sid": 487476998131350,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "accel",
+			"type": "number",
+			"desc": "",
+			"sid": 825177691153310
+		},
+		{
+			"name": "deccel",
+			"type": "number",
+			"desc": "",
+			"sid": 724891430506998
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 250,
+						"height": 250,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7552248,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 364277705263955,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

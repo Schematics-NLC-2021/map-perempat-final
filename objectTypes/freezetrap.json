@@ -1,0 +1,86 @@
+{
+	"name": "freezeTrap",
+	"plugin-id": "Sprite",
+	"sid": 495495859607373,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "cooldown",
+			"type": "number",
+			"desc": "",
+			"sid": 472643065904134
+		},
+		{
+			"name": "ready",
+			"type": "boolean",
+			"desc": "",
+			"sid": 528232244709073
+		},
+		{
+			"name": "freezeTime",
+			"type": "number",
+			"desc": "",
+			"sid": 283033625706988
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Timer",
+			"name": "Timer",
+			"sid": 531602327455985
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 250,
+						"height": 250,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 5427851,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 250,
+						"height": 250,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2806538,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 250,
+						"height": 250,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4181344,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 987940377971932,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

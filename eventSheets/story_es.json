@@ -437,9 +437,31 @@
 					"sid": 252459259186498
 				},
 				{
-					"callFunction": "showNextStory",
-					"sid": 574899934348912
+					"callFunction": "loadGame",
+					"sid": 224678832940654
 				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 251692450738006
+				},
+				{
+					"callFunction": "showNextStory",
+					"sid": 440233616587037
+				}
+			],
+			"sid": 301687424833473
+		},
+		{
+			"functionName": "loadGame",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": true,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
 				{
 					"id": "request-project-file",
 					"objectClass": "AJAX",
@@ -495,7 +517,7 @@
 					}
 				}
 			],
-			"sid": 301687424833473
+			"sid": 970983155378013
 		}
 	],
 	"sid": 721022730895950

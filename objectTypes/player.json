@@ -3,7 +3,26 @@
 	"plugin-id": "Sprite",
 	"sid": 671040111196394,
 	"isGlobal": false,
-	"instanceVariables": [],
+	"instanceVariables": [
+		{
+			"name": "normalSpeed",
+			"type": "number",
+			"desc": "",
+			"sid": 176055666119512
+		},
+		{
+			"name": "normalAccel",
+			"type": "number",
+			"desc": "",
+			"sid": 939789431497993
+		},
+		{
+			"name": "normalDeccel",
+			"type": "number",
+			"desc": "",
+			"sid": 252655948270712
+		}
+	],
 	"behaviorTypes": [
 		{
 			"behaviorId": "EightDir",
@@ -14,6 +33,11 @@
 			"behaviorId": "scrollto",
 			"name": "ScrollTo",
 			"sid": 881563463771295
+		},
+		{
+			"behaviorId": "Timer",
+			"name": "Timer",
+			"sid": 113313452103100
 		}
 	],
 	"effectTypes": [],

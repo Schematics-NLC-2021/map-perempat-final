@@ -12,6 +12,16 @@
 			"sid": 846226766339612
 		},
 		{
+			"eventType": "variable",
+			"name": "timeDiff",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 745797670439529
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -65,6 +75,15 @@
 						"layer": "\"UI\"",
 						"visibility": "visible"
 					}
+				},
+				{
+					"callFunction": "loadGame",
+					"sid": 417929479939474
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 982924170911477
 				}
 			],
 			"sid": 856959149988460,
@@ -895,6 +914,365 @@
 				}
 			],
 			"sid": 340690638768288
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "UiText",
+					"sid": 190364969611237,
+					"parameters": {
+						"instance-variable": "id",
+						"comparison": 0,
+						"value": "1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 642868075217780,
+					"parameters": {
+						"variable": "timeDiff",
+						"value": "endTime - Date.Now"
+					}
+				}
+			],
+			"sid": 132606374472769,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 849973193988740,
+							"parameters": {
+								"variable": "timeDiff",
+								"comparison": 4,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "UiText",
+							"sid": 177962562868323,
+							"parameters": {
+								"text": "Date.ToTimerHours(timeDiff) & \":\" & (Date.ToTimerMinutes(timeDiff) >= 10 ? Date.ToTimerMinutes(timeDiff) : \"0\"&Date.ToTimerMinutes(timeDiff)) & \":\" & (Date.ToTimerSeconds(timeDiff) >= 10 ? Date.ToTimerSeconds(timeDiff)  : \"0\"&Date.ToTimerSeconds(timeDiff) )"
+							}
+						}
+					],
+					"sid": 469732161934196
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 626292993561534,
+							"parameters": {
+								"variable": "timeDiff",
+								"comparison": 3,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "UiText",
+							"sid": 180730227295323,
+							"parameters": {
+								"text": "\"Waktu Habis\""
+							}
+						}
+					],
+					"sid": 221699555133077
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "Player",
+					"sid": 139106148239676,
+					"parameters": {
+						"object": "slowGround"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-max-speed",
+					"objectClass": "Player",
+					"sid": 275328534568594,
+					"behaviorType": "8Direction",
+					"parameters": {
+						"max-speed": "slowGround.maxSpeed"
+					}
+				}
+			],
+			"sid": 709149523889978
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "Player",
+					"sid": 246338537965932,
+					"parameters": {
+						"object": "slipperyGround"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-acceleration",
+					"objectClass": "Player",
+					"sid": 419671141051274,
+					"behaviorType": "8Direction",
+					"parameters": {
+						"acceleration": "slipperyGround.accel"
+					}
+				},
+				{
+					"id": "set-deceleration",
+					"objectClass": "Player",
+					"sid": 633182033144870,
+					"behaviorType": "8Direction",
+					"parameters": {
+						"deceleration": "slipperyGround.deccel"
+					}
+				}
+			],
+			"sid": 629205471817808
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Player",
+					"sid": 666753198772163,
+					"parameters": {
+						"object": "freezeTrap"
+					}
+				},
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "freezeTrap",
+					"sid": 681370015471638,
+					"parameters": {
+						"instance-variable": "ready"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation-frame",
+					"objectClass": "freezeTrap",
+					"sid": 208900252743825,
+					"parameters": {
+						"frame-number": "1"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 577786426621612,
+					"parameters": {
+						"seconds": "0.1"
+					}
+				},
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "freezeTrap",
+					"sid": 855600001771756,
+					"parameters": {
+						"instance-variable": "ready",
+						"value": "false"
+					}
+				},
+				{
+					"id": "set-max-speed",
+					"objectClass": "Player",
+					"sid": 197174995703222,
+					"behaviorType": "8Direction",
+					"parameters": {
+						"max-speed": "0"
+					}
+				},
+				{
+					"id": "start-timer",
+					"objectClass": "Player",
+					"sid": 780347296690262,
+					"behaviorType": "Timer",
+					"parameters": {
+						"duration": "freezeTrap.freezeTime",
+						"type": "once",
+						"tag": "\"freeze\""
+					}
+				},
+				{
+					"id": "start-timer",
+					"objectClass": "freezeTrap",
+					"sid": 857952314823959,
+					"behaviorType": "Timer",
+					"parameters": {
+						"duration": "freezeTrap.cooldown",
+						"type": "once",
+						"tag": "\"cooldown\""
+					}
+				},
+				{
+					"id": "set-animation-frame",
+					"objectClass": "freezeTrap",
+					"sid": 311898859669514,
+					"parameters": {
+						"frame-number": "2"
+					}
+				}
+			],
+			"sid": 264401450933586
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-timer",
+					"objectClass": "freezeTrap",
+					"sid": 364444321524152,
+					"behaviorType": "Timer",
+					"parameters": {
+						"tag": "\"cooldown\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "freezeTrap",
+					"sid": 102892920152411,
+					"parameters": {
+						"instance-variable": "ready",
+						"value": "true"
+					}
+				},
+				{
+					"id": "set-animation-frame",
+					"objectClass": "freezeTrap",
+					"sid": 478441431014500,
+					"parameters": {
+						"frame-number": "0"
+					}
+				}
+			],
+			"sid": 596320386004661
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-timer",
+					"objectClass": "Player",
+					"sid": 620573177172952,
+					"behaviorType": "Timer",
+					"parameters": {
+						"tag": "\"freeze\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-max-speed",
+					"objectClass": "Player",
+					"sid": 937356441330690,
+					"behaviorType": "8Direction",
+					"parameters": {
+						"max-speed": "Self.normalSpeed"
+					}
+				}
+			],
+			"sid": 295569055461532
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "Player",
+					"sid": 806222623591071,
+					"parameters": {
+						"object": "slowGround"
+					},
+					"isInverted": true
+				},
+				{
+					"id": "is-timer-running",
+					"objectClass": "Player",
+					"sid": 184144936438493,
+					"behaviorType": "Timer",
+					"parameters": {
+						"tag": "\"freeze\""
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "set-max-speed",
+					"objectClass": "Player",
+					"sid": 431206877284283,
+					"behaviorType": "8Direction",
+					"parameters": {
+						"max-speed": "Self.normalSpeed"
+					}
+				}
+			],
+			"sid": 764598358147845
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "Player",
+					"sid": 688572517004945,
+					"parameters": {
+						"object": "slipperyGround"
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "set-acceleration",
+					"objectClass": "Player",
+					"sid": 895258501492952,
+					"behaviorType": "8Direction",
+					"parameters": {
+						"acceleration": "Self.normalAccel"
+					}
+				},
+				{
+					"id": "set-deceleration",
+					"objectClass": "Player",
+					"sid": 814392007779723,
+					"behaviorType": "8Direction",
+					"parameters": {
+						"deceleration": "Self.normalDeccel"
+					}
+				}
+			],
+			"sid": 193879657181748
 		}
 	],
 	"sid": 249019606169262
