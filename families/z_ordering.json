@@ -7,7 +7,6 @@
 	"effectTypes": [],
 	"members": [
 		"Pos",
-		"Decorations",
 		"Player"
 	]
 }

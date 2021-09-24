@@ -12,7 +12,6 @@
 	],
 	"effectTypes": [],
 	"members": [
-		"Pos",
-		"Decorations"
+		"Pos"
 	]
 }

@@ -132,7 +132,6 @@
 		"items": [
 			"game",
 			"Player",
-			"Decorations",
 			"Pos",
 			"UiText",
 			"Keyboard",
@@ -149,7 +148,8 @@
 			"Sprite",
 			"slowGround",
 			"slipperyGround",
-			"freezeTrap"
+			"freezeTrap",
+			"Sprite2"
 		],
 		"subfolders": []
 	},
