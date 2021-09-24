@@ -245,7 +245,7 @@
 					"instanceVariables": {
 						"id": 4,
 						"game": "",
-						"posGame": false
+						"posGame": true
 					},
 					"behaviors": {
 						"Solid": {
@@ -285,7 +285,7 @@
 					"instanceVariables": {
 						"id": 3,
 						"game": "",
-						"posGame": false
+						"posGame": true
 					},
 					"behaviors": {
 						"Solid": {
@@ -405,7 +405,7 @@
 					"instanceVariables": {
 						"id": 5,
 						"game": "",
-						"posGame": false
+						"posGame": true
 					},
 					"behaviors": {
 						"Solid": {
