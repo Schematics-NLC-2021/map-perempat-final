@@ -1,0 +1,239 @@
+{
+	"name": "LoadingScreen",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "dot",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 741199090880492
+		},
+		{
+			"functionName": "loadGame",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": true,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "request-project-file",
+					"objectClass": "AJAX",
+					"sid": 752408583196634,
+					"parameters": {
+						"tag": "\"soal\"",
+						"file": "soal.html"
+					}
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 485200649686872
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 275407091200658,
+					"parameters": {
+						"variable": "soalHtmlContent",
+						"value": "AJAX.LastData"
+					}
+				},
+				{
+					"id": "request-project-file",
+					"objectClass": "AJAX",
+					"sid": 678706805590380,
+					"parameters": {
+						"tag": "\"config\"",
+						"file": "config.json"
+					}
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 404963311143175
+				},
+				{
+					"id": "load",
+					"objectClass": "config",
+					"sid": 125315841389297,
+					"parameters": {
+						"json": "AJAX.LastData"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 492132566795466,
+					"parameters": {
+						"variable": "endTime",
+						"value": "Date.Parse(config.Get(\"end-time\"))"
+					}
+				}
+			],
+			"sid": 970983155378013
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 193669183487039
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "loadGame",
+					"sid": 224678832940654
+				},
+				{
+					"id": "load-layout-images",
+					"objectClass": "System",
+					"sid": 266622638475554,
+					"parameters": {
+						"layout": "Game"
+					}
+				},
+				{
+					"id": "load-layout-images",
+					"objectClass": "System",
+					"sid": 126644811443850,
+					"parameters": {
+						"layout": "Login"
+					}
+				},
+				{
+					"id": "load-layout-images",
+					"objectClass": "System",
+					"sid": 169890600937294,
+					"parameters": {
+						"layout": "Story"
+					}
+				}
+			],
+			"sid": 740959044691722
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 240059457889507,
+					"parameters": {
+						"interval-seconds": "0.5"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "LoadingText",
+					"sid": 891822997937725,
+					"parameters": {
+						"text": "\"Loading\""
+					}
+				},
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 971144462630640,
+					"parameters": {
+						"variable": "dot",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 875304385819434,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 881804515239456,
+							"parameters": {
+								"variable": "dot",
+								"comparison": 0,
+								"value": "4"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 638609712323863,
+							"parameters": {
+								"variable": "dot",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 497193936419251
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "repeat",
+							"objectClass": "System",
+							"sid": 903886965807726,
+							"parameters": {
+								"count": "dot"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "append-text",
+							"objectClass": "LoadingText",
+							"sid": 463491548146929,
+							"parameters": {
+								"text": "\".\""
+							}
+						}
+					],
+					"sid": 121905148323312
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-image-loading-complete",
+					"objectClass": "System",
+					"sid": 272123247035545
+				}
+			],
+			"actions": [
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 644231373113457,
+					"parameters": {
+						"seconds": "0.5"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 585529486658479,
+					"parameters": {
+						"layout": "Login"
+					}
+				}
+			],
+			"sid": 570602319364576
+		}
+	],
+	"sid": 549757804693015
+}

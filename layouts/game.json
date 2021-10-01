@@ -13155,7 +13155,7 @@
 				{
 					"type": "UiText",
 					"properties": {
-						"text": "anggep pos 1",
+						"text": "time",
 						"enable-bbcode": true,
 						"character-width": 16,
 						"character-height": 16,
@@ -13172,7 +13172,7 @@
 					},
 					"uid": 91,
 					"instanceVariables": {
-						"id": 1
+						"id": 2
 					},
 					"behaviors": {},
 					"world": {

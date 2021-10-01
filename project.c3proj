@@ -8,16 +8,16 @@
 	"usedAddons": [
 		{
 			"type": "plugin",
-			"id": "iframe",
-			"name": "iframe",
+			"id": "Sprite",
+			"name": "Sprite",
 			"author": "Scirra",
 			"version": "r260",
 			"bundled": false
 		},
 		{
 			"type": "plugin",
-			"id": "Sprite",
-			"name": "Sprite",
+			"id": "iframe",
+			"name": "iframe",
 			"author": "Scirra",
 			"version": "r260",
 			"bundled": false
@@ -87,6 +87,14 @@
 			"bundled": false
 		},
 		{
+			"type": "plugin",
+			"id": "TextBox",
+			"name": "Text input",
+			"author": "Scirra",
+			"version": "r260",
+			"bundled": false
+		},
+		{
 			"type": "behavior",
 			"id": "EightDir",
 			"name": "8 Direction",
@@ -149,9 +157,20 @@
 			"slowGround",
 			"slipperyGround",
 			"freezeTrap",
-			"Sprite2"
+			"Sprite2",
+			"Username",
+			"Password",
+			"LoadingText"
 		],
-		"subfolders": []
+		"subfolders": [
+			{
+				"items": [
+					"loginButton"
+				],
+				"subfolders": [],
+				"name": "forLogin"
+			}
+		]
 	},
 	"autosaveData": null,
 	"containers": [],
@@ -165,14 +184,18 @@
 	"layouts": {
 		"items": [
 			"Game",
-			"Story"
+			"Story",
+			"Login",
+			"LoadingScreen"
 		],
 		"subfolders": []
 	},
 	"eventSheets": {
 		"items": [
 			"Game_ES",
-			"Story_ES"
+			"Story_ES",
+			"Login_ES",
+			"LoadingScreen"
 		],
 		"subfolders": []
 	},
@@ -291,7 +314,7 @@
 		"authorWebsite": "rushhourdream.itch.io",
 		"appId": "",
 		"pixelRounding": false,
-		"useLoaderLayout": false,
+		"useLoaderLayout": true,
 		"fullscreenMode": "letterbox-scale",
 		"fullscreenQuality": "high",
 		"viewportFit": "auto",
@@ -330,5 +353,5 @@
 	},
 	"viewportWidth": 1280,
 	"viewportHeight": 720,
-	"firstLayout": "Story"
+	"firstLayout": "LoadingScreen"
 }

@@ -921,11 +921,11 @@
 				{
 					"id": "compare-instance-variable",
 					"objectClass": "UiText",
-					"sid": 190364969611237,
+					"sid": 335660255084060,
 					"parameters": {
 						"instance-variable": "id",
 						"comparison": 0,
-						"value": "1"
+						"value": "2"
 					}
 				}
 			],

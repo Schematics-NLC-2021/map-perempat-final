@@ -1,0 +1,63 @@
+{
+	"name": "Login_ES",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 363952123292747
+				}
+			],
+			"actions": [
+				{
+					"id": "set-css-style",
+					"objectClass": "Username",
+					"sid": 158184773294261,
+					"parameters": {
+						"property-name": "\"font-size\"",
+						"value": "\"2vw\""
+					}
+				},
+				{
+					"id": "set-css-style",
+					"objectClass": "Password",
+					"sid": 687276406408614,
+					"parameters": {
+						"property-name": "\"font-size\"",
+						"value": "\"2vw\""
+					}
+				}
+			],
+			"sid": 156283092909756
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 233721641949998,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "loginButton"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 590412416622807,
+					"parameters": {
+						"layout": "Story"
+					}
+				}
+			],
+			"sid": 744966453220445
+		}
+	],
+	"sid": 889062280607382
+}

@@ -437,87 +437,11 @@
 					"sid": 252459259186498
 				},
 				{
-					"callFunction": "loadGame",
-					"sid": 224678832940654
-				},
-				{
-					"id": "wait-for-previous-actions",
-					"objectClass": "System",
-					"sid": 251692450738006
-				},
-				{
 					"callFunction": "showNextStory",
 					"sid": 440233616587037
 				}
 			],
 			"sid": 301687424833473
-		},
-		{
-			"functionName": "loadGame",
-			"functionDescription": "",
-			"functionCategory": "",
-			"functionReturnType": "none",
-			"functionIsAsync": true,
-			"functionParameters": [],
-			"eventType": "function-block",
-			"conditions": [],
-			"actions": [
-				{
-					"id": "request-project-file",
-					"objectClass": "AJAX",
-					"sid": 752408583196634,
-					"parameters": {
-						"tag": "\"soal\"",
-						"file": "soal.html"
-					}
-				},
-				{
-					"id": "wait-for-previous-actions",
-					"objectClass": "System",
-					"sid": 485200649686872
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 275407091200658,
-					"parameters": {
-						"variable": "soalHtmlContent",
-						"value": "AJAX.LastData"
-					}
-				},
-				{
-					"id": "request-project-file",
-					"objectClass": "AJAX",
-					"sid": 678706805590380,
-					"parameters": {
-						"tag": "\"config\"",
-						"file": "config.json"
-					}
-				},
-				{
-					"id": "wait-for-previous-actions",
-					"objectClass": "System",
-					"sid": 404963311143175
-				},
-				{
-					"id": "load",
-					"objectClass": "config",
-					"sid": 125315841389297,
-					"parameters": {
-						"json": "AJAX.LastData"
-					}
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 492132566795466,
-					"parameters": {
-						"variable": "endTime",
-						"value": "Date.Parse(config.Get(\"end-time\"))"
-					}
-				}
-			],
-			"sid": 970983155378013
 		}
 	],
 	"sid": 721022730895950
