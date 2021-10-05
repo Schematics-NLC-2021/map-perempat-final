@@ -157,10 +157,10 @@
 			"slowGround",
 			"slipperyGround",
 			"freezeTrap",
-			"Sprite2",
 			"Username",
 			"Password",
-			"LoadingText"
+			"LoadingText",
+			"Sprite2"
 		],
 		"subfolders": [
 			{
