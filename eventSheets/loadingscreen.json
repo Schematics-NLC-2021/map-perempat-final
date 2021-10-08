@@ -74,9 +74,121 @@
 						"variable": "endTime",
 						"value": "Date.Parse(config.Get(\"end-time\"))"
 					}
+				},
+				{
+					"id": "check-item-exists",
+					"objectClass": "LocalStorage",
+					"sid": 202512766706572,
+					"parameters": {
+						"key": "\"posVisited\""
+					}
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 137751618904908
+				},
+				{
+					"id": "check-item-exists",
+					"objectClass": "LocalStorage",
+					"sid": 312749529104822,
+					"parameters": {
+						"key": "\"unsentScores\""
+					}
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 919771571367973
+				},
+				{
+					"id": "check-item-exists",
+					"objectClass": "LocalStorage",
+					"sid": 813818435833995,
+					"parameters": {
+						"key": "\"curPosition\""
+					}
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 664692320730146
+				},
+				{
+					"id": "check-item-exists",
+					"objectClass": "LocalStorage",
+					"sid": 385826997498650,
+					"parameters": {
+						"key": "\"accumulatedScore\""
+					}
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 684724080920533
 				}
 			],
 			"sid": 970983155378013
+		},
+		{
+			"functionName": "initGame",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 812930765285410,
+					"parameters": {
+						"variable": "accumulatedScore",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 678535474791932,
+					"parameters": {
+						"variable": "curX",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 909974067857751,
+					"parameters": {
+						"variable": "curY",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-size",
+					"objectClass": "PosVisited",
+					"sid": 157563928991165,
+					"parameters": {
+						"width": "0",
+						"height": "1",
+						"depth": "1"
+					}
+				},
+				{
+					"id": "set-size",
+					"objectClass": "UnsentScores",
+					"sid": 481078026822102,
+					"parameters": {
+						"width": "0",
+						"height": "1",
+						"depth": "1"
+					}
+				}
+			],
+			"sid": 137277623973437
 		},
 		{
 			"eventType": "block",
@@ -89,28 +201,12 @@
 			],
 			"actions": [
 				{
+					"callFunction": "initGame",
+					"sid": 602168365754504
+				},
+				{
 					"callFunction": "loadGame",
-					"sid": 224678832940654
-				},
-				{
-					"id": "set-size",
-					"objectClass": "PosVisited",
-					"sid": 219704273855895,
-					"parameters": {
-						"width": "0",
-						"height": "1",
-						"depth": "1"
-					}
-				},
-				{
-					"id": "set-size",
-					"objectClass": "Scores",
-					"sid": 225105635893084,
-					"parameters": {
-						"width": "0",
-						"height": "1",
-						"depth": "1"
-					}
+					"sid": 850503090131580
 				},
 				{
 					"id": "wait",
@@ -216,6 +312,209 @@
 					"sid": 121905148323312
 				}
 			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-exists",
+					"objectClass": "LocalStorage",
+					"sid": 168242234345912,
+					"parameters": {
+						"key": "\"posVisited\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "get-item",
+					"objectClass": "LocalStorage",
+					"sid": 910857255119486,
+					"parameters": {
+						"key": "\"posVisited\""
+					}
+				}
+			],
+			"sid": 487388916155099
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-get",
+					"objectClass": "LocalStorage",
+					"sid": 539402697710068,
+					"parameters": {
+						"key": "\"posVisited\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "load",
+					"objectClass": "PosVisited",
+					"sid": 572561814618812,
+					"parameters": {
+						"json": "LocalStorage.ItemValue"
+					}
+				}
+			],
+			"sid": 968954270728371
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-exists",
+					"objectClass": "LocalStorage",
+					"sid": 201083395747925,
+					"parameters": {
+						"key": "\"unsentScores\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "get-item",
+					"objectClass": "LocalStorage",
+					"sid": 668424001853298,
+					"parameters": {
+						"key": "\"unsentScores\""
+					}
+				}
+			],
+			"sid": 216049304168362
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-get",
+					"objectClass": "LocalStorage",
+					"sid": 951301879713577,
+					"parameters": {
+						"key": "\"unsentScores\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "load",
+					"objectClass": "UnsentScores",
+					"sid": 474291057901710,
+					"parameters": {
+						"json": "LocalStorage.ItemValue"
+					}
+				}
+			],
+			"sid": 485000802366277
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-exists",
+					"objectClass": "LocalStorage",
+					"sid": 908740418679724,
+					"parameters": {
+						"key": "\"curPosition\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "get-item",
+					"objectClass": "LocalStorage",
+					"sid": 170650283723611,
+					"parameters": {
+						"key": "\"curPosition\""
+					}
+				}
+			],
+			"sid": 366238943913841
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-get",
+					"objectClass": "LocalStorage",
+					"sid": 800849859732917,
+					"parameters": {
+						"key": "\"curPosition\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 946471052566062,
+					"parameters": {
+						"variable": "curX",
+						"value": "float(tokenat(LocalStorage.ItemValue, 0, \" \"))"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 273882726277577,
+					"parameters": {
+						"variable": "curY",
+						"value": "float(tokenat(LocalStorage.ItemValue, 1, \" \"))"
+					}
+				}
+			],
+			"sid": 323320943057455
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-exists",
+					"objectClass": "LocalStorage",
+					"sid": 387289728857575,
+					"parameters": {
+						"key": "\"accumulatedScore\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "get-item",
+					"objectClass": "LocalStorage",
+					"sid": 436010284947762,
+					"parameters": {
+						"key": "\"accumulatedScore\""
+					}
+				}
+			],
+			"sid": 590798213335635
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-get",
+					"objectClass": "LocalStorage",
+					"sid": 871568791327288,
+					"parameters": {
+						"key": "\"accumulatedScore\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 104987743875783,
+					"parameters": {
+						"variable": "accumulatedScore",
+						"value": "LocalStorage.ItemValue"
+					}
+				}
+			],
+			"sid": 228405616121762
 		}
 	],
 	"sid": 549757804693015

@@ -3212,7 +3212,7 @@
 			"instanceVariables": {}
 		},
 		{
-			"type": "Scores",
+			"type": "UnsentScores",
 			"properties": {
 				"width": 10,
 				"height": 1,

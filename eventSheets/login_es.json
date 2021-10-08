@@ -209,17 +209,82 @@
 			"functionParameters": [],
 			"eventType": "function-block",
 			"conditions": [],
-			"actions": [
+			"actions": [],
+			"sid": 567174251635857,
+			"children": [
 				{
-					"id": "go-to-layout",
-					"objectClass": "System",
-					"sid": 970515797265711,
-					"parameters": {
-						"layout": "Story"
-					}
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 213455380185633,
+							"parameters": {
+								"variable": "curX",
+								"comparison": 1,
+								"value": "0"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 714365549885264,
+							"parameters": {
+								"variable": "curY",
+								"comparison": 1,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 504600971359821,
+							"parameters": {
+								"layout": "Game"
+							}
+						}
+					],
+					"sid": 824447888703860
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 850507147142075,
+							"parameters": {
+								"variable": "curX",
+								"comparison": 0,
+								"value": "0"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 909284105096971,
+							"parameters": {
+								"variable": "curY",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 666922669778358,
+							"parameters": {
+								"layout": "Story"
+							}
+						}
+					],
+					"sid": 467971685284139
 				}
-			],
-			"sid": 567174251635857
+			]
 		},
 		{
 			"functionName": "loginFailed",
@@ -241,6 +306,30 @@
 				}
 			],
 			"sid": 690302166272867
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 133329973211812,
+					"parameters": {
+						"key": 46
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "initGame",
+					"sid": 907556757597592
+				},
+				{
+					"callFunction": "save",
+					"sid": 598712846645772
+				}
+			],
+			"sid": 153776397785245
 		}
 	],
 	"sid": 889062280607382

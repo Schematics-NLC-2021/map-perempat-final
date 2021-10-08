@@ -53,7 +53,7 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "accumulatedScores",
+			"name": "accumulatedScore",
 			"type": "number",
 			"initialValue": "0",
 			"comment": "",
@@ -120,15 +120,6 @@
 					"id": "destroy",
 					"objectClass": "gameText",
 					"sid": 475765825407598
-				},
-				{
-					"callFunction": "loadGame",
-					"sid": 417929479939474
-				},
-				{
-					"id": "wait-for-previous-actions",
-					"objectClass": "System",
-					"sid": 982924170911477
 				}
 			],
 			"sid": 856959149988460,
@@ -179,6 +170,43 @@
 						}
 					],
 					"sid": 763251942292179
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 437661125078289,
+							"parameters": {
+								"variable": "curX",
+								"comparison": 1,
+								"value": "0"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 147241600491162,
+							"parameters": {
+								"variable": "curY",
+								"comparison": 1,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "Player",
+							"sid": 887913874291913,
+							"parameters": {
+								"x": "curX",
+								"y": "curY"
+							}
+						}
+					],
+					"sid": 428098048552890
 				}
 			]
 		},
@@ -987,13 +1015,17 @@
 				},
 				{
 					"id": "push",
-					"objectClass": "Scores",
+					"objectClass": "UnsentScores",
 					"sid": 164905305613836,
 					"parameters": {
 						"where": "back",
 						"value": "score",
 						"axis": "x"
 					}
+				},
+				{
+					"callFunction": "save",
+					"sid": 125235582913505
 				}
 			],
 			"sid": 340690638768288
@@ -1387,6 +1419,10 @@
 						"variable": "curY",
 						"value": "Player.Y"
 					}
+				},
+				{
+					"callFunction": "save",
+					"sid": 945058963400296
 				}
 			],
 			"sid": 829859358810926
@@ -1605,6 +1641,55 @@
 				}
 			],
 			"sid": 299373057427743
+		},
+		{
+			"functionName": "save",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-item",
+					"objectClass": "LocalStorage",
+					"sid": 382499725547034,
+					"parameters": {
+						"key": "\"posVisited\"",
+						"value": "PosVisited.AsJSON"
+					}
+				},
+				{
+					"id": "set-item",
+					"objectClass": "LocalStorage",
+					"sid": 820832393544288,
+					"parameters": {
+						"key": "\"unsentScores\"",
+						"value": "UnsentScores.AsJSON"
+					}
+				},
+				{
+					"id": "set-item",
+					"objectClass": "LocalStorage",
+					"sid": 894178053394088,
+					"parameters": {
+						"key": "\"curPosition\"",
+						"value": "curX & \" \" & curY "
+					}
+				},
+				{
+					"id": "set-item",
+					"objectClass": "LocalStorage",
+					"sid": 564111523596848,
+					"parameters": {
+						"key": "\"accumulatedScore\"",
+						"value": "accumulatedScore"
+					}
+				}
+			],
+			"sid": 735925645552628
 		}
 	],
 	"sid": 249019606169262
