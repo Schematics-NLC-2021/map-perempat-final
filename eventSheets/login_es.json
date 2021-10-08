@@ -46,17 +46,201 @@
 					}
 				}
 			],
+			"actions": [],
+			"sid": 744966453220445,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 315657464686837,
+							"parameters": {
+								"first-value": "Functions.validasi",
+								"comparison": 1,
+								"second-value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "tryLogin",
+							"sid": 734347622926333
+						}
+					],
+					"sid": 478408423984391
+				}
+			]
+		},
+		{
+			"functionName": "tryLogin",
+			"functionDescription": "",
+			"functionCategory": "Login",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"callFunction": "loginSuccess",
+					"sid": 317625018498623
+				}
+			],
+			"sid": 324256572314733
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 338283947847246
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "UiText",
+					"sid": 866347600987763,
+					"parameters": {
+						"text": "\"\""
+					}
+				}
+			],
+			"sid": 759759089089603
+		},
+		{
+			"functionName": "validasi",
+			"functionDescription": "",
+			"functionCategory": "Login",
+			"functionReturnType": "number",
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-function-return-value",
+					"objectClass": "Functions",
+					"sid": 208787614830623,
+					"parameters": {
+						"value": "1"
+					}
+				}
+			],
+			"sid": 615261102005424,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-text",
+							"objectClass": "Password",
+							"sid": 948381027979788,
+							"parameters": {
+								"text": "\"\"",
+								"case": "case-insensitive"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "UiText",
+							"sid": 629701769142192,
+							"parameters": {
+								"text": "\"Password harus diisi\""
+							}
+						},
+						{
+							"id": "set-function-return-value",
+							"objectClass": "Functions",
+							"sid": 770302421913174,
+							"parameters": {
+								"value": "0"
+							}
+						}
+					],
+					"sid": 735707973201450
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-text",
+							"objectClass": "Username",
+							"sid": 505709623912298,
+							"parameters": {
+								"text": "\"\"",
+								"case": "case-insensitive"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "UiText",
+							"sid": 240641869234888,
+							"parameters": {
+								"text": "\"Username harus diisi\""
+							}
+						},
+						{
+							"id": "set-function-return-value",
+							"objectClass": "Functions",
+							"sid": 936245780376079,
+							"parameters": {
+								"value": "0"
+							}
+						}
+					],
+					"sid": 580313016015718
+				}
+			]
+		},
+		{
+			"functionName": "loginSuccess",
+			"functionDescription": "",
+			"functionCategory": "Login",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
 			"actions": [
 				{
 					"id": "go-to-layout",
 					"objectClass": "System",
-					"sid": 590412416622807,
+					"sid": 970515797265711,
 					"parameters": {
 						"layout": "Story"
 					}
 				}
 			],
-			"sid": 744966453220445
+			"sid": 567174251635857
+		},
+		{
+			"functionName": "loginFailed",
+			"functionDescription": "",
+			"functionCategory": "Login",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "UiText",
+					"sid": 877451246889855,
+					"parameters": {
+						"text": "\"Login gagal, coba cek kembali username dan password\""
+					}
+				}
+			],
+			"sid": 690302166272867
 		}
 	],
 	"sid": 889062280607382

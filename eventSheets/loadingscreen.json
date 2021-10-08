@@ -93,27 +93,19 @@
 					"sid": 224678832940654
 				},
 				{
-					"id": "load-layout-images",
+					"id": "wait",
 					"objectClass": "System",
-					"sid": 266622638475554,
+					"sid": 682569866001650,
 					"parameters": {
-						"layout": "Game"
+						"seconds": "random(1,2)"
 					}
 				},
 				{
-					"id": "load-layout-images",
+					"id": "go-to-layout",
 					"objectClass": "System",
-					"sid": 126644811443850,
+					"sid": 638904189757838,
 					"parameters": {
 						"layout": "Login"
-					}
-				},
-				{
-					"id": "load-layout-images",
-					"objectClass": "System",
-					"sid": 169890600937294,
-					"parameters": {
-						"layout": "Story"
 					}
 				}
 			],
@@ -204,35 +196,6 @@
 					"sid": 121905148323312
 				}
 			]
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-image-loading-complete",
-					"objectClass": "System",
-					"sid": 272123247035545
-				}
-			],
-			"actions": [
-				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 644231373113457,
-					"parameters": {
-						"seconds": "0.5"
-					}
-				},
-				{
-					"id": "go-to-layout",
-					"objectClass": "System",
-					"sid": 585529486658479,
-					"parameters": {
-						"layout": "Login"
-					}
-				}
-			],
-			"sid": 570602319364576
 		}
 	],
 	"sid": 549757804693015
