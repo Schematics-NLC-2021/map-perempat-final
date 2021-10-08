@@ -259,6 +259,7 @@
 				}
 			],
 			"sid": 875304385819434,
+			"disabled": true,
 			"children": [
 				{
 					"eventType": "block",
@@ -285,7 +286,8 @@
 							}
 						}
 					],
-					"sid": 497193936419251
+					"sid": 497193936419251,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -309,7 +311,8 @@
 							}
 						}
 					],
-					"sid": 121905148323312
+					"sid": 121905148323312,
+					"disabled": true
 				}
 			]
 		},
@@ -515,6 +518,27 @@
 				}
 			],
 			"sid": 228405616121762
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 403235058605819
+				}
+			],
+			"actions": [
+				{
+					"id": "start-animation",
+					"objectClass": "loadScreen",
+					"sid": 484727486598929,
+					"parameters": {
+						"from": "beginning"
+					}
+				}
+			],
+			"sid": 484198153934287
 		}
 	],
 	"sid": 549757804693015

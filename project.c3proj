@@ -196,7 +196,9 @@
 			"PosVisited",
 			"UnsentScores",
 			"gameText",
-			"LocalStorage"
+			"LocalStorage",
+			"loadScreen",
+			"Sprite3"
 		],
 		"subfolders": [
 			{
