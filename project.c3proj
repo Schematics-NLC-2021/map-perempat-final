@@ -103,6 +103,22 @@
 			"bundled": false
 		},
 		{
+			"type": "plugin",
+			"id": "Arr",
+			"name": "Array",
+			"author": "Scirra",
+			"version": "r260",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "LocalStorage",
+			"name": "Local storage",
+			"author": "Scirra",
+			"version": "r260",
+			"bundled": false
+		},
+		{
 			"type": "behavior",
 			"id": "EightDir",
 			"name": "8 Direction",
@@ -141,6 +157,14 @@
 			"author": "Scirra",
 			"version": "r260",
 			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Pin",
+			"name": "Pin",
+			"author": "Scirra",
+			"version": "r260",
+			"bundled": false
 		}
 	],
 	"uniqueId": "rdjsfacqpgg",
@@ -168,7 +192,11 @@
 			"Username",
 			"Password",
 			"LoadingText",
-			"Sprite2"
+			"Sprite2",
+			"PosVisited",
+			"Scores",
+			"gameText",
+			"LocalStorage"
 		],
 		"subfolders": [
 			{

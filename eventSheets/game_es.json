@@ -22,6 +22,46 @@
 			"sid": 745797670439529
 		},
 		{
+			"eventType": "variable",
+			"name": "curPos",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 205637138989306
+		},
+		{
+			"eventType": "variable",
+			"name": "curX",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 672820887030452
+		},
+		{
+			"eventType": "variable",
+			"name": "curY",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 857785512173970
+		},
+		{
+			"eventType": "variable",
+			"name": "accumulatedScores",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 262097926841773
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -75,6 +115,11 @@
 						"layer": "\"UI\"",
 						"visibility": "visible"
 					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "gameText",
+					"sid": 475765825407598
 				},
 				{
 					"callFunction": "loadGame",
@@ -344,6 +389,15 @@
 								"offset-x": "0",
 								"offset-y": "-20"
 							}
+						},
+						{
+							"id": "contains-value",
+							"objectClass": "PosVisited",
+							"sid": 292525364248355,
+							"parameters": {
+								"value": "Pos.id"
+							},
+							"isInverted": true
 						}
 					],
 					"actions": [
@@ -354,6 +408,15 @@
 							"parameters": {
 								"layer": "\"konfirmasi\"",
 								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 437800188187046,
+							"parameters": {
+								"variable": "curPos",
+								"value": "Pos.id"
 							}
 						}
 					],
@@ -911,6 +974,26 @@
 				{
 					"type": "script",
 					"script": "console.log(localVars.score)\nconsole.log(\"score diterima\")"
+				},
+				{
+					"id": "push",
+					"objectClass": "PosVisited",
+					"sid": 675408290260634,
+					"parameters": {
+						"where": "back",
+						"value": "curPos",
+						"axis": "x"
+					}
+				},
+				{
+					"id": "push",
+					"objectClass": "Scores",
+					"sid": 164905305613836,
+					"parameters": {
+						"where": "back",
+						"value": "score",
+						"axis": "x"
+					}
 				}
 			],
 			"sid": 340690638768288
@@ -1273,6 +1356,255 @@
 				}
 			],
 			"sid": 193879657181748
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 524664564995127,
+					"parameters": {
+						"interval-seconds": "1.0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 459063308314288,
+					"parameters": {
+						"variable": "curX",
+						"value": "Player.X"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 566839406208025,
+					"parameters": {
+						"variable": "curY",
+						"value": "Player.Y"
+					}
+				}
+			],
+			"sid": 829859358810926
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "layer-is-visible",
+					"objectClass": "System",
+					"sid": 802131626923920,
+					"parameters": {
+						"layer": "\"konfirmasi\""
+					},
+					"isInverted": true
+				},
+				{
+					"id": "is-overlapping-at-offset",
+					"objectClass": "Player",
+					"sid": 896704020079544,
+					"parameters": {
+						"object": "Pos",
+						"offset-x": "0",
+						"offset-y": "-20"
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 245934412717663
+				}
+			],
+			"actions": [],
+			"sid": 674194614606998,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "contains-value",
+							"objectClass": "PosVisited",
+							"sid": 110743990337828,
+							"parameters": {
+								"value": "Pos.id"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 545503496291892,
+							"parameters": {
+								"object-to-create": "gameText",
+								"layer": "\"Game\"",
+								"x": "Player.X",
+								"y": "Player.Y - Player.Height",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "gameText",
+							"sid": 105760277789198,
+							"parameters": {
+								"text": "\"Kamu sudah mengunjungi pos ini\""
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 349578035183765,
+							"parameters": {
+								"seconds": "0.01"
+							}
+						},
+						{
+							"id": "set-height",
+							"objectClass": "gameText",
+							"sid": 187782843228406,
+							"parameters": {
+								"height": "gameText.TextHeight"
+							}
+						},
+						{
+							"id": "pin-to-object-properties",
+							"objectClass": "gameText",
+							"sid": 743991753702209,
+							"behaviorType": "Pin",
+							"parameters": {
+								"pin-to": "Player",
+								"x": true,
+								"y": true,
+								"angle": true,
+								"width-type": "no",
+								"height-type": "no",
+								"z": false
+							}
+						}
+					],
+					"sid": 446843934186166
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "contains-value",
+							"objectClass": "PosVisited",
+							"sid": 533820835535938,
+							"parameters": {
+								"value": "Pos.id"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 618817843763571,
+							"parameters": {
+								"object-to-create": "gameText",
+								"layer": "\"Game\"",
+								"x": "Player.X",
+								"y": "Player.Y - Player.Height",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "gameText",
+							"sid": 113042119581865,
+							"parameters": {
+								"text": "\"Pencet spasi untuk mengunjungi pos ini\""
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 857126392512354,
+							"parameters": {
+								"seconds": "0.01"
+							}
+						},
+						{
+							"id": "set-height",
+							"objectClass": "gameText",
+							"sid": 828070080517740,
+							"parameters": {
+								"height": "gameText.TextHeight"
+							}
+						},
+						{
+							"id": "pin-to-object-properties",
+							"objectClass": "gameText",
+							"sid": 324151057418949,
+							"behaviorType": "Pin",
+							"parameters": {
+								"pin-to": "Player",
+								"x": true,
+								"y": true,
+								"angle": true,
+								"width-type": "no",
+								"height-type": "no",
+								"z": false
+							}
+						}
+					],
+					"sid": 455062117542800
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-at-offset",
+					"objectClass": "Player",
+					"sid": 438729493258640,
+					"parameters": {
+						"object": "Pos",
+						"offset-x": "0",
+						"offset-y": "-20"
+					},
+					"isInverted": true
+				},
+				{
+					"id": "is-on-screen",
+					"objectClass": "gameText",
+					"sid": 480009213615708
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "gameText",
+					"sid": 318660904257125
+				}
+			],
+			"sid": 745241415123380
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-on-screen",
+					"objectClass": "gameText",
+					"sid": 495928124682891
+				}
+			],
+			"actions": [
+				{
+					"id": "move-to-top",
+					"objectClass": "gameText",
+					"sid": 331666094701255
+				}
+			],
+			"sid": 299373057427743
 		}
 	],
 	"sid": 249019606169262

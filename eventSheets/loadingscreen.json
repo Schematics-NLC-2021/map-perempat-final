@@ -93,6 +93,26 @@
 					"sid": 224678832940654
 				},
 				{
+					"id": "set-size",
+					"objectClass": "PosVisited",
+					"sid": 219704273855895,
+					"parameters": {
+						"width": "0",
+						"height": "1",
+						"depth": "1"
+					}
+				},
+				{
+					"id": "set-size",
+					"objectClass": "Scores",
+					"sid": 225105635893084,
+					"parameters": {
+						"width": "0",
+						"height": "1",
+						"depth": "1"
+					}
+				},
+				{
 					"id": "wait",
 					"objectClass": "System",
 					"sid": 682569866001650,
