@@ -579,6 +579,11 @@
 							}
 						},
 						{
+							"id": "is-visible",
+							"objectClass": "button",
+							"sid": 482513317247461
+						},
+						{
 							"id": "is-on-layer",
 							"objectClass": "button",
 							"sid": 555557829332992,
@@ -638,6 +643,11 @@
 							}
 						},
 						{
+							"id": "is-visible",
+							"objectClass": "button",
+							"sid": 728301294603946
+						},
+						{
 							"id": "is-on-layer",
 							"objectClass": "button",
 							"sid": 222684180183917,
@@ -687,7 +697,22 @@
 									}
 								}
 							],
-							"actions": [],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "gameText",
+									"sid": 724807779606396
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 443223397256717,
+									"parameters": {
+										"layer": "\"konfirmasi\"",
+										"visibility": "invisible"
+									}
+								}
+							],
 							"sid": 118661332944780,
 							"children": [
 								{
@@ -715,15 +740,6 @@
 											}
 										},
 										{
-											"id": "set-layer-visible",
-											"objectClass": "System",
-											"sid": 228840507589168,
-											"parameters": {
-												"layer": "\"konfirmasi\"",
-												"visibility": "invisible"
-											}
-										},
-										{
 											"id": "navigate-url",
 											"objectClass": "game",
 											"sid": 111701399816902,
@@ -732,7 +748,44 @@
 											}
 										}
 									],
-									"sid": 391896200416041
+									"sid": 391896200416041,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-all",
+													"objectClass": "System",
+													"sid": 383081545720635,
+													"parameters": {
+														"object": "button"
+													}
+												},
+												{
+													"id": "pick-by-comparison",
+													"objectClass": "System",
+													"sid": 544570329363925,
+													"parameters": {
+														"object": "button",
+														"expression": "button.LayerName",
+														"comparison": 0,
+														"value": "\"soalGame\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-visible",
+													"objectClass": "button",
+													"sid": 950332089877543,
+													"parameters": {
+														"visibility": "invisible"
+													}
+												}
+											],
+											"sid": 770906507658345
+										}
+									]
 								},
 								{
 									"eventType": "block",
@@ -750,37 +803,61 @@
 									],
 									"actions": [
 										{
-											"id": "wait",
-											"objectClass": "System",
-											"sid": 119781070553465,
-											"parameters": {
-												"seconds": "0.01"
-											}
-										},
-										{
 											"id": "set-layer-visible",
 											"objectClass": "System",
-											"sid": 712034200654621,
+											"sid": 625031469431223,
 											"parameters": {
 												"layer": "\"soal\"",
 												"visibility": "visible"
 											}
 										},
 										{
-											"id": "set-layer-visible",
-											"objectClass": "System",
-											"sid": 885735333538332,
+											"id": "display-html-string",
+											"objectClass": "soal",
+											"sid": 463970916173991,
 											"parameters": {
-												"layer": "\"konfirmasi\"",
-												"visibility": "invisible"
+												"html": "soalHtmlContent"
 											}
-										},
-										{
-											"callFunction": "showSoal",
-											"sid": 912200695591190
 										}
 									],
-									"sid": 473287512800895
+									"sid": 473287512800895,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-all",
+													"objectClass": "System",
+													"sid": 334089862773078,
+													"parameters": {
+														"object": "button"
+													}
+												},
+												{
+													"id": "pick-by-comparison",
+													"objectClass": "System",
+													"sid": 491640324367099,
+													"parameters": {
+														"object": "button",
+														"expression": "button.LayerName",
+														"comparison": 0,
+														"value": "\"soal\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-visible",
+													"objectClass": "button",
+													"sid": 992556323622436,
+													"parameters": {
+														"visibility": "invisible"
+													}
+												}
+											],
+											"sid": 966171938870653
+										}
+									]
 								}
 							]
 						},
@@ -867,39 +944,6 @@
 			"sid": 725749927069627
 		},
 		{
-			"functionName": "showSoal",
-			"functionDescription": "",
-			"functionCategory": "",
-			"functionReturnType": "none",
-			"functionIsAsync": false,
-			"functionParameters": [],
-			"eventType": "function-block",
-			"conditions": [],
-			"actions": [
-				{
-					"id": "display-html-string",
-					"objectClass": "soal",
-					"sid": 435451108534697,
-					"parameters": {
-						"html": "soalHtmlContent"
-					}
-				},
-				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 435961800641834,
-					"parameters": {
-						"seconds": "0.05"
-					}
-				},
-				{
-					"type": "script",
-					"script": "const soal = \"contoh pertanyaan safkhdslk safsahlk saf\";\n\nsoalFrame.contentWindow.setSoal(soal);"
-				}
-			],
-			"sid": 333854763167478
-		},
-		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -977,9 +1021,52 @@
 				{
 					"type": "script",
 					"script": "console.log(localVars.jawaban);\nconsole.log(\"jawaban diterima\");"
+				},
+				{
+					"id": "push",
+					"objectClass": "PosVisited",
+					"sid": 190642570605435,
+					"parameters": {
+						"where": "back",
+						"value": "curPos",
+						"axis": "x"
+					}
+				},
+				{
+					"callFunction": "save",
+					"sid": 993075613300141
 				}
 			],
-			"sid": 771383412548228
+			"sid": 771383412548228,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-comparison",
+							"objectClass": "System",
+							"sid": 574106766341370,
+							"parameters": {
+								"object": "button",
+								"expression": "button.LayerName",
+								"comparison": 0,
+								"value": "\"soal\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "button",
+							"sid": 564952202189939,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 985127909463950
+				}
+			]
 		},
 		{
 			"functionName": "sendScore",
@@ -1028,7 +1115,36 @@
 					"sid": 125235582913505
 				}
 			],
-			"sid": 340690638768288
+			"sid": 340690638768288,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-comparison",
+							"objectClass": "System",
+							"sid": 623406778663730,
+							"parameters": {
+								"object": "button",
+								"expression": "button.LayerName",
+								"comparison": 0,
+								"value": "\"soalGame\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "button",
+							"sid": 226926554743063,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 195185492863352
+				}
+			]
 		},
 		{
 			"eventType": "block",
@@ -1430,15 +1546,6 @@
 		{
 			"eventType": "block",
 			"conditions": [
-				{
-					"id": "layer-is-visible",
-					"objectClass": "System",
-					"sid": 802131626923920,
-					"parameters": {
-						"layer": "\"konfirmasi\""
-					},
-					"isInverted": true
-				},
 				{
 					"id": "is-overlapping-at-offset",
 					"objectClass": "Player",
