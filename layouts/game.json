@@ -2626,7 +2626,7 @@
 						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 76,
+					"uid": 110,
 					"instanceVariables": {
 						"id": 3,
 						"game": "../game-nabil/",
@@ -3528,35 +3528,6 @@
 						"y": 50,
 						"width": 56.170956848508226,
 						"height": 56.170956848508226,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "BG",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 99,
-					"instanceVariables": {},
-					"behaviors": {},
-					"world": {
-						"x": -9311,
-						"y": -2861,
-						"width": 15220,
-						"height": 12172,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [

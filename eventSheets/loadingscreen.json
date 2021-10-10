@@ -523,22 +523,26 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-start-of-layout",
+					"id": "every-x-seconds",
 					"objectClass": "System",
-					"sid": 403235058605819
+					"sid": 718221425177646,
+					"parameters": {
+						"interval-seconds": "0.2"
+					}
 				}
 			],
 			"actions": [
 				{
-					"id": "start-animation",
-					"objectClass": "loadScreen",
-					"sid": 484727486598929,
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 373057697452680,
 					"parameters": {
-						"from": "beginning"
+						"type": "log",
+						"message": "loadingprogress"
 					}
 				}
 			],
-			"sid": 484198153934287
+			"sid": 887577225606132
 		}
 	],
 	"sid": 549757804693015

@@ -1001,26 +1001,23 @@
 			"sid": 263618549314257
 		},
 		{
-			"functionName": "sendAnswer",
+			"functionName": "answerSent",
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
 			"functionIsAsync": false,
-			"functionParameters": [
-				{
-					"name": "jawaban",
-					"type": "string",
-					"initialValue": "",
-					"comment": "",
-					"sid": 139856208919589
-				}
-			],
+			"functionParameters": [],
 			"eventType": "function-block",
 			"conditions": [],
 			"actions": [
 				{
-					"type": "script",
-					"script": "console.log(localVars.jawaban);\nconsole.log(\"jawaban diterima\");"
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 605362654880390,
+					"parameters": {
+						"type": "log",
+						"message": "\"jawaban disubmit\""
+					}
 				},
 				{
 					"id": "push",
