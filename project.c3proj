@@ -185,7 +185,7 @@
 			"config",
 			"Date",
 			"Browser",
-			"Sprite",
+			"ui",
 			"slowGround",
 			"slipperyGround",
 			"freezeTrap",
@@ -200,7 +200,8 @@
 			"loadScreen",
 			"load",
 			"fillings",
-			"slowGroundAsset"
+			"slowGroundAsset",
+			"tooltip"
 		],
 		"subfolders": [
 			{

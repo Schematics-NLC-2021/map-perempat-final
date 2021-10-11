@@ -446,6 +446,11 @@
 								"variable": "curPos",
 								"value": "Pos.id"
 							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "tooltip",
+							"sid": 592110459899177
 						}
 					],
 					"sid": 621631110311017,
@@ -520,9 +525,9 @@
 								{
 									"id": "set-text",
 									"objectClass": "UiText",
-									"sid": 439015252827518,
+									"sid": 781818939128438,
 									"parameters": {
-										"text": "\"Mau \" & (Pos.posGame ? \"main game\" : \"mengerjakan soal\") & \" pos \"&Pos.id&\"?\""
+										"text": "\"Kamu yakin ingin \" & (Pos.posGame ? \"main game\" : \"mengerjakan soal\") & \" pos \"&Pos.id&\"?\""
 									}
 								}
 							],
@@ -1578,21 +1583,21 @@
 						{
 							"id": "create-object",
 							"objectClass": "System",
-							"sid": 545503496291892,
+							"sid": 429449004308991,
 							"parameters": {
-								"object-to-create": "gameText",
+								"object-to-create": "tooltip",
 								"layer": "\"Game\"",
-								"x": "Player.X",
-								"y": "Player.Y - Player.Height",
+								"x": "Pos.X",
+								"y": "Pos.Y - Pos.Height + 30",
 								"create-hierarchy": false
 							}
 						},
 						{
-							"id": "set-text",
-							"objectClass": "gameText",
-							"sid": 105760277789198,
+							"id": "set-animation-frame",
+							"objectClass": "tooltip",
+							"sid": 118843962905835,
 							"parameters": {
-								"text": "\"Kamu sudah mengunjungi pos ini\""
+								"frame-number": "1"
 							}
 						},
 						{
@@ -1607,6 +1612,7 @@
 							"id": "set-height",
 							"objectClass": "gameText",
 							"sid": 187782843228406,
+							"disabled": true,
 							"parameters": {
 								"height": "gameText.TextHeight"
 							}
@@ -1615,6 +1621,7 @@
 							"id": "pin-to-object-properties",
 							"objectClass": "gameText",
 							"sid": 743991753702209,
+							"disabled": true,
 							"behaviorType": "Pin",
 							"parameters": {
 								"pin-to": "Player",
@@ -1646,21 +1653,21 @@
 						{
 							"id": "create-object",
 							"objectClass": "System",
-							"sid": 618817843763571,
+							"sid": 245947857882510,
 							"parameters": {
-								"object-to-create": "gameText",
+								"object-to-create": "tooltip",
 								"layer": "\"Game\"",
-								"x": "Player.X",
-								"y": "Player.Y - Player.Height",
+								"x": "Pos.X",
+								"y": "Pos.Y - Pos.Height + 30",
 								"create-hierarchy": false
 							}
 						},
 						{
-							"id": "set-text",
-							"objectClass": "gameText",
-							"sid": 113042119581865,
+							"id": "set-animation-frame",
+							"objectClass": "tooltip",
+							"sid": 279311392923036,
 							"parameters": {
-								"text": "\"Pencet spasi untuk mengunjungi pos ini\""
+								"frame-number": "0"
 							}
 						},
 						{
@@ -1675,6 +1682,7 @@
 							"id": "set-height",
 							"objectClass": "gameText",
 							"sid": 828070080517740,
+							"disabled": true,
 							"parameters": {
 								"height": "gameText.TextHeight"
 							}
@@ -1683,6 +1691,7 @@
 							"id": "pin-to-object-properties",
 							"objectClass": "gameText",
 							"sid": 324151057418949,
+							"disabled": true,
 							"behaviorType": "Pin",
 							"parameters": {
 								"pin-to": "Player",
@@ -1715,15 +1724,15 @@
 				},
 				{
 					"id": "is-on-screen",
-					"objectClass": "gameText",
-					"sid": 480009213615708
+					"objectClass": "tooltip",
+					"sid": 233235458989635
 				}
 			],
 			"actions": [
 				{
 					"id": "destroy",
-					"objectClass": "gameText",
-					"sid": 318660904257125
+					"objectClass": "tooltip",
+					"sid": 256181880741911
 				}
 			],
 			"sid": 745241415123380
@@ -1733,15 +1742,15 @@
 			"conditions": [
 				{
 					"id": "is-on-screen",
-					"objectClass": "gameText",
-					"sid": 495928124682891
+					"objectClass": "tooltip",
+					"sid": 390524035385219
 				}
 			],
 			"actions": [
 				{
 					"id": "move-to-top",
-					"objectClass": "gameText",
-					"sid": 331666094701255
+					"objectClass": "tooltip",
+					"sid": 359755764973171
 				}
 			],
 			"sid": 299373057427743

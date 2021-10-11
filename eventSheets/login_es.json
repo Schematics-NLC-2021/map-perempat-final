@@ -5,9 +5,9 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "every-tick",
+					"id": "on-start-of-layout",
 					"objectClass": "System",
-					"sid": 363952123292747
+					"sid": 694422779862915
 				}
 			],
 			"actions": [
@@ -28,6 +28,42 @@
 						"property-name": "\"font-size\"",
 						"value": "\"2vw\""
 					}
+				},
+				{
+					"id": "set-css-style",
+					"objectClass": "Password",
+					"sid": 361854969644273,
+					"parameters": {
+						"property-name": "\"border\"",
+						"value": "\"4px solid white\""
+					}
+				},
+				{
+					"id": "set-css-style",
+					"objectClass": "Password",
+					"sid": 886884450604423,
+					"parameters": {
+						"property-name": "\"border-radius\"",
+						"value": "\"6px\""
+					}
+				},
+				{
+					"id": "set-css-style",
+					"objectClass": "Username",
+					"sid": 280499512941845,
+					"parameters": {
+						"property-name": "\"border\"",
+						"value": "\"4px solid white\""
+					}
+				},
+				{
+					"id": "set-css-style",
+					"objectClass": "Username",
+					"sid": 718010517556435,
+					"parameters": {
+						"property-name": "\"border-radius\"",
+						"value": "\"6px\""
+					}
 				}
 			],
 			"sid": 156283092909756
@@ -46,7 +82,44 @@
 					}
 				}
 			],
-			"actions": [],
+			"actions": [
+				{
+					"id": "set-css-style",
+					"objectClass": "Password",
+					"sid": 492762766810684,
+					"parameters": {
+						"property-name": "\"border\"",
+						"value": "\"4px solid white\""
+					}
+				},
+				{
+					"id": "set-css-style",
+					"objectClass": "Password",
+					"sid": 738759935382431,
+					"parameters": {
+						"property-name": "\"background-color\"",
+						"value": "\"white\""
+					}
+				},
+				{
+					"id": "set-css-style",
+					"objectClass": "Username",
+					"sid": 344282721606403,
+					"parameters": {
+						"property-name": "\"border\"",
+						"value": "\"4px solid white\""
+					}
+				},
+				{
+					"id": "set-css-style",
+					"objectClass": "Username",
+					"sid": 489426680777471,
+					"parameters": {
+						"property-name": "\"background-color\"",
+						"value": "\"white\""
+					}
+				}
+			],
 			"sid": 744966453220445,
 			"children": [
 				{
@@ -155,6 +228,24 @@
 							}
 						},
 						{
+							"id": "set-css-style",
+							"objectClass": "Password",
+							"sid": 847314623990572,
+							"parameters": {
+								"property-name": "\"border\"",
+								"value": "\"4px solid rgb(253, 117, 117)\""
+							}
+						},
+						{
+							"id": "set-css-style",
+							"objectClass": "Password",
+							"sid": 933420288877582,
+							"parameters": {
+								"property-name": "\"background-color\"",
+								"value": "\"rgb(255, 209, 209)\""
+							}
+						},
+						{
 							"id": "set-function-return-value",
 							"objectClass": "Functions",
 							"sid": 770302421913174,
@@ -185,6 +276,24 @@
 							"sid": 240641869234888,
 							"parameters": {
 								"text": "\"Username harus diisi\""
+							}
+						},
+						{
+							"id": "set-css-style",
+							"objectClass": "Username",
+							"sid": 323110439361777,
+							"parameters": {
+								"property-name": "\"border\"",
+								"value": "\"4px solid rgb(253, 117, 117)\""
+							}
+						},
+						{
+							"id": "set-css-style",
+							"objectClass": "Username",
+							"sid": 882984804537948,
+							"parameters": {
+								"property-name": "\"background-color\"",
+								"value": "\"rgb(255, 209, 209)\""
 							}
 						},
 						{
