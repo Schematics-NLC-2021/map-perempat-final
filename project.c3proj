@@ -192,13 +192,15 @@
 			"Username",
 			"Password",
 			"LoadingText",
-			"Sprite2",
+			"solidAsset",
 			"PosVisited",
 			"UnsentScores",
 			"gameText",
 			"LocalStorage",
 			"loadScreen",
-			"Sprite3"
+			"load",
+			"fillings",
+			"slowGroundAsset"
 		],
 		"subfolders": [
 			{
