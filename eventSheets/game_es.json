@@ -13,6 +13,16 @@
 		},
 		{
 			"eventType": "variable",
+			"name": "namaTim",
+			"type": "string",
+			"initialValue": "Apaya",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 660525647364890
+		},
+		{
+			"eventType": "variable",
 			"name": "timeDiff",
 			"type": "number",
 			"initialValue": "0",
@@ -115,11 +125,6 @@
 						"layer": "\"UI\"",
 						"visibility": "visible"
 					}
-				},
-				{
-					"id": "destroy",
-					"objectClass": "gameText",
-					"sid": 475765825407598
 				}
 			],
 			"sid": 856959149988460,
@@ -385,6 +390,32 @@
 			"eventType": "block",
 			"conditions": [
 				{
+					"id": "is-moving",
+					"objectClass": "Player",
+					"sid": 133662504232418,
+					"behaviorType": "8Direction"
+				},
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 709337480653242,
+					"parameters": {
+						"interval-seconds": "0.33"
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "playStep",
+					"sid": 801207769013493
+				}
+			],
+			"sid": 491893264857540
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
 					"id": "on-key-pressed",
 					"objectClass": "Keyboard",
 					"sid": 425945699673436,
@@ -451,6 +482,10 @@
 							"id": "destroy",
 							"objectClass": "tooltip",
 							"sid": 592110459899177
+						},
+						{
+							"callFunction": "playInteraction",
+							"sid": 757687268839298
 						}
 					],
 					"sid": 621631110311017,
@@ -623,6 +658,10 @@
 							"parameters": {
 								"url": "link"
 							}
+						},
+						{
+							"callFunction": "playTap",
+							"sid": 649163505584479
 						}
 					],
 					"sid": 619849596924546
@@ -670,6 +709,10 @@
 								"layer": "\"soal\"",
 								"visibility": "invisible"
 							}
+						},
+						{
+							"callFunction": "playTap",
+							"sid": 649163505584479
 						}
 					],
 					"sid": 105865883433855
@@ -704,11 +747,6 @@
 							],
 							"actions": [
 								{
-									"id": "destroy",
-									"objectClass": "gameText",
-									"sid": 724807779606396
-								},
-								{
 									"id": "set-layer-visible",
 									"objectClass": "System",
 									"sid": 443223397256717,
@@ -716,6 +754,10 @@
 										"layer": "\"konfirmasi\"",
 										"visibility": "invisible"
 									}
+								},
+								{
+									"callFunction": "playTap",
+									"sid": 649163505584479
 								}
 							],
 							"sid": 118661332944780,
@@ -888,6 +930,10 @@
 										"layer": "\"konfirmasi\"",
 										"visibility": "invisible"
 									}
+								},
+								{
+									"callFunction": "playTap",
+									"sid": 649163505584479
 								}
 							],
 							"sid": 943112936814637
@@ -1011,18 +1057,21 @@
 			"functionCategory": "",
 			"functionReturnType": "none",
 			"functionIsAsync": false,
-			"functionParameters": [],
+			"functionParameters": [
+				{
+					"name": "score",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 515661703961335
+				}
+			],
 			"eventType": "function-block",
 			"conditions": [],
 			"actions": [
 				{
-					"id": "log",
-					"objectClass": "Browser",
-					"sid": 605362654880390,
-					"parameters": {
-						"type": "log",
-						"message": "\"jawaban disubmit\""
-					}
+					"type": "script",
+					"script": "console.log(localVars.score)\nconsole.log(\"score soal diterima\")"
 				},
 				{
 					"id": "push",
@@ -1032,6 +1081,15 @@
 						"where": "back",
 						"value": "curPos",
 						"axis": "x"
+					}
+				},
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 690691421569987,
+					"parameters": {
+						"variable": "accumulatedScore",
+						"value": "score"
 					}
 				},
 				{
@@ -1090,7 +1148,16 @@
 			"actions": [
 				{
 					"type": "script",
-					"script": "console.log(localVars.score)\nconsole.log(\"score diterima\")"
+					"script": "console.log(localVars.score)\nconsole.log(\"score jawaban diterima\")"
+				},
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 347489127850737,
+					"parameters": {
+						"variable": "accumulatedScore",
+						"value": "score"
+					}
 				},
 				{
 					"id": "push",
@@ -1228,6 +1295,58 @@
 					"sid": 221699555133077
 				}
 			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "UiText",
+					"sid": 718839406221618,
+					"parameters": {
+						"instance-variable": "id",
+						"comparison": 0,
+						"value": "3"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "UiText",
+					"sid": 261827043663966,
+					"parameters": {
+						"text": "namaTim"
+					}
+				}
+			],
+			"sid": 735348433631109
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "UiText",
+					"sid": 687442336934497,
+					"parameters": {
+						"instance-variable": "id",
+						"comparison": 0,
+						"value": "4"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "UiText",
+					"sid": 970915095267681,
+					"parameters": {
+						"text": "\"Skor: \" & accumulatedScore "
+					}
+				}
+			],
+			"sid": 856443742139762
 		},
 		{
 			"eventType": "block",
@@ -1607,31 +1726,6 @@
 							"parameters": {
 								"seconds": "0.01"
 							}
-						},
-						{
-							"id": "set-height",
-							"objectClass": "gameText",
-							"sid": 187782843228406,
-							"disabled": true,
-							"parameters": {
-								"height": "gameText.TextHeight"
-							}
-						},
-						{
-							"id": "pin-to-object-properties",
-							"objectClass": "gameText",
-							"sid": 743991753702209,
-							"disabled": true,
-							"behaviorType": "Pin",
-							"parameters": {
-								"pin-to": "Player",
-								"x": true,
-								"y": true,
-								"angle": true,
-								"width-type": "no",
-								"height-type": "no",
-								"z": false
-							}
 						}
 					],
 					"sid": 446843934186166
@@ -1676,31 +1770,6 @@
 							"sid": 857126392512354,
 							"parameters": {
 								"seconds": "0.01"
-							}
-						},
-						{
-							"id": "set-height",
-							"objectClass": "gameText",
-							"sid": 828070080517740,
-							"disabled": true,
-							"parameters": {
-								"height": "gameText.TextHeight"
-							}
-						},
-						{
-							"id": "pin-to-object-properties",
-							"objectClass": "gameText",
-							"sid": 324151057418949,
-							"disabled": true,
-							"behaviorType": "Pin",
-							"parameters": {
-								"pin-to": "Player",
-								"x": true,
-								"y": true,
-								"angle": true,
-								"width-type": "no",
-								"height-type": "no",
-								"z": false
 							}
 						}
 					],
@@ -1803,6 +1872,98 @@
 				}
 			],
 			"sid": 735925645552628
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "sfx",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "playTap",
+					"functionDescription": "",
+					"functionCategory": "sfx",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 481697095585684,
+							"parameters": {
+								"audio-file": "placeholder",
+								"loop": "not-looping",
+								"volume": "0",
+								"tag-optional": "\"sfx\""
+							}
+						}
+					],
+					"sid": 890032034505164
+				},
+				{
+					"functionName": "playInteraction",
+					"functionDescription": "",
+					"functionCategory": "sfx",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 517461067828440,
+							"parameters": {
+								"audio-file": "placeholder",
+								"loop": "not-looping",
+								"volume": "0",
+								"tag-optional": "\"sfx\""
+							}
+						}
+					],
+					"sid": 251772977070872
+				},
+				{
+					"functionName": "playStep",
+					"functionDescription": "",
+					"functionCategory": "sfx",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Player",
+							"sid": 788392671435850,
+							"parameters": {
+								"object": "BG"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "play-by-name",
+							"objectClass": "Audio",
+							"sid": 590930628954337,
+							"parameters": {
+								"folder": "sounds",
+								"audio-file-name": "\"placeholder\"&BG.AnimationFrame",
+								"loop": "not-looping",
+								"volume": "0",
+								"tag-optional": "\"sfx\""
+							}
+						}
+					],
+					"sid": 590361317818635
+				}
+			],
+			"sid": 726216878769986
 		}
 	],
 	"sid": 249019606169262

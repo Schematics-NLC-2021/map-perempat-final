@@ -1,5 +1,5 @@
 {
-	"name": "LoadingScreen",
+	"name": "LoadingScreen_ES",
 	"events": [
 		{
 			"eventType": "variable",
@@ -207,22 +207,6 @@
 				{
 					"callFunction": "loadGame",
 					"sid": 850503090131580
-				},
-				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 682569866001650,
-					"parameters": {
-						"seconds": "random(1,2)"
-					}
-				},
-				{
-					"id": "go-to-layout",
-					"objectClass": "System",
-					"sid": 638904189757838,
-					"parameters": {
-						"layout": "Login"
-					}
 				}
 			],
 			"sid": 740959044691722
@@ -543,6 +527,35 @@
 				}
 			],
 			"sid": 887577225606132
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-loader-layout-complete",
+					"objectClass": "System",
+					"sid": 249513571397225
+				}
+			],
+			"actions": [
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 682569866001650,
+					"parameters": {
+						"seconds": "random(1,2)"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 638904189757838,
+					"parameters": {
+						"layout": "Login"
+					}
+				}
+			],
+			"sid": 668953971353216
 		}
 	],
 	"sid": 549757804693015

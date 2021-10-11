@@ -1,5 +1,5 @@
 {
-	"name": "LoadingScreen",
+	"name": "EndScreen",
 	"layers": [
 		{
 			"name": "Layer 0",
@@ -23,7 +23,7 @@
 						"initially-visible": true,
 						"origin": "center"
 					},
-					"uid": 386,
+					"uid": 23,
 					"instanceVariables": {
 						"id": 0
 					},
@@ -54,7 +54,7 @@
 						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 111,
+					"uid": 77,
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
@@ -75,7 +75,7 @@
 					}
 				}
 			],
-			"sid": 137119521546412,
+			"sid": 731020884251093,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"color": [
@@ -102,7 +102,7 @@
 			"global": false
 		}
 	],
-	"sid": 889470315907810,
+	"sid": 257817232949234,
 	"nonworld-instances": [],
 	"effectTypes": [],
 	"width": 1280,
@@ -110,5 +110,5 @@
 	"unboundedScrolling": false,
 	"vpX": 0.5,
 	"vpY": 0.5,
-	"eventSheet": "LoadingScreen_ES"
+	"eventSheet": "EndScreen_ES"
 }

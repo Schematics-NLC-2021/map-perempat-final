@@ -2532,50 +2532,6 @@
 					}
 				},
 				{
-					"type": "gameText",
-					"properties": {
-						"text": "Text",
-						"enable-bbcode": true,
-						"character-width": 16,
-						"character-height": 16,
-						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>",
-						"spacing-data": "",
-						"scale": 1.5,
-						"character-spacing": 0,
-						"line-height": 0,
-						"horizontal-alignment": "center",
-						"vertical-alignment": "center",
-						"wrapping": "word",
-						"initially-visible": true,
-						"origin": "bottom"
-					},
-					"uid": 77,
-					"instanceVariables": {},
-					"behaviors": {
-						"Pin": {
-							"properties": {
-								"destroy": false
-							}
-						}
-					},
-					"world": {
-						"x": 5143.5,
-						"y": 5339,
-						"width": 599,
-						"height": 30,
-						"originX": 0.5,
-						"originY": 1,
-						"color": [
-							0,
-							0,
-							0,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
 					"type": "slowGround",
 					"properties": {
 						"initially-visible": false,
@@ -9980,7 +9936,7 @@
 						"x": 0,
 						"y": 0,
 						"width": 385.99999999999994,
-						"height": 57.99999999999999,
+						"height": 115.05851649902743,
 						"originX": 0,
 						"originY": 0,
 						"color": [
@@ -10019,6 +9975,115 @@
 					"world": {
 						"x": 13,
 						"y": 8,
+						"width": 523,
+						"height": 55,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "UiText",
+					"properties": {
+						"text": "skor",
+						"enable-bbcode": true,
+						"character-width": 37,
+						"character-height": 40,
+						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>",
+						"spacing-data": " [[8,\" \"],[7,\"'\"],[8,\"Il!|\"],[9,\"i.,;:\"],[12,\"`\"],[13,\"j\\\"[]\"],[14,\"r-()\"],[16,\"ft°\"],[17,\"Jcs*\"],[18,\"aehnuz1?+=<>\"],[19,\"EFLbdkpqy23579~\\/£\"],[20,\"Povx068_\"],[21,\"BZg4#$€\"],[22,\"CRS\"],[23,\"GKTU\"],[24,\"DHNX\"],[25,\"Y\"],[26,\"AOV&\"],[27,\"Qmw\"],[28,\"M\"],[33,\"@\"],[34,\"%\"],[35,\"W\"]]",
+						"scale": 1,
+						"character-spacing": 0,
+						"line-height": 0,
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 24,
+					"instanceVariables": {
+						"id": 4
+					},
+					"behaviors": {},
+					"world": {
+						"x": 13,
+						"y": 64.58811974168317,
+						"width": 523,
+						"height": 55,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "ui",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 29,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 1281.892291588457,
+						"y": -0.019818070459974746,
+						"width": -385.99999999999994,
+						"height": 57.99999999999999,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "UiText",
+					"properties": {
+						"text": "nama tim",
+						"enable-bbcode": true,
+						"character-width": 37,
+						"character-height": 40,
+						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>",
+						"spacing-data": " [[8,\" \"],[7,\"'\"],[8,\"Il!|\"],[9,\"i.,;:\"],[12,\"`\"],[13,\"j\\\"[]\"],[14,\"r-()\"],[16,\"ft°\"],[17,\"Jcs*\"],[18,\"aehnuz1?+=<>\"],[19,\"EFLbdkpqy23579~\\/£\"],[20,\"Povx068_\"],[21,\"BZg4#$€\"],[22,\"CRS\"],[23,\"GKTU\"],[24,\"DHNX\"],[25,\"Y\"],[26,\"AOV&\"],[27,\"Qmw\"],[28,\"M\"],[33,\"@\"],[34,\"%\"],[35,\"W\"]]",
+						"scale": 1,
+						"character-spacing": 0,
+						"line-height": 0,
+						"horizontal-alignment": "right",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 79,
+					"instanceVariables": {
+						"id": 3
+					},
+					"behaviors": {},
+					"world": {
+						"x": 741.3102181365327,
+						"y": 7.980181929540025,
 						"width": 523,
 						"height": 55,
 						"originX": 0,

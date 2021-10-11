@@ -2,14 +2,6 @@
 <html>
 
 <head>
-<<<<<<< Updated upstream
-	<style>
-		body {
-			height: 100%;
-			background-color: white;
-		}
-	</style>
-=======
     <style>
 
 		.flex-container {
@@ -32,7 +24,7 @@
 			padding-bottom: 0.5em;
 		}
 
-		#soal {
+		.soal {
 			justify-content: center;
 			font-size: 1.5vw;
 			max-width: 50vw;
@@ -67,39 +59,26 @@
 			outline: 3px solid transparent;
 		}
     </style>
->>>>>>> Stashed changes
 </head>
 
 <body onload="setSoal()">
 	<div class="flex-containter">
-		<p id="soal">Soal sedang dimuat...</p>
+		<p class="soal" id="soal1">mattis rhoncus urna neque viverra justo nec ultrices dui sapien eget mi proin sed libero</p>
 
-<<<<<<< Updated upstream
-	<p id="soal1">mattis rhoncus urna neque viverra justo nec ultrices dui sapien eget mi proin sed libero</p>
+		<label for="jawaban1">Jawaban: </label>
+		<input type="text" id="jawaban1" name="jawaban1" value=""><br>
 
-	<label for="jawaban1">Jawaban: </label>
-	<input type="text" id="jawaban1" name="jawaban1" value=""><br>
+		<p class="soal" id="soal2">mattis rhoncus urna neque viverra justo nec ultrices dui sapien eget mi proin sed libero</p>
 
-	<p id="soal2">mattis rhoncus urna neque viverra justo nec ultrices dui sapien eget mi proin sed libero</p>
+		<label for="jawaban2">Jawaban: </label>
+		<input type="text" id="jawaban2" name="jawaban2" value=""><br>
 
-	<label for="jawaban2">Jawaban: </label>
-	<input type="text" id="jawaban2" name="jawaban2" value=""><br>
-
-	<p>Peserta baru bisa kembali ke game utama setelah mensubmit jawaban. Kosongi kolom jawaban jika tidak ingin menjawab soal.</p>
-	<button onclick="sendAnswer()">Submit Jawaban</button>
-
-	<p id="warning"></p>
-
-=======
-		<form onSubmit="sendAnswer()" style="line-height: 1.5em;">
-			<label for="jawaban">Jawaban</label><br>
-			<input type="text" id="jawaban" name="jawaban" value=""><br>
-			<input type="submit">
-		</form> 
+		<p>Peserta baru bisa kembali ke game utama setelah mensubmit jawaban. Kosongi kolom jawaban jika tidak ingin menjawab soal.</p>
+		<button onclick="sendAnswer()">Submit Jawaban</button>
 
 		<p id="warning"></p>
+
 	</div>
->>>>>>> Stashed changes
 	<script>
 		function sendAnswer() {
 			event.preventDefault();
@@ -108,19 +87,15 @@
 			const warning = document.getElementById("warning");
 
 			warning.innerHTML = "Jawaban sedang dikirim";
-			parent.c3_callFunction("answerSent");
+			parent.c3_callFunction("answerSent", [10]);
 		}
 
 		function setSoal() {
-<<<<<<< Updated upstream
 			const soal1 = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse facere, alias ratione veritatis tempore?"
 			const soal2 = "pariatur architecto blanditiis eaque quas deleniti illum quos ea eos ab vero nostrum expedita earum modi?"
 			document.getElementById("soal1").innerHTML = soal1;
 			document.getElementById("soal2").innerHTML = soal2;
-=======
-			const soal = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque a aliquet tortor. Sed ac nunc mi. Nunc posuere eu lorem ut varius. Praesent ornare, metus non interdum blandit, lacus nunc euismod lorem, a faucibus turpis lorem eu mi. Sed vel finibus enim. Curabitur augue orci, lacinia vitae tincidunt quis, vehicula eget neque. Vivamus semper venenatis turpis sit amet porttitor. Aliquam interdum fermentum eros, quis pellentesque velit. Suspendisse a facilisis lectus. Nam tortor lectus, dictum sed sapien nec, bibendum mattis magna. Fusce porttitor lectus nec odio auctor feugiat. Vivamus pulvinar arcu consequat elit iaculis convallis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sit amet ex a orci aliquet aliquam vitae sit amet dui."
-		  	document.getElementById("soal").innerHTML = soal;
->>>>>>> Stashed changes
+
 		}
 	</script>
 </body>

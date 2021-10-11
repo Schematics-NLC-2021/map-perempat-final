@@ -119,6 +119,14 @@
 			"bundled": false
 		},
 		{
+			"type": "plugin",
+			"id": "Audio",
+			"name": "Audio",
+			"author": "Scirra",
+			"version": "r260",
+			"bundled": false
+		},
+		{
 			"type": "behavior",
 			"id": "EightDir",
 			"name": "8 Direction",
@@ -157,14 +165,6 @@
 			"author": "Scirra",
 			"version": "r260",
 			"bundled": false
-		},
-		{
-			"type": "behavior",
-			"id": "Pin",
-			"name": "Pin",
-			"author": "Scirra",
-			"version": "r260",
-			"bundled": false
 		}
 	],
 	"uniqueId": "rdjsfacqpgg",
@@ -195,13 +195,13 @@
 			"solidAsset",
 			"PosVisited",
 			"UnsentScores",
-			"gameText",
 			"LocalStorage",
 			"loadScreen",
 			"load",
 			"fillings",
 			"slowGroundAsset",
-			"tooltip"
+			"tooltip",
+			"Audio"
 		],
 		"subfolders": [
 			{
@@ -235,7 +235,8 @@
 			"Game",
 			"Story",
 			"Login",
-			"LoadingScreen"
+			"LoadingScreen",
+			"EndScreen"
 		],
 		"subfolders": []
 	},
@@ -244,7 +245,8 @@
 			"Game_ES",
 			"Story_ES",
 			"Login_ES",
-			"LoadingScreen"
+			"LoadingScreen_ES",
+			"EndScreen_ES"
 		],
 		"subfolders": []
 	},
@@ -254,7 +256,38 @@
 			"subfolders": []
 		},
 		"sound": {
-			"items": [],
+			"items": [
+				{
+					"name": "placeholder.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 883058024811845
+				},
+				{
+					"name": "placeholdermusic.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 333138491654965
+				},
+				{
+					"name": "placeholder2.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 156964321753260
+				},
+				{
+					"name": "placeholder3.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 388378558820306
+				},
+				{
+					"name": "placeholder1.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 373070086589939
+				},
+				{
+					"name": "placeholder0.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 249892511744701
+				}
+			],
 			"subfolders": []
 		},
 		"music": {

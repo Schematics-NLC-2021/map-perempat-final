@@ -118,6 +118,10 @@
 						"property-name": "\"background-color\"",
 						"value": "\"white\""
 					}
+				},
+				{
+					"callFunction": "playTap",
+					"sid": 649163505584479
 				}
 			],
 			"sid": 744966453220445,
@@ -439,6 +443,34 @@
 				}
 			],
 			"sid": 153776397785245
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-tag-playing",
+					"objectClass": "Audio",
+					"sid": 670317109683092,
+					"parameters": {
+						"tag": "\"bgm\""
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 305795786813379,
+					"parameters": {
+						"audio-file": "placeholdermusic",
+						"loop": "looping",
+						"volume": "0",
+						"tag-optional": "\"bgm\""
+					}
+				}
+			],
+			"sid": 743202175735957
 		}
 	],
 	"sid": 889062280607382
