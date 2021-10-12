@@ -175,22 +175,22 @@
 						{
 							"id": "for",
 							"objectClass": "System",
-							"sid": 904443883142663,
+							"sid": 892075358663482,
 							"parameters": {
 								"name": "\"i\"",
-								"start-index": "11",
-								"end-index": "15"
+								"start-index": "1",
+								"end-index": "5"
 							}
 						},
 						{
 							"id": "pick-by-comparison",
 							"objectClass": "System",
-							"sid": 660980300002145,
+							"sid": 999908063135486,
 							"parameters": {
 								"object": "Pos",
 								"expression": "Pos.id",
 								"comparison": 0,
-								"value": "loopindex(\"i\")"
+								"value": "loopindex(\"i\") + 10"
 							}
 						}
 					],
@@ -898,6 +898,10 @@
 									],
 									"actions": [
 										{
+											"type": "script",
+											"script": "sessionStorage.setItem(\"token\", runtime.globalVars.token);\nsessionStorage.setItem(\"curPos\", runtime.globalVars.curPos);\nsessionStorage.setItem(\"ApiBase\", runtime.globalVars.baseUrl);"
+										},
+										{
 											"id": "set-layer-visible",
 											"objectClass": "System",
 											"sid": 625031469431223,
@@ -909,7 +913,7 @@
 										{
 											"id": "display-html-string",
 											"objectClass": "soal",
-											"sid": 463970916173991,
+											"sid": 197836100497859,
 											"parameters": {
 												"html": "soalHtmlContent"
 											}
