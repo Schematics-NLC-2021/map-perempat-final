@@ -72,6 +72,46 @@
 			"sid": 262097926841773
 		},
 		{
+			"eventType": "variable",
+			"name": "mainTooltipX",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 812968417765689
+		},
+		{
+			"eventType": "variable",
+			"name": "mainTooltipY",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 649817268563653
+		},
+		{
+			"eventType": "variable",
+			"name": "mainTooltipWidth",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 773526477141773
+		},
+		{
+			"eventType": "variable",
+			"name": "mainTooltipHeight",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 181974516054589
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -1755,13 +1795,49 @@
 						{
 							"id": "create-object",
 							"objectClass": "System",
-							"sid": 245947857882510,
+							"sid": 597874375818726,
 							"parameters": {
 								"object-to-create": "tooltip",
-								"layer": "\"Game\"",
+								"layer": "\"topGame\"",
 								"x": "Pos.X",
 								"y": "Pos.Y - Pos.Height + 30",
 								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 792351533947254,
+							"parameters": {
+								"variable": "mainTooltipX",
+								"value": "tooltip.X"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 160984365284091,
+							"parameters": {
+								"variable": "mainTooltipY",
+								"value": "tooltip.Y"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 961909636100237,
+							"parameters": {
+								"variable": "mainTooltipHeight",
+								"value": "tooltip.Height"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 871021386013776,
+							"parameters": {
+								"variable": "mainTooltipWidth",
+								"value": "tooltip.Width"
 							}
 						},
 						{
@@ -1770,6 +1846,46 @@
 							"sid": 279311392923036,
 							"parameters": {
 								"frame-number": "0"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 317436386736267,
+							"parameters": {
+								"object-to-create": "tooltip",
+								"layer": "\"topGame\"",
+								"x": "mainTooltipX-(mainTooltipWidth/2)",
+								"y": "mainTooltipY-(mainTooltipHeight/2) -10",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "tooltip",
+							"sid": 475690784801170,
+							"parameters": {
+								"frame-number": "(Pos.posGame) ? 8 : (2+((Pos.difficultySoal1=\"Easy\")?0:((Pos.difficultySoal1=\"Medium\") ? 1 : 2)))"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 156327085827279,
+							"parameters": {
+								"object-to-create": "tooltip",
+								"layer": "\"topGame\"",
+								"x": "mainTooltipX+(mainTooltipWidth/2)",
+								"y": "mainTooltipY-(mainTooltipHeight/2) -10",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "tooltip",
+							"sid": 152927976814036,
+							"parameters": {
+								"frame-number": "(Pos.posGame) ? 9 : (5 + ((Pos.difficultySoal2=\"Easy\")?0:((Pos.difficultySoal2=\"Medium\") ? 1 : 2)))"
 							}
 						},
 						{

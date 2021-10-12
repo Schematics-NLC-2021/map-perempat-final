@@ -6,6 +6,35 @@
 			"overriden": 0,
 			"instances": [
 				{
+					"type": "fillings",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 1,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 81,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 2637.5,
+						"y": 2156,
+						"width": -768.0000000000002,
+						"height": 3090,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
 					"type": "BG",
 					"properties": {
 						"initially-visible": true,
@@ -961,6 +990,361 @@
 						"angle": 0,
 						"zElevation": 0
 					}
+				},
+				{
+					"type": "fillings",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 2,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 92,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 5013,
+						"y": 360,
+						"width": 4000,
+						"height": -515.0014000000001,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "fillings",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 3,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 93,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 7196,
+						"y": 2162,
+						"width": -515,
+						"height": 3090,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "fillings",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 4,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 94,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 1840,
+						"y": 3585,
+						"width": 3097,
+						"height": -289,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "fillings",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 5,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 96,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 123,
+						"y": 5300,
+						"width": -367,
+						"height": 3723.0000000000005,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "fillings",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 6,
+						"enable-collisions": false,
+						"live-preview": false
+					},
+					"uid": 103,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 1856,
+						"y": 7315,
+						"width": 3097,
+						"height": -367,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Pos",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 104,
+					"instanceVariables": {
+						"id": 2,
+						"game": "",
+						"posGame": false,
+						"difficultySoal1": "Easy",
+						"difficultySoal2": "Medium"
+					},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 4111,
+						"y": 5343,
+						"width": 108.60977304091931,
+						"height": 144.3458919124476,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Pos",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 1,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 106,
+					"instanceVariables": {
+						"id": 6,
+						"game": "",
+						"posGame": false,
+						"difficultySoal1": "Medium",
+						"difficultySoal2": "Hard"
+					},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 2392,
+						"y": 3945,
+						"width": 108.60977304091931,
+						"height": 144.3458919124476,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Pos",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 2,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 107,
+					"instanceVariables": {
+						"id": 10,
+						"game": "",
+						"posGame": false,
+						"difficultySoal1": "Medium",
+						"difficultySoal2": "Medium"
+					},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 9633,
+						"y": 3952,
+						"width": 108.60977304091931,
+						"height": 144.3458919124476,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Pos",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 3,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 105,
+					"instanceVariables": {
+						"id": 7,
+						"game": "",
+						"posGame": false,
+						"difficultySoal1": "Medium",
+						"difficultySoal2": "Hard"
+					},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 5875,
+						"y": 2467,
+						"width": 108.60977304091931,
+						"height": 144.3458919124476,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Pos",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 108,
+					"instanceVariables": {
+						"id": 5,
+						"game": "",
+						"posGame": false,
+						"difficultySoal1": "Easy",
+						"difficultySoal2": "Hard"
+					},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 5826,
+						"y": 4360,
+						"width": 108.60977304091931,
+						"height": 144.3458919124476,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
 				}
 			],
 			"sid": 915512931733267,
@@ -1019,8 +1403,8 @@
 						}
 					},
 					"world": {
-						"x": 5046,
-						"y": 4648,
+						"x": 5004,
+						"y": 4683,
 						"width": 108.60977304091931,
 						"height": 144.3458919124476,
 						"originX": 0.5,
@@ -1046,7 +1430,7 @@
 					},
 					"uid": 20,
 					"instanceVariables": {
-						"id": 10,
+						"id": 15,
 						"game": "../game-farhan/",
 						"posGame": true,
 						"difficultySoal1": "",
@@ -1088,7 +1472,7 @@
 					},
 					"uid": 33,
 					"instanceVariables": {
-						"id": 7,
+						"id": 13,
 						"game": "../game-prabu/",
 						"posGame": true,
 						"difficultySoal1": "",
@@ -1130,7 +1514,7 @@
 					},
 					"uid": 34,
 					"instanceVariables": {
-						"id": 4,
+						"id": 11,
 						"game": "../game-mufis-zahra/",
 						"posGame": true,
 						"difficultySoal1": "",
@@ -1172,11 +1556,11 @@
 					},
 					"uid": 35,
 					"instanceVariables": {
-						"id": 6,
+						"id": 4,
 						"game": "",
 						"posGame": false,
-						"difficultySoal1": "",
-						"difficultySoal2": ""
+						"difficultySoal1": "Easy",
+						"difficultySoal2": "Hard"
 					},
 					"behaviors": {
 						"Solid": {
@@ -1214,11 +1598,11 @@
 					},
 					"uid": 36,
 					"instanceVariables": {
-						"id": 3,
+						"id": 9,
 						"game": "",
 						"posGame": false,
-						"difficultySoal1": "",
-						"difficultySoal2": ""
+						"difficultySoal1": "Medium",
+						"difficultySoal2": "Medium"
 					},
 					"behaviors": {
 						"Solid": {
@@ -1256,11 +1640,11 @@
 					},
 					"uid": 37,
 					"instanceVariables": {
-						"id": 9,
+						"id": 8,
 						"game": "",
 						"posGame": false,
-						"difficultySoal1": "",
-						"difficultySoal2": ""
+						"difficultySoal1": "Medium",
+						"difficultySoal2": "Hard"
 					},
 					"behaviors": {
 						"Solid": {
@@ -1298,7 +1682,7 @@
 					},
 					"uid": 38,
 					"instanceVariables": {
-						"id": 5,
+						"id": 12,
 						"game": "../game-dewangga/",
 						"posGame": true,
 						"difficultySoal1": "",
@@ -1340,11 +1724,11 @@
 					},
 					"uid": 39,
 					"instanceVariables": {
-						"id": 2,
+						"id": 3,
 						"game": "",
 						"posGame": false,
-						"difficultySoal1": "",
-						"difficultySoal2": ""
+						"difficultySoal1": "Easy",
+						"difficultySoal2": "Hard"
 					},
 					"behaviors": {
 						"Solid": {
@@ -1382,7 +1766,7 @@
 					},
 					"uid": 40,
 					"instanceVariables": {
-						"id": 8,
+						"id": 14,
 						"game": "../game-nabil/",
 						"posGame": true,
 						"difficultySoal1": "",
@@ -1527,8 +1911,8 @@
 						}
 					},
 					"world": {
-						"x": 4696,
-						"y": 5483,
+						"x": 5064,
+						"y": 5724,
 						"width": 32,
 						"height": 64,
 						"originX": 0.5,
@@ -7063,70 +7447,6 @@
 					}
 				},
 				{
-					"type": "slipperyGround",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 93,
-					"instanceVariables": {
-						"accel": 0,
-						"deccel": 0
-					},
-					"behaviors": {},
-					"world": {
-						"x": 40,
-						"y": 892,
-						"width": 802.584,
-						"height": 184.184,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "slipperyGround",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 94,
-					"instanceVariables": {
-						"accel": 0,
-						"deccel": 0
-					},
-					"behaviors": {},
-					"world": {
-						"x": 242,
-						"y": 984,
-						"width": 802.584,
-						"height": 184.184,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
 					"type": "solidAsset",
 					"properties": {
 						"initially-visible": false,
@@ -9662,7 +9982,7 @@
 						"x": 4968,
 						"y": 6876,
 						"width": 324,
-						"height": 64,
+						"height": 108,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
