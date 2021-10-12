@@ -76,6 +76,15 @@
 					}
 				},
 				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 739735948734932,
+					"parameters": {
+						"variable": "baseUrl",
+						"value": "config.Get(\"url-api\")"
+					}
+				},
+				{
 					"id": "check-item-exists",
 					"objectClass": "LocalStorage",
 					"sid": 202512766706572,

@@ -300,6 +300,46 @@
 			"eventType": "block",
 			"conditions": [
 				{
+					"id": "on-completed",
+					"objectClass": "AJAX",
+					"sid": 214876414776721,
+					"parameters": {
+						"tag": "\"login\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "loginSuccess",
+					"sid": 527821462266782
+				}
+			],
+			"sid": 565711359520558
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-error",
+					"objectClass": "AJAX",
+					"sid": 258547978798551,
+					"parameters": {
+						"tag": "\"login\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "loginFailed",
+					"sid": 732109050515893
+				}
+			],
+			"sid": 828027042800047
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
 					"id": "on-start-of-layout",
 					"objectClass": "System",
 					"sid": 338283947847246
@@ -684,46 +724,6 @@
 				}
 			],
 			"sid": 743202175735957
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-completed",
-					"objectClass": "AJAX",
-					"sid": 170239809808837,
-					"parameters": {
-						"tag": "\"login\""
-					}
-				}
-			],
-			"actions": [
-				{
-					"callFunction": "loginSuccess",
-					"sid": 317625018498623
-				}
-			],
-			"sid": 933427212100687
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-error",
-					"objectClass": "AJAX",
-					"sid": 553809372593216,
-					"parameters": {
-						"tag": "\"login\""
-					}
-				}
-			],
-			"actions": [
-				{
-					"callFunction": "loginFailed",
-					"sid": 117903679264335
-				}
-			],
-			"sid": 979558151225883
 		}
 	],
 	"sid": 889062280607382

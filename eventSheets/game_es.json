@@ -1397,16 +1397,24 @@
 				{
 					"id": "push",
 					"objectClass": "UnsentScores",
-					"sid": 164905305613836,
+					"sid": 779297790543231,
 					"parameters": {
 						"where": "back",
-						"value": "score",
+						"value": "str(score & \",\" & curPos-10)",
 						"axis": "x"
 					}
 				},
 				{
 					"callFunction": "save",
 					"sid": 125235582913505
+				},
+				{
+					"callFunction": "sendScoreToApi",
+					"sid": 895361395041562,
+					"parameters": [
+						"curPos-10",
+						"score"
+					]
 				}
 			],
 			"sid": 340690638768288,
@@ -2265,6 +2273,281 @@
 				}
 			],
 			"sid": 726216878769986
+		},
+		{
+			"functionName": "sendScoreToApi",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "id",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 829011538383804
+				},
+				{
+					"name": "score",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 248806320391521
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "parse",
+					"objectClass": "Request",
+					"sid": 642151207000093,
+					"parameters": {
+						"data": "\"{}\""
+					}
+				},
+				{
+					"id": "set-value",
+					"objectClass": "Request",
+					"sid": 418067915897059,
+					"parameters": {
+						"path": "\"game_id\"",
+						"value": "id"
+					}
+				},
+				{
+					"id": "set-value",
+					"objectClass": "Request",
+					"sid": 641079340969150,
+					"parameters": {
+						"path": "\"game_point\"",
+						"value": "score"
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 766994420829511,
+					"parameters": {
+						"type": "log",
+						"message": "\"Sending score game\""
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 697105109364200,
+					"parameters": {
+						"type": "log",
+						"message": "Request.ToBeautifiedString"
+					}
+				},
+				{
+					"id": "set-request-header",
+					"objectClass": "AJAX",
+					"sid": 685235626273069,
+					"parameters": {
+						"header": "\"Accept\"",
+						"value": "\"application/json\""
+					}
+				},
+				{
+					"id": "set-request-header",
+					"objectClass": "AJAX",
+					"sid": 971595598253303,
+					"parameters": {
+						"header": "\"Content-Type\"",
+						"value": "\"application/json\""
+					}
+				},
+				{
+					"id": "post-to-url",
+					"objectClass": "AJAX",
+					"sid": 793924317004809,
+					"parameters": {
+						"tag": "\"sendGame\"",
+						"url": "baseUrl&\"/perempat/insert_jawaban_pos_game\"",
+						"data": "Request.ToCompactString",
+						"method": "\"POST\""
+					}
+				}
+			],
+			"sid": 970094357133100
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-completed",
+					"objectClass": "AJAX",
+					"sid": 448040881260804,
+					"parameters": {
+						"tag": "\"sendGame\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "parse",
+					"objectClass": "Response",
+					"sid": 224108725038566,
+					"parameters": {
+						"data": "AJAX.LastData"
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 243066220565487,
+					"parameters": {
+						"type": "log",
+						"message": "\"SendScoreGame Berhasil\""
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 103192700532472,
+					"parameters": {
+						"type": "log",
+						"message": "Response.ToBeautifiedString"
+					}
+				},
+				{
+					"callFunction": "deleteFromUnsentScore",
+					"sid": 735599884686397,
+					"parameters": [
+						"Response.Get(\"data.game_id\")",
+						"Response.Get(\"data.game_point\")"
+					]
+				}
+			],
+			"sid": 340813722527204
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-error",
+					"objectClass": "AJAX",
+					"sid": 614564842094368,
+					"parameters": {
+						"tag": "\"sendGame\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "parse",
+					"objectClass": "Response",
+					"sid": 285398096351970,
+					"parameters": {
+						"data": "AJAX.LastData"
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 378683162936702,
+					"parameters": {
+						"type": "log",
+						"message": "\"SendScoreGame Gagal\""
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 715751958455066,
+					"parameters": {
+						"type": "log",
+						"message": "Response.ToBeautifiedString"
+					}
+				}
+			],
+			"sid": 626147899549761
+		},
+		{
+			"functionName": "deleteFromUnsentScore",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "id",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 663303466315566
+				},
+				{
+					"name": "score",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 609740131938489
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 467960911867913,
+					"parameters": {
+						"type": "log",
+						"message": "\"Removing \" & id & \" \" & score"
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 954946122334053,
+					"parameters": {
+						"type": "log",
+						"message": "\"Before\""
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 763171576225747,
+					"parameters": {
+						"type": "log",
+						"message": "UnsentScores.AsJSON"
+					}
+				},
+				{
+					"id": "delete",
+					"objectClass": "UnsentScores",
+					"sid": 825702215438257,
+					"parameters": {
+						"index": "UnsentScores.IndexOf(str(score & \",\" & id))",
+						"axis": "x"
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 875846059293035,
+					"parameters": {
+						"type": "log",
+						"message": "\"After\""
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 126801892142351,
+					"parameters": {
+						"type": "log",
+						"message": "UnsentScores.AsJSON"
+					}
+				}
+			],
+			"sid": 956743078588215
 		}
 	],
 	"sid": 249019606169262
