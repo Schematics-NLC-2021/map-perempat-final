@@ -2,6 +2,36 @@
 	"name": "Login_ES",
 	"events": [
 		{
+			"eventType": "variable",
+			"name": "baseUrl",
+			"type": "string",
+			"initialValue": "https://sch-nlc-game-api-dev.herokuapp.com/nlc_api",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 579874570649917
+		},
+		{
+			"eventType": "variable",
+			"name": "id_team",
+			"type": "string",
+			"initialValue": "",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 855129848363534
+		},
+		{
+			"eventType": "variable",
+			"name": "token",
+			"type": "string",
+			"initialValue": "",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 478217504288104
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -80,6 +110,11 @@
 						"click-type": "clicked",
 						"object-clicked": "loginButton"
 					}
+				},
+				{
+					"id": "is-visible",
+					"objectClass": "loginButton",
+					"sid": 484081374597664
 				}
 			],
 			"actions": [
@@ -122,6 +157,14 @@
 				{
 					"callFunction": "playTap",
 					"sid": 649163505584479
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "loginButton",
+					"sid": 304354899959571,
+					"parameters": {
+						"visibility": "invisible"
+					}
 				}
 			],
 			"sid": 744966453220445,
@@ -143,7 +186,11 @@
 					"actions": [
 						{
 							"callFunction": "tryLogin",
-							"sid": 734347622926333
+							"sid": 413336085360127,
+							"parameters": [
+								"Username.Text",
+								"Password.Text"
+							]
 						}
 					],
 					"sid": 478408423984391
@@ -156,13 +203,95 @@
 			"functionCategory": "Login",
 			"functionReturnType": "none",
 			"functionIsAsync": false,
-			"functionParameters": [],
+			"functionParameters": [
+				{
+					"name": "username",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 100481472565457
+				},
+				{
+					"name": "password",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 706553394346934
+				}
+			],
 			"eventType": "function-block",
 			"conditions": [],
 			"actions": [
 				{
-					"callFunction": "loginSuccess",
-					"sid": 317625018498623
+					"id": "set-default-color",
+					"objectClass": "UiText",
+					"sid": 475515605625693,
+					"parameters": {
+						"color": "rgbEx255(255, 255, 255)"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "UiText",
+					"sid": 344211097781313,
+					"parameters": {
+						"text": "\"Mencoba login...\""
+					}
+				},
+				{
+					"id": "set-request-header",
+					"objectClass": "AJAX",
+					"sid": 966509167007105,
+					"parameters": {
+						"header": "\"Accept\"",
+						"value": "\"application/json\""
+					}
+				},
+				{
+					"id": "set-request-header",
+					"objectClass": "AJAX",
+					"sid": 140584357686238,
+					"parameters": {
+						"header": "\"Content-Type\"",
+						"value": "\"application/json\""
+					}
+				},
+				{
+					"id": "parse",
+					"objectClass": "Request",
+					"sid": 876969912898955,
+					"parameters": {
+						"data": "\"{}\""
+					}
+				},
+				{
+					"id": "set-value",
+					"objectClass": "Request",
+					"sid": 573359139684573,
+					"parameters": {
+						"path": "\"name\"",
+						"value": "username"
+					}
+				},
+				{
+					"id": "set-value",
+					"objectClass": "Request",
+					"sid": 525704467168888,
+					"parameters": {
+						"path": "\"password\"",
+						"value": "password"
+					}
+				},
+				{
+					"id": "post-to-url",
+					"objectClass": "AJAX",
+					"sid": 465831099308839,
+					"parameters": {
+						"tag": "\"login\"",
+						"url": "baseUrl&\"/auth/login\"",
+						"data": "Request.ToCompactString",
+						"method": "\"POST\""
+					}
 				}
 			],
 			"sid": 324256572314733
@@ -322,7 +451,67 @@
 			"functionParameters": [],
 			"eventType": "function-block",
 			"conditions": [],
-			"actions": [],
+			"actions": [
+				{
+					"id": "parse",
+					"objectClass": "Response",
+					"sid": 634661005265435,
+					"parameters": {
+						"data": "AJAX.LastData"
+					}
+				},
+				{
+					"id": "set-default-color",
+					"objectClass": "UiText",
+					"sid": 499703208909762,
+					"parameters": {
+						"color": "rgbEx255(153, 255, 153)"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "UiText",
+					"sid": 322235008248422,
+					"parameters": {
+						"text": "\"Login berhasil. Mohon tunggu sebentar...\""
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 903594971412871,
+					"parameters": {
+						"variable": "token",
+						"value": "Response.Get(\"data.token\")"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 722248954204982,
+					"parameters": {
+						"variable": "namaTim",
+						"value": "Response.Get(\"data.team_name\")"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 486669951636764,
+					"parameters": {
+						"variable": "id_team",
+						"value": "Response.Get(\"data.team_id\")"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 594556085744787,
+					"parameters": {
+						"seconds": "1"
+					}
+				}
+			],
 			"sid": 567174251635857,
 			"children": [
 				{
@@ -410,11 +599,35 @@
 			"conditions": [],
 			"actions": [
 				{
+					"id": "parse",
+					"objectClass": "Response",
+					"sid": 471668712756855,
+					"parameters": {
+						"data": "AJAX.LastData"
+					}
+				},
+				{
+					"id": "set-default-color",
+					"objectClass": "UiText",
+					"sid": 988077997972771,
+					"parameters": {
+						"color": "rgbEx255(255, 153, 153)"
+					}
+				},
+				{
 					"id": "set-text",
 					"objectClass": "UiText",
 					"sid": 877451246889855,
 					"parameters": {
 						"text": "\"Login gagal, coba cek kembali username dan password\""
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "loginButton",
+					"sid": 637114770154198,
+					"parameters": {
+						"visibility": "visible"
 					}
 				}
 			],
@@ -471,6 +684,46 @@
 				}
 			],
 			"sid": 743202175735957
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-completed",
+					"objectClass": "AJAX",
+					"sid": 170239809808837,
+					"parameters": {
+						"tag": "\"login\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "loginSuccess",
+					"sid": 317625018498623
+				}
+			],
+			"sid": 933427212100687
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-error",
+					"objectClass": "AJAX",
+					"sid": 553809372593216,
+					"parameters": {
+						"tag": "\"login\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "loginFailed",
+					"sid": 117903679264335
+				}
+			],
+			"sid": 979558151225883
 		}
 	],
 	"sid": 889062280607382
