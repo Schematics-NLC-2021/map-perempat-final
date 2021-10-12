@@ -21,6 +21,18 @@
 			"type": "boolean",
 			"desc": "",
 			"sid": 564500648978802
+		},
+		{
+			"name": "difficultySoal1",
+			"type": "string",
+			"desc": "",
+			"sid": 361167568998897
+		},
+		{
+			"name": "difficultySoal2",
+			"type": "string",
+			"desc": "",
+			"sid": 509578013143504
 		}
 	],
 	"behaviorTypes": [],

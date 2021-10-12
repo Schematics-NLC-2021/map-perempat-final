@@ -135,11 +135,11 @@
 						{
 							"id": "for",
 							"objectClass": "System",
-							"sid": 943623929989019,
+							"sid": 904443883142663,
 							"parameters": {
 								"name": "\"i\"",
-								"start-index": "1",
-								"end-index": "5"
+								"start-index": "11",
+								"end-index": "15"
 							}
 						},
 						{
@@ -560,9 +560,17 @@
 								{
 									"id": "set-text",
 									"objectClass": "UiText",
-									"sid": 781818939128438,
+									"sid": 917829099439450,
 									"parameters": {
-										"text": "\"Kamu yakin ingin \" & (Pos.posGame ? \"main game\" : \"mengerjakan soal\") & \" pos \"&Pos.id&\"?\""
+										"text": "\"Kamu yakin ingin \" & (Pos.posGame ? \"main game\" : \"mengerjakan soal\") & \" di pos ini?\""
+									}
+								},
+								{
+									"id": "append-text",
+									"objectClass": "UiText",
+									"sid": 571758975364477,
+									"parameters": {
+										"text": "Pos.posGame ? \"\" : (newline & \"Tingkat kesulitan soal: \" & Pos.difficultySoal1 & (Pos.difficultySoal1 <> Pos.difficultySoal2 ? (\" dan \" & Pos.difficultySoal2) : \"\"))"
 									}
 								}
 							],

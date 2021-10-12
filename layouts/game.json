@@ -1006,7 +1006,9 @@
 					"instanceVariables": {
 						"id": 1,
 						"game": "",
-						"posGame": false
+						"posGame": false,
+						"difficultySoal1": "Easy",
+						"difficultySoal2": "Medium"
 					},
 					"behaviors": {
 						"Solid": {
@@ -1046,7 +1048,9 @@
 					"instanceVariables": {
 						"id": 10,
 						"game": "../game-farhan/",
-						"posGame": true
+						"posGame": true,
+						"difficultySoal1": "",
+						"difficultySoal2": ""
 					},
 					"behaviors": {
 						"Solid": {
@@ -1086,7 +1090,9 @@
 					"instanceVariables": {
 						"id": 7,
 						"game": "../game-prabu/",
-						"posGame": true
+						"posGame": true,
+						"difficultySoal1": "",
+						"difficultySoal2": ""
 					},
 					"behaviors": {
 						"Solid": {
@@ -1126,7 +1132,9 @@
 					"instanceVariables": {
 						"id": 4,
 						"game": "../game-mufis-zahra/",
-						"posGame": true
+						"posGame": true,
+						"difficultySoal1": "",
+						"difficultySoal2": ""
 					},
 					"behaviors": {
 						"Solid": {
@@ -1166,7 +1174,9 @@
 					"instanceVariables": {
 						"id": 6,
 						"game": "",
-						"posGame": false
+						"posGame": false,
+						"difficultySoal1": "",
+						"difficultySoal2": ""
 					},
 					"behaviors": {
 						"Solid": {
@@ -1206,7 +1216,9 @@
 					"instanceVariables": {
 						"id": 3,
 						"game": "",
-						"posGame": false
+						"posGame": false,
+						"difficultySoal1": "",
+						"difficultySoal2": ""
 					},
 					"behaviors": {
 						"Solid": {
@@ -1246,7 +1258,9 @@
 					"instanceVariables": {
 						"id": 9,
 						"game": "",
-						"posGame": false
+						"posGame": false,
+						"difficultySoal1": "",
+						"difficultySoal2": ""
 					},
 					"behaviors": {
 						"Solid": {
@@ -1286,7 +1300,9 @@
 					"instanceVariables": {
 						"id": 5,
 						"game": "../game-dewangga/",
-						"posGame": true
+						"posGame": true,
+						"difficultySoal1": "",
+						"difficultySoal2": ""
 					},
 					"behaviors": {
 						"Solid": {
@@ -1326,7 +1342,9 @@
 					"instanceVariables": {
 						"id": 2,
 						"game": "",
-						"posGame": false
+						"posGame": false,
+						"difficultySoal1": "",
+						"difficultySoal2": ""
 					},
 					"behaviors": {
 						"Solid": {
@@ -1366,7 +1384,9 @@
 					"instanceVariables": {
 						"id": 8,
 						"game": "../game-nabil/",
-						"posGame": true
+						"posGame": true,
+						"difficultySoal1": "",
+						"difficultySoal2": ""
 					},
 					"behaviors": {
 						"Solid": {
@@ -10146,9 +10166,9 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 335,
+						"x": 254,
 						"y": 173,
-						"width": 578,
+						"width": 772,
 						"height": 308,
 						"originX": 0,
 						"originY": 0,
@@ -10177,7 +10197,7 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 796,
+						"x": 915,
 						"y": 422,
 						"width": 155.7316108653433,
 						"height": 51.45914098159171,
@@ -10208,7 +10228,7 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 613,
+						"x": 732,
 						"y": 420,
 						"width": 129.9682306796289,
 						"height": 24.486768099060516,
@@ -10227,7 +10247,7 @@
 				{
 					"type": "UiText",
 					"properties": {
-						"text": "Mau Main ",
+						"text": "Mau mengunjungi pos soal ini?\nTipe pos: Soal\nKesulitan soal: Medium dan Medium",
 						"enable-bbcode": true,
 						"character-width": 37,
 						"character-height": 40,
@@ -10236,7 +10256,7 @@
 						"scale": 1,
 						"character-spacing": 0,
 						"line-height": 0,
-						"horizontal-alignment": "center",
+						"horizontal-alignment": "left",
 						"vertical-alignment": "top",
 						"wrapping": "word",
 						"initially-visible": true,
@@ -10248,9 +10268,9 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 384,
+						"x": 303,
 						"y": 231,
-						"width": 487.34005732396463,
+						"width": 672.3400573239646,
 						"height": 125,
 						"originX": 0,
 						"originY": 0,
