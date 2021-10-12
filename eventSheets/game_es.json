@@ -289,10 +289,10 @@
 						{
 							"id": "create-object",
 							"objectClass": "System",
-							"sid": 812470604402070,
+							"sid": 390627325119028,
 							"parameters": {
 								"object-to-create": "posSign",
-								"layer": "\"topGame\"",
+								"layer": "\"Game\"",
 								"x": "Pos.X-Pos.Width/2 + 13",
 								"y": "Pos.Y-10",
 								"create-hierarchy": false
@@ -317,10 +317,10 @@
 						{
 							"id": "create-object",
 							"objectClass": "System",
-							"sid": 926292448124551,
+							"sid": 454123656990369,
 							"parameters": {
 								"object-to-create": "posSign",
-								"layer": "\"topGame\"",
+								"layer": "\"Game\"",
 								"x": "Pos.X-Pos.Width/2 + 13",
 								"y": "Pos.Y + 18",
 								"create-hierarchy": false
@@ -547,23 +547,135 @@
 					"objectClass": "Player",
 					"sid": 133662504232418,
 					"behaviorType": "8Direction"
+				}
+			],
+			"actions": [],
+			"sid": 491893264857540,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 193051243260398,
+							"parameters": {
+								"interval-seconds": "0.33"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "playStep",
+							"sid": 364737269518830
+						}
+					],
+					"sid": 273166944573440
 				},
 				{
-					"id": "every-x-seconds",
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 320156820741086
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Player",
+							"sid": 447767157833311,
+							"parameters": {
+								"animation": "\"Run\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 235826669080876
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-moving",
+					"objectClass": "Player",
+					"sid": 404681710000080,
+					"behaviorType": "8Direction",
+					"isInverted": true
+				},
+				{
+					"id": "trigger-once-while-true",
 					"objectClass": "System",
-					"sid": 709337480653242,
+					"sid": 385861585540552
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "Player",
+					"sid": 446024382460782,
 					"parameters": {
-						"interval-seconds": "0.33"
+						"animation": "\"Idle\"",
+						"from": "beginning"
+					}
+				}
+			],
+			"sid": 273609341252916
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 260193643053450,
+					"parameters": {
+						"first-value": "Player.8Direction.VectorX",
+						"comparison": 4,
+						"second-value": "0"
 					}
 				}
 			],
 			"actions": [
 				{
-					"callFunction": "playStep",
-					"sid": 801207769013493
+					"id": "set-mirrored",
+					"objectClass": "Player",
+					"sid": 834157839376798,
+					"parameters": {
+						"state": "not-mirrored"
+					}
 				}
 			],
-			"sid": 491893264857540
+			"sid": 949645639233295
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 630840133701049,
+					"parameters": {
+						"first-value": "Player.8Direction.VectorX",
+						"comparison": 2,
+						"second-value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-mirrored",
+					"objectClass": "Player",
+					"sid": 880294488934347,
+					"parameters": {
+						"state": "mirrored"
+					}
+				}
+			],
+			"sid": 725749927069627
 		},
 		{
 			"eventType": "block",
@@ -1106,58 +1218,6 @@
 					]
 				}
 			]
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "compare-two-values",
-					"objectClass": "System",
-					"sid": 260193643053450,
-					"parameters": {
-						"first-value": "Player.8Direction.VectorX",
-						"comparison": 4,
-						"second-value": "0"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-mirrored",
-					"objectClass": "Player",
-					"sid": 834157839376798,
-					"parameters": {
-						"state": "not-mirrored"
-					}
-				}
-			],
-			"sid": 949645639233295
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "compare-two-values",
-					"objectClass": "System",
-					"sid": 630840133701049,
-					"parameters": {
-						"first-value": "Player.8Direction.VectorX",
-						"comparison": 2,
-						"second-value": "0"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-mirrored",
-					"objectClass": "Player",
-					"sid": 880294488934347,
-					"parameters": {
-						"state": "mirrored"
-					}
-				}
-			],
-			"sid": 725749927069627
 		},
 		{
 			"eventType": "block",
@@ -1867,10 +1927,10 @@
 						{
 							"id": "create-object",
 							"objectClass": "System",
-							"sid": 429449004308991,
+							"sid": 437197222201450,
 							"parameters": {
 								"object-to-create": "tooltip",
-								"layer": "\"Game\"",
+								"layer": "\"topGame\"",
 								"x": "Pos.X",
 								"y": "Pos.Y - Pos.Height + 30",
 								"create-hierarchy": false
