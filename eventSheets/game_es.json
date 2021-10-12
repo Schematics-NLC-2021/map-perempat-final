@@ -2362,6 +2362,15 @@
 					}
 				},
 				{
+					"id": "set-request-header",
+					"objectClass": "AJAX",
+					"sid": 791279996886902,
+					"parameters": {
+						"header": "\"Authorization\"",
+						"value": "\"Bearer \"&token"
+					}
+				},
+				{
 					"id": "post-to-url",
 					"objectClass": "AJAX",
 					"sid": 793924317004809,
@@ -2548,6 +2557,40 @@
 				}
 			],
 			"sid": 956743078588215
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 272380059749284,
+					"parameters": {
+						"key": 32
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "push",
+					"objectClass": "UnsentScores",
+					"sid": 149251247313473,
+					"parameters": {
+						"where": "back",
+						"value": "\"10,1\"",
+						"axis": "x"
+					}
+				},
+				{
+					"callFunction": "sendScoreToApi",
+					"sid": 743716435709538,
+					"parameters": [
+						"1",
+						"10"
+					]
+				}
+			],
+			"sid": 503026150734318
 		}
 	],
 	"sid": 249019606169262
