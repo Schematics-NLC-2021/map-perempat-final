@@ -1668,7 +1668,7 @@
 					"type": "Player",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "Animation 1",
+						"initial-animation": "Run",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
@@ -1701,10 +1701,10 @@
 						}
 					},
 					"world": {
-						"x": 5064,
-						"y": 5724,
-						"width": 32,
-						"height": 64,
+						"x": 3037,
+						"y": 5008,
+						"width": 55,
+						"height": 63,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -10469,6 +10469,122 @@
 						"y": 5121,
 						"width": 3824,
 						"height": 3069,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Rain",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 334,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 813,
+						"y": 4375,
+						"width": 1596.438018342118,
+						"height": 1903.4775951751267,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Rain",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 335,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 2516,
+						"y": 4352,
+						"width": 1596.438018342118,
+						"height": 1903.4775951751267,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Rain",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 336,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 771,
+						"y": 6238,
+						"width": 1596.438018342118,
+						"height": 1903.4775951751267,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Rain",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 337,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 2444,
+						"y": 6210,
+						"width": 1596.438018342118,
+						"height": 1903.4775951751267,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [

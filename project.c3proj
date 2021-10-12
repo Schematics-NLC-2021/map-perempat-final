@@ -201,7 +201,9 @@
 			"fillings",
 			"slowGroundAsset",
 			"tooltip",
-			"Audio"
+			"Audio",
+			"posSign",
+			"Rain"
 		],
 		"subfolders": [
 			{

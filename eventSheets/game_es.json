@@ -252,8 +252,121 @@
 						}
 					],
 					"sid": 428098048552890
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 645255925749189,
+							"parameters": {
+								"object": "Pos"
+							}
+						},
+						{
+							"id": "pick-by-comparison",
+							"objectClass": "System",
+							"sid": 247945827233294,
+							"disabled": true,
+							"parameters": {
+								"object": "Pos",
+								"expression": "Pos.id",
+								"comparison": 0,
+								"value": "loopindex(\"p\")"
+							}
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Pos",
+							"sid": 642323908151174,
+							"parameters": {
+								"object": "BG"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 812470604402070,
+							"parameters": {
+								"object-to-create": "posSign",
+								"layer": "\"topGame\"",
+								"x": "Pos.X-Pos.Width/2 + 13",
+								"y": "Pos.Y-10",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "posSign",
+							"sid": 627254162551009,
+							"parameters": {
+								"frame-number": "(Pos.posGame) ? 0 : (1 + BG.AnimationFrame*3 +((Pos.difficultySoal1 = \"Easy\") ? 0 : (Pos.difficultySoal1 = \"Medium\") ? 1 : 2))"
+							}
+						},
+						{
+							"id": "set-scale",
+							"objectClass": "posSign",
+							"sid": 627204865205578,
+							"parameters": {
+								"scale": "0.6"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 926292448124551,
+							"parameters": {
+								"object-to-create": "posSign",
+								"layer": "\"topGame\"",
+								"x": "Pos.X-Pos.Width/2 + 13",
+								"y": "Pos.Y + 18",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "posSign",
+							"sid": 981126125395726,
+							"parameters": {
+								"frame-number": "(Pos.posGame) ? 0 : (1 + BG.AnimationFrame*3 +((Pos.difficultySoal2 = \"Easy\") ? 0 : (Pos.difficultySoal2 = \"Medium\") ? 1 : 2))"
+							}
+						},
+						{
+							"id": "set-scale",
+							"objectClass": "posSign",
+							"sid": 885726519834379,
+							"parameters": {
+								"scale": "0.6"
+							}
+						}
+					],
+					"sid": 599314790352021
 				}
 			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-on-layer",
+					"objectClass": "posSign",
+					"sid": 131096730981526,
+					"parameters": {
+						"layer": "\"Game\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "move-to-top",
+					"objectClass": "Z_Ordering",
+					"sid": 762228470508797
+				}
+			],
+			"sid": 714584397226867
 		},
 		{
 			"eventType": "block",
