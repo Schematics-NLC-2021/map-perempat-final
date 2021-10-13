@@ -11308,6 +11308,16 @@
 			},
 			"uid": 75,
 			"instanceVariables": {}
+		},
+		{
+			"type": "SentSoal",
+			"properties": {
+				"width": 10,
+				"height": 1,
+				"depth": 1
+			},
+			"uid": 338,
+			"instanceVariables": {}
 		}
 	],
 	"effectTypes": [],

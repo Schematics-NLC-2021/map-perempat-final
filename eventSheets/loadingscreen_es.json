@@ -113,6 +113,19 @@
 				{
 					"id": "check-item-exists",
 					"objectClass": "LocalStorage",
+					"sid": 792476834655497,
+					"parameters": {
+						"key": "\"sentSoal\""
+					}
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 329932876978201
+				},
+				{
+					"id": "check-item-exists",
+					"objectClass": "LocalStorage",
 					"sid": 813818435833995,
 					"parameters": {
 						"key": "\"curPosition\""
@@ -195,6 +208,16 @@
 						"height": "1",
 						"depth": "1"
 					}
+				},
+				{
+					"id": "set-size",
+					"objectClass": "SentSoal",
+					"sid": 812902768660602,
+					"parameters": {
+						"width": "0",
+						"height": "1",
+						"depth": "1"
+					}
 				}
 			],
 			"sid": 137277623973437
@@ -219,95 +242,6 @@
 				}
 			],
 			"sid": 740959044691722
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "every-x-seconds",
-					"objectClass": "System",
-					"sid": 240059457889507,
-					"parameters": {
-						"interval-seconds": "0.5"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-text",
-					"objectClass": "LoadingText",
-					"sid": 891822997937725,
-					"parameters": {
-						"text": "\"Loading\""
-					}
-				},
-				{
-					"id": "add-to-eventvar",
-					"objectClass": "System",
-					"sid": 971144462630640,
-					"parameters": {
-						"variable": "dot",
-						"value": "1"
-					}
-				}
-			],
-			"sid": 875304385819434,
-			"disabled": true,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 881804515239456,
-							"parameters": {
-								"variable": "dot",
-								"comparison": 0,
-								"value": "4"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 638609712323863,
-							"parameters": {
-								"variable": "dot",
-								"value": "0"
-							}
-						}
-					],
-					"sid": 497193936419251,
-					"disabled": true
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "repeat",
-							"objectClass": "System",
-							"sid": 903886965807726,
-							"parameters": {
-								"count": "dot"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "append-text",
-							"objectClass": "LoadingText",
-							"sid": 463491548146929,
-							"parameters": {
-								"text": "\".\""
-							}
-						}
-					],
-					"sid": 121905148323312,
-					"disabled": true
-				}
-			]
 		},
 		{
 			"eventType": "block",
@@ -511,6 +445,54 @@
 				}
 			],
 			"sid": 228405616121762
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-exists",
+					"objectClass": "LocalStorage",
+					"sid": 171495680343855,
+					"parameters": {
+						"key": "\"sentSoal\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "get-item",
+					"objectClass": "LocalStorage",
+					"sid": 916259547306754,
+					"parameters": {
+						"key": "\"sentSoal\""
+					}
+				}
+			],
+			"sid": 121188023301872
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-get",
+					"objectClass": "LocalStorage",
+					"sid": 361740603581290,
+					"parameters": {
+						"key": "\"sentSoal\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "load",
+					"objectClass": "SentSoal",
+					"sid": 848672395395120,
+					"parameters": {
+						"json": "LocalStorage.ItemValue"
+					}
+				}
+			],
+			"sid": 260706731683947
 		},
 		{
 			"eventType": "block",

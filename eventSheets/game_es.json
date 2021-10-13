@@ -265,18 +265,6 @@
 							}
 						},
 						{
-							"id": "pick-by-comparison",
-							"objectClass": "System",
-							"sid": 247945827233294,
-							"disabled": true,
-							"parameters": {
-								"object": "Pos",
-								"expression": "Pos.id",
-								"comparison": 0,
-								"value": "loopindex(\"p\")"
-							}
-						},
-						{
 							"id": "is-overlapping-another-object",
 							"objectClass": "Pos",
 							"sid": 642323908151174,
@@ -351,27 +339,6 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "is-on-layer",
-					"objectClass": "posSign",
-					"sid": 131096730981526,
-					"parameters": {
-						"layer": "\"Game\""
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "move-to-top",
-					"objectClass": "Z_Ordering",
-					"sid": 762228470508797
-				}
-			],
-			"sid": 714584397226867
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
 					"id": "for-each-ordered",
 					"objectClass": "System",
 					"sid": 243781560512296,
@@ -390,6 +357,41 @@
 				}
 			],
 			"sid": 958526299508821
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "for-each",
+					"objectClass": "System",
+					"sid": 232279479814181,
+					"parameters": {
+						"object": "posSign"
+					}
+				},
+				{
+					"id": "pick-nearestfurthest",
+					"objectClass": "Pos",
+					"sid": 743298652908210,
+					"parameters": {
+						"which": "nearest",
+						"x": "posSign.X",
+						"y": "posSign.Y"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "move-to-object",
+					"objectClass": "posSign",
+					"sid": 442336222312077,
+					"parameters": {
+						"where": "in-front",
+						"object": "Pos"
+					}
+				}
+			],
+			"sid": 168957178589553
 		},
 		{
 			"eventType": "block",
@@ -631,11 +633,11 @@
 				{
 					"id": "compare-two-values",
 					"objectClass": "System",
-					"sid": 260193643053450,
+					"sid": 374209398179543,
 					"parameters": {
 						"first-value": "Player.8Direction.VectorX",
 						"comparison": 4,
-						"second-value": "0"
+						"second-value": "2"
 					}
 				}
 			],
@@ -657,11 +659,11 @@
 				{
 					"id": "compare-two-values",
 					"objectClass": "System",
-					"sid": 630840133701049,
+					"sid": 813940607981642,
 					"parameters": {
 						"first-value": "Player.8Direction.VectorX",
 						"comparison": 2,
-						"second-value": "0"
+						"second-value": "-2"
 					}
 				}
 			],
@@ -1029,6 +1031,20 @@
 									}
 								},
 								{
+									"id": "push",
+									"objectClass": "PosVisited",
+									"sid": 675408290260634,
+									"parameters": {
+										"where": "back",
+										"value": "curPos",
+										"axis": "x"
+									}
+								},
+								{
+									"callFunction": "save",
+									"sid": 831453529524066
+								},
+								{
 									"callFunction": "playTap",
 									"sid": 649163505584479
 								}
@@ -1300,7 +1316,7 @@
 				},
 				{
 					"id": "push",
-					"objectClass": "PosVisited",
+					"objectClass": "SentSoal",
 					"sid": 190642570605435,
 					"parameters": {
 						"where": "back",
@@ -1378,29 +1394,19 @@
 				{
 					"id": "add-to-eventvar",
 					"objectClass": "System",
-					"sid": 347489127850737,
+					"sid": 822798336970658,
 					"parameters": {
 						"variable": "accumulatedScore",
-						"value": "score"
-					}
-				},
-				{
-					"id": "push",
-					"objectClass": "PosVisited",
-					"sid": 675408290260634,
-					"parameters": {
-						"where": "back",
-						"value": "curPos",
-						"axis": "x"
+						"value": "round(score)"
 					}
 				},
 				{
 					"id": "push",
 					"objectClass": "UnsentScores",
-					"sid": 779297790543231,
+					"sid": 193936422069246,
 					"parameters": {
 						"where": "back",
-						"value": "str(score & \",\" & curPos-10)",
+						"value": "str(round(score) & \",\" & curPos-10)",
 						"axis": "x"
 					}
 				},
@@ -2164,6 +2170,15 @@
 				{
 					"id": "set-item",
 					"objectClass": "LocalStorage",
+					"sid": 257255568231149,
+					"parameters": {
+						"key": "\"sentSoal\"",
+						"value": "SentSoal.AsJSON"
+					}
+				},
+				{
+					"id": "set-item",
+					"objectClass": "LocalStorage",
 					"sid": 894178053394088,
 					"parameters": {
 						"key": "\"curPosition\"",
@@ -2554,43 +2569,13 @@
 						"type": "log",
 						"message": "UnsentScores.AsJSON"
 					}
+				},
+				{
+					"callFunction": "save",
+					"sid": 826427348231134
 				}
 			],
 			"sid": 956743078588215
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-key-pressed",
-					"objectClass": "Keyboard",
-					"sid": 272380059749284,
-					"parameters": {
-						"key": 32
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "push",
-					"objectClass": "UnsentScores",
-					"sid": 149251247313473,
-					"parameters": {
-						"where": "back",
-						"value": "\"10,1\"",
-						"axis": "x"
-					}
-				},
-				{
-					"callFunction": "sendScoreToApi",
-					"sid": 743716435709538,
-					"parameters": [
-						"1",
-						"10"
-					]
-				}
-			],
-			"sid": 503026150734318
 		}
 	],
 	"sid": 249019606169262
