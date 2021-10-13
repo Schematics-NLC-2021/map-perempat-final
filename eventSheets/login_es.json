@@ -102,6 +102,55 @@
 			"eventType": "block",
 			"conditions": [
 				{
+					"id": "cursor-is-over-object",
+					"objectClass": "Mouse",
+					"sid": 396358966897842,
+					"parameters": {
+						"object": "loginButton"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-default-color",
+					"objectClass": "loginButton",
+					"sid": 865855099986623,
+					"parameters": {
+						"color": "rgbEx(130, 130, 130)"
+					}
+				}
+			],
+			"sid": 254129472024917
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "cursor-is-over-object",
+					"objectClass": "Mouse",
+					"sid": 217041070645711,
+					"parameters": {
+						"object": "loginButton"
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "set-default-color",
+					"objectClass": "loginButton",
+					"sid": 908274653932186,
+					"parameters": {
+						"color": "rgbEx(100, 100, 100)"
+					}
+				}
+			],
+			"sid": 917331507782874
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
 					"id": "on-object-clicked",
 					"objectClass": "Mouse",
 					"sid": 233721641949998,
@@ -419,6 +468,14 @@
 							}
 						},
 						{
+							"id": "set-visible",
+							"objectClass": "loginButton",
+							"sid": 280207729410112,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
 							"id": "set-function-return-value",
 							"objectClass": "Functions",
 							"sid": 770302421913174,
@@ -470,6 +527,14 @@
 							}
 						},
 						{
+							"id": "set-visible",
+							"objectClass": "loginButton",
+							"sid": 759041566576971,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
 							"id": "set-function-return-value",
 							"objectClass": "Functions",
 							"sid": 936245780376079,
@@ -479,6 +544,48 @@
 						}
 					],
 					"sid": 580313016015718
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-text",
+							"objectClass": "Password",
+							"sid": 213709181931336,
+							"parameters": {
+								"text": "\"\"",
+								"case": "case-insensitive"
+							}
+						},
+						{
+							"id": "compare-text",
+							"objectClass": "Username",
+							"sid": 248349690589305,
+							"parameters": {
+								"text": "\"\"",
+								"case": "case-insensitive"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "UiText",
+							"sid": 469672641289304,
+							"parameters": {
+								"text": "\"Username dan password harus diisi\""
+							}
+						},
+						{
+							"id": "set-function-return-value",
+							"objectClass": "Functions",
+							"sid": 998903292459123,
+							"parameters": {
+								"value": "0"
+							}
+						}
+					],
+					"sid": 973772121708995
 				}
 			]
 		},
