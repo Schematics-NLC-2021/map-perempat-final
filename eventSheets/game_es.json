@@ -112,6 +112,16 @@
 			"sid": 181974516054589
 		},
 		{
+			"eventType": "variable",
+			"name": "sendingScore",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 854479984333584
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -1293,6 +1303,82 @@
 			"sid": 263618549314257
 		},
 		{
+			"functionName": "setIdSoal",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "soal_id1",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 148579770977237
+				},
+				{
+					"name": "soal_id2",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 650290520045374
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"type": "script",
+					"script": "console.log(localVars.soal_id1)\nconsole.log(localVars.soal_id2)\nconsole.log(\"id_soal diterima\")"
+				}
+			],
+			"sid": 905015116567262,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 517929118926560,
+							"parameters": {
+								"variable": "curPos",
+								"comparison": 5,
+								"value": "1"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 984043060452605,
+							"parameters": {
+								"variable": "curPos",
+								"comparison": 3,
+								"value": "10"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "push",
+							"objectClass": "unsentSoal",
+							"sid": 416770431048159,
+							"parameters": {
+								"where": "back",
+								"value": "str(soal_id1&\",\"&soal_id2)",
+								"axis": "x"
+							}
+						},
+						{
+							"callFunction": "save",
+							"sid": 200052493671702
+						}
+					],
+					"sid": 955980024900563
+				}
+			]
+		},
+		{
 			"functionName": "answerSent",
 			"functionDescription": "",
 			"functionCategory": "",
@@ -1305,6 +1391,20 @@
 					"initialValue": "0",
 					"comment": "",
 					"sid": 515661703961335
+				},
+				{
+					"name": "soal_id1",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 764905178611492
+				},
+				{
+					"name": "soal_id2",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 772147776018743
 				}
 			],
 			"eventType": "function-block",
@@ -1312,7 +1412,7 @@
 			"actions": [
 				{
 					"type": "script",
-					"script": "console.log(localVars.score)\nconsole.log(\"score soal diterima\")"
+					"script": "console.log(localVars.score)\nconsole.log(\"score soal diterima\")\nconsole.log(localVars.soal_id1)\nconsole.log(localVars.soal_id2)\nconsole.log(\"id_soal diterima\")"
 				}
 			],
 			"sid": 771383412548228,
@@ -1343,14 +1443,12 @@
 					],
 					"actions": [
 						{
-							"id": "push",
-							"objectClass": "SentSoal",
-							"sid": 190642570605435,
-							"parameters": {
-								"where": "back",
-								"value": "curPos",
-								"axis": "x"
-							}
+							"callFunction": "deleteFromUnsentSoal",
+							"sid": 522116855814922,
+							"parameters": [
+								"soal_id1",
+								"soal_id2"
+							]
 						},
 						{
 							"id": "add-to-eventvar",
@@ -1372,15 +1470,6 @@
 							"parameters": {
 								"variable": "curPos",
 								"value": "0"
-							}
-						},
-						{
-							"id": "log",
-							"objectClass": "Browser",
-							"sid": 865154293050838,
-							"parameters": {
-								"type": "log",
-								"message": "\"Menyimpan pos jawaban\""
 							}
 						}
 					],
@@ -1489,14 +1578,6 @@
 						{
 							"callFunction": "save",
 							"sid": 519578037648865
-						},
-						{
-							"callFunction": "sendScoreToApi",
-							"sid": 390511195581123,
-							"parameters": [
-								"curPos-10",
-								"round(score)"
-							]
 						},
 						{
 							"id": "set-eventvar-value",
@@ -1615,6 +1696,14 @@
 							"sid": 180730227295323,
 							"parameters": {
 								"text": "\"Waktu Habis\""
+							}
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 964008723656124,
+							"parameters": {
+								"layout": "EndScreen"
 							}
 						}
 					],
@@ -2257,10 +2346,10 @@
 				{
 					"id": "set-item",
 					"objectClass": "LocalStorage",
-					"sid": 257255568231149,
+					"sid": 644139362885658,
 					"parameters": {
-						"key": "\"sentSoal\"",
-						"value": "SentSoal.AsJSON"
+						"key": "\"unsentSoal\"",
+						"value": "unsentSoal.AsJSON"
 					}
 				},
 				{
@@ -2532,6 +2621,15 @@
 						"Response.Get(\"data.game_id\")",
 						"Response.Get(\"data.game_point\")"
 					]
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 463037593983248,
+					"parameters": {
+						"variable": "sendingScore",
+						"value": "false"
+					}
 				}
 			],
 			"sid": 340813722527204
@@ -2574,6 +2672,15 @@
 						"type": "log",
 						"message": "Response.ToBeautifiedString"
 					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 784908726435559,
+					"parameters": {
+						"variable": "sendingScore",
+						"value": "false"
+					}
 				}
 			],
 			"sid": 626147899549761
@@ -2606,10 +2713,10 @@
 				{
 					"id": "log",
 					"objectClass": "Browser",
-					"sid": 467960911867913,
+					"sid": 914890100061736,
 					"parameters": {
 						"type": "log",
-						"message": "\"Removing \" & id & \" \" & score"
+						"message": "\"Removing \" & id & \" \" & score & \" from unsentScore\""
 					}
 				},
 				{
@@ -2663,6 +2770,71 @@
 				}
 			],
 			"sid": 956743078588215
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 356359216435126,
+					"parameters": {
+						"variable": "sendingScore"
+					},
+					"isInverted": true
+				},
+				{
+					"id": "is-empty",
+					"objectClass": "UnsentScores",
+					"sid": 725582163923758,
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 665686096996839,
+					"parameters": {
+						"variable": "sendingScore",
+						"value": "true"
+					}
+				},
+				{
+					"callFunction": "sendScoreToApi",
+					"sid": 383242595209148,
+					"parameters": [
+						"int(tokenat(UnsentScores.Back, 1, \",\"))",
+						"int(tokenat(UnsentScores.Back, 0, \",\"))"
+					]
+				}
+			],
+			"sid": 283802424474115
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 936459789444000,
+					"parameters": {
+						"key": 35
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 967963244963976,
+					"parameters": {
+						"variable": "endTime",
+						"value": "0"
+					}
+				}
+			],
+			"sid": 637881965308487
 		}
 	],
 	"sid": 249019606169262

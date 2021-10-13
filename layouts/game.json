@@ -11310,7 +11310,7 @@
 			"instanceVariables": {}
 		},
 		{
-			"type": "SentSoal",
+			"type": "unsentSoal",
 			"properties": {
 				"width": 10,
 				"height": 1,

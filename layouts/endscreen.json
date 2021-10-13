@@ -6,33 +6,22 @@
 			"overriden": 0,
 			"instances": [
 				{
-					"type": "LoadingText",
+					"type": "login",
 					"properties": {
-						"text": "Loading ",
-						"enable-bbcode": true,
-						"character-width": 16,
-						"character-height": 16,
-						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>",
-						"spacing-data": "",
-						"scale": 4,
-						"character-spacing": 0,
-						"line-height": 0,
-						"horizontal-alignment": "center",
-						"vertical-alignment": "center",
-						"wrapping": "word",
 						"initially-visible": true,
-						"origin": "center"
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
 					},
-					"uid": 23,
-					"instanceVariables": {
-						"id": 0
-					},
+					"uid": 77,
+					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 494,
-						"y": -147,
-						"width": 1073,
-						"height": 125,
+						"x": 640,
+						"y": 360,
+						"width": 1280,
+						"height": 720,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -46,28 +35,79 @@
 					}
 				},
 				{
-					"type": "loadScreen",
+					"type": "UiText",
 					"properties": {
+						"text": "Waktu permainan telah habis",
+						"enable-bbcode": true,
+						"character-width": 37,
+						"character-height": 40,
+						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%",
+						"spacing-data": " [[8,\" \"],[7,\"'\"],[8,\"Il!|\"],[9,\"i.,;:\"],[12,\"`\"],[13,\"j\\\"[]\"],[14,\"r-()\"],[16,\"ft°\"],[17,\"Jcs*\"],[18,\"aehnuz1?+=<>\"],[19,\"EFLbdkpqy23579~\\/£\"],[20,\"Povx068_\"],[21,\"BZg4#$€\"],[22,\"CRS\"],[23,\"GKTU\"],[24,\"DHNX\"],[25,\"Y\"],[26,\"AOV&\"],[27,\"Qmw\"],[28,\"M\"],[33,\"@\"],[34,\"%\"],[35,\"W\"]]",
+						"scale": 1.5,
+						"character-spacing": 0,
+						"line-height": 0,
+						"horizontal-alignment": "center",
+						"vertical-alignment": "top",
+						"wrapping": "word",
 						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
+						"origin": "top-left"
 					},
-					"uid": 77,
-					"instanceVariables": {},
+					"uid": 23,
+					"instanceVariables": {
+						"id": 0
+					},
 					"behaviors": {},
 					"world": {
-						"x": 640,
-						"y": 359.9031617333615,
-						"width": 1280,
-						"height": 720,
-						"originX": 0.5,
-						"originY": 0.5,
+						"x": 702,
+						"y": 202,
+						"width": 467,
+						"height": 127.20723056204702,
+						"originX": 0,
+						"originY": 0,
 						"color": [
-							1,
-							1,
-							1,
+							0.9176470588235294,
+							0.7529411764705882,
+							0.396078431372549,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "UiText",
+					"properties": {
+						"text": "Sedang menyinkronkan jawaban dengan server. Jangan menutup halaman game ini terlebih dahulu...",
+						"enable-bbcode": true,
+						"character-width": 37,
+						"character-height": 40,
+						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%",
+						"spacing-data": " [[8,\" \"],[7,\"'\"],[8,\"Il!|\"],[9,\"i.,;:\"],[12,\"`\"],[13,\"j\\\"[]\"],[14,\"r-()\"],[16,\"ft°\"],[17,\"Jcs*\"],[18,\"aehnuz1?+=<>\"],[19,\"EFLbdkpqy23579~\\/£\"],[20,\"Povx068_\"],[21,\"BZg4#$€\"],[22,\"CRS\"],[23,\"GKTU\"],[24,\"DHNX\"],[25,\"Y\"],[26,\"AOV&\"],[27,\"Qmw\"],[28,\"M\"],[33,\"@\"],[34,\"%\"],[35,\"W\"]]",
+						"scale": 1.1,
+						"character-spacing": 0,
+						"line-height": 0,
+						"horizontal-alignment": "center",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 341,
+					"instanceVariables": {
+						"id": 1
+					},
+					"behaviors": {},
+					"world": {
+						"x": 653,
+						"y": 335,
+						"width": 561,
+						"height": 183.20723056204702,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							0.9176470588235294,
+							0.7529411764705882,
+							0.396078431372549,
 							1
 						],
 						"angle": 0,

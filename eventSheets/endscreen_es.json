@@ -1,5 +1,704 @@
 {
 	"name": "EndScreen_ES",
-	"events": [],
+	"events": [
+		{
+			"functionName": "sendScoreToApi2",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "idsoal1",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 220180208792424
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "parse",
+					"objectClass": "Request",
+					"sid": 903606945686428,
+					"parameters": {
+						"data": "\"{}\""
+					}
+				},
+				{
+					"id": "set-value",
+					"objectClass": "Request",
+					"sid": 274996192030334,
+					"parameters": {
+						"path": "\"game_id\"",
+						"value": "idsoal1"
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 938008563377200,
+					"parameters": {
+						"type": "log",
+						"message": "\"Sending score game\""
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 725013553939725,
+					"parameters": {
+						"type": "log",
+						"message": "Request.ToBeautifiedString"
+					}
+				},
+				{
+					"id": "set-request-header",
+					"objectClass": "AJAX",
+					"sid": 843582548961435,
+					"parameters": {
+						"header": "\"Accept\"",
+						"value": "\"application/json\""
+					}
+				},
+				{
+					"id": "set-request-header",
+					"objectClass": "AJAX",
+					"sid": 237361679055550,
+					"parameters": {
+						"header": "\"Content-Type\"",
+						"value": "\"application/json\""
+					}
+				},
+				{
+					"id": "set-request-header",
+					"objectClass": "AJAX",
+					"sid": 539692793859815,
+					"parameters": {
+						"header": "\"Authorization\"",
+						"value": "\"Bearer \"&token"
+					}
+				},
+				{
+					"id": "post-to-url",
+					"objectClass": "AJAX",
+					"sid": 911515570171033,
+					"parameters": {
+						"tag": "\"sendGame\"",
+						"url": "baseUrl&\"/perempat/insert_jawaban_pos_game\"",
+						"data": "Request.ToCompactString",
+						"method": "\"POST\""
+					}
+				}
+			],
+			"sid": 781073404957264
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-completed",
+					"objectClass": "AJAX",
+					"sid": 190813088529464,
+					"parameters": {
+						"tag": "\"sendGame\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "parse",
+					"objectClass": "Response",
+					"sid": 331682195313593,
+					"parameters": {
+						"data": "AJAX.LastData"
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 745012510302871,
+					"parameters": {
+						"type": "log",
+						"message": "\"SendScoreGame Berhasil\""
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 271385528724797,
+					"parameters": {
+						"type": "log",
+						"message": "Response.ToBeautifiedString"
+					}
+				},
+				{
+					"callFunction": "deleteFromUnsentScore",
+					"sid": 405974017814949,
+					"parameters": [
+						"Response.Get(\"data.game_id\")",
+						"Response.Get(\"data.game_point\")"
+					]
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 243870095431578,
+					"parameters": {
+						"variable": "sendingScore",
+						"value": "false"
+					}
+				}
+			],
+			"sid": 377842861094949
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-error",
+					"objectClass": "AJAX",
+					"sid": 367748865662768,
+					"parameters": {
+						"tag": "\"sendGame\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "parse",
+					"objectClass": "Response",
+					"sid": 585385218770207,
+					"parameters": {
+						"data": "AJAX.LastData"
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 771343765781447,
+					"parameters": {
+						"type": "log",
+						"message": "\"SendScoreGame Gagal\""
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 355833310197467,
+					"parameters": {
+						"type": "log",
+						"message": "Response.ToBeautifiedString"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 284836414383647,
+					"parameters": {
+						"variable": "sendingScore",
+						"value": "false"
+					}
+				}
+			],
+			"sid": 754637460910962
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 442292482613175,
+					"parameters": {
+						"variable": "sendingScore"
+					},
+					"isInverted": true
+				},
+				{
+					"id": "is-empty",
+					"objectClass": "UnsentScores",
+					"sid": 146654700637402,
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 134185450022796,
+					"parameters": {
+						"variable": "sendingScore",
+						"value": "true"
+					}
+				},
+				{
+					"callFunction": "sendScoreToApi",
+					"sid": 625856336877072,
+					"parameters": [
+						"int(tokenat(UnsentScores.Back, 1, \",\"))",
+						"int(tokenat(UnsentScores.Back, 0, \",\"))"
+					]
+				}
+			],
+			"sid": 136310155624024
+		},
+		{
+			"eventType": "variable",
+			"name": "sendingJawabanSoal",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 326461399215527
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-empty",
+					"objectClass": "UnsentScores",
+					"sid": 198804223236247
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 547379352341043,
+					"parameters": {
+						"variable": "sendingJawabanSoal"
+					},
+					"isInverted": true
+				},
+				{
+					"id": "is-empty",
+					"objectClass": "unsentSoal",
+					"sid": 631244876757141,
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 904397596023661,
+					"parameters": {
+						"variable": "sendingJawabanSoal",
+						"value": "true"
+					}
+				},
+				{
+					"callFunction": "sendJawabanSoalToApi",
+					"sid": 293220476766800,
+					"parameters": [
+						"int(tokenat(unsentSoal.Back, 0, \",\"))",
+						"int(tokenat(unsentSoal.Back, 1, \",\"))"
+					]
+				}
+			],
+			"sid": 594038466489030
+		},
+		{
+			"functionName": "sendJawabanSoalToApi",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "soal_id1",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 959207303749365
+				},
+				{
+					"name": "soal_id2",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 743475032051157
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "parse",
+					"objectClass": "Request",
+					"sid": 994450448404779,
+					"parameters": {
+						"data": "\"{}\""
+					}
+				},
+				{
+					"id": "set-value",
+					"objectClass": "Request",
+					"sid": 192339117290912,
+					"parameters": {
+						"path": "\"team_id\"",
+						"value": "id_team"
+					}
+				},
+				{
+					"id": "set-array",
+					"objectClass": "Request",
+					"sid": 695587275979496,
+					"parameters": {
+						"path": "\"jawaban\"",
+						"size": "2"
+					}
+				},
+				{
+					"id": "set-object",
+					"objectClass": "Request",
+					"sid": 504392213169869,
+					"parameters": {
+						"path": "\"jawaban.0\""
+					}
+				},
+				{
+					"id": "set-value",
+					"objectClass": "Request",
+					"sid": 685494010776519,
+					"parameters": {
+						"path": "\"jawaban.0.soal_id\"",
+						"value": "soal_id1"
+					}
+				},
+				{
+					"id": "set-value",
+					"objectClass": "Request",
+					"sid": 982834670071554,
+					"parameters": {
+						"path": "\"jawaban.0.isi_jawaban\"",
+						"value": "\"\""
+					}
+				},
+				{
+					"id": "set-object",
+					"objectClass": "Request",
+					"sid": 981377351447423,
+					"parameters": {
+						"path": "\"jawaban.1\""
+					}
+				},
+				{
+					"id": "set-value",
+					"objectClass": "Request",
+					"sid": 405971729389819,
+					"parameters": {
+						"path": "\"jawaban.1.soal_id\"",
+						"value": "soal_id2"
+					}
+				},
+				{
+					"id": "set-value",
+					"objectClass": "Request",
+					"sid": 710385997931866,
+					"parameters": {
+						"path": "\"jawaban.1.isi_jawaban\"",
+						"value": "\"\""
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 243090132924724,
+					"parameters": {
+						"type": "log",
+						"message": "\"Mengirim Jawaban Soal\""
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 999605694084948,
+					"parameters": {
+						"type": "log",
+						"message": "Request.ToBeautifiedString"
+					}
+				},
+				{
+					"id": "set-request-header",
+					"objectClass": "AJAX",
+					"sid": 567142182212004,
+					"parameters": {
+						"header": "\"Accept\"",
+						"value": "\"application/json\""
+					}
+				},
+				{
+					"id": "set-request-header",
+					"objectClass": "AJAX",
+					"sid": 873261206674411,
+					"parameters": {
+						"header": "\"Content-Type\"",
+						"value": "\"application/json\""
+					}
+				},
+				{
+					"id": "set-request-header",
+					"objectClass": "AJAX",
+					"sid": 647591146476735,
+					"parameters": {
+						"header": "\"Authorization\"",
+						"value": "\"Bearer \"&token"
+					}
+				},
+				{
+					"id": "post-to-url",
+					"objectClass": "AJAX",
+					"sid": 919168160327536,
+					"parameters": {
+						"tag": "\"sendSoal\"",
+						"url": "baseUrl&\"/perempat/insert_jawaban_pos_soal\"",
+						"data": "Request.ToCompactString",
+						"method": "\"POST\""
+					}
+				}
+			],
+			"sid": 265184211357351
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-completed",
+					"objectClass": "AJAX",
+					"sid": 605695054694935,
+					"parameters": {
+						"tag": "\"sendSoal\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "parse",
+					"objectClass": "Response",
+					"sid": 193038965262005,
+					"parameters": {
+						"data": "AJAX.LastData"
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 716817474163484,
+					"parameters": {
+						"type": "log",
+						"message": "\"SendJawabanSoal Berhasil\""
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 270608796994002,
+					"parameters": {
+						"type": "log",
+						"message": "Response.ToBeautifiedString"
+					}
+				},
+				{
+					"callFunction": "deleteFromUnsentSoal",
+					"sid": 445636099485163,
+					"parameters": [
+						"Response.Get(\"data.0.soal_id\")",
+						"Response.Get(\"data.1.soal_id\")"
+					]
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 234925314356941,
+					"parameters": {
+						"variable": "sendingJawabanSoal",
+						"value": "false"
+					}
+				}
+			],
+			"sid": 763276019853709
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-error",
+					"objectClass": "AJAX",
+					"sid": 764688226515556,
+					"parameters": {
+						"tag": "\"sendSoal\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "parse",
+					"objectClass": "Response",
+					"sid": 404799065927810,
+					"parameters": {
+						"data": "AJAX.LastData"
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 258365697605283,
+					"parameters": {
+						"type": "log",
+						"message": "\"SendJawabanSoal Gagal\""
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 584954593073815,
+					"parameters": {
+						"type": "log",
+						"message": "Response.ToBeautifiedString"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 289857491932349,
+					"parameters": {
+						"variable": "sendingJawabanSoal",
+						"value": "false"
+					}
+				}
+			],
+			"sid": 728311049154162
+		},
+		{
+			"functionName": "deleteFromUnsentSoal",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "id_soal1",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 613065213661975
+				},
+				{
+					"name": "id_soal2",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 336323173537323
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 816432975514429,
+					"parameters": {
+						"type": "log",
+						"message": "\"Removing \" & id_soal1 & \" \" & id_soal2 & \" from unsentSoal\""
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 141654970602014,
+					"parameters": {
+						"type": "log",
+						"message": "\"Before\""
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 965014545638394,
+					"parameters": {
+						"type": "log",
+						"message": "unsentSoal.AsJSON"
+					}
+				},
+				{
+					"id": "delete",
+					"objectClass": "unsentSoal",
+					"sid": 916844154663002,
+					"parameters": {
+						"index": "unsentSoal.IndexOf(str(id_soal1 & \",\" & id_soal2))",
+						"axis": "x"
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 618413184048180,
+					"parameters": {
+						"type": "log",
+						"message": "\"After\""
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 150843647240533,
+					"parameters": {
+						"type": "log",
+						"message": "unsentSoal.AsJSON"
+					}
+				},
+				{
+					"callFunction": "save",
+					"sid": 490738179864273
+				}
+			],
+			"sid": 921914994431157
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-empty",
+					"objectClass": "UnsentScores",
+					"sid": 677612192951979
+				},
+				{
+					"id": "is-empty",
+					"objectClass": "unsentSoal",
+					"sid": 109609631083159
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 538779590949985
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "UiText",
+					"sid": 473722764423936,
+					"parameters": {
+						"instance-variable": "id",
+						"comparison": 0,
+						"value": "1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "UiText",
+					"sid": 351789443864048,
+					"parameters": {
+						"text": "\"Sinkronisasi dengan server selesai. Halaman game ini sudah bisa ditutup.\""
+					}
+				}
+			],
+			"sid": 501151716487964
+		}
+	],
 	"sid": 907364501343057
 }

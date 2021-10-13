@@ -197,14 +197,14 @@
 			"UnsentScores",
 			"LocalStorage",
 			"loadScreen",
-			"load",
+			"login",
 			"fillings",
 			"slowGroundAsset",
 			"tooltip",
 			"Audio",
 			"posSign",
 			"Rain",
-			"SentSoal"
+			"unsentSoal"
 		],
 		"subfolders": [
 			{
@@ -255,7 +255,16 @@
 	},
 	"rootFileFolders": {
 		"script": {
-			"items": [],
+			"items": [
+				{
+					"name": "main.js",
+					"type": "application/javascript",
+					"sid": 717766077736220,
+					"script-info": {
+						"purpose": "main"
+					}
+				}
+			],
 			"subfolders": []
 		},
 		"sound": {

@@ -113,9 +113,9 @@
 				{
 					"id": "check-item-exists",
 					"objectClass": "LocalStorage",
-					"sid": 792476834655497,
+					"sid": 666739168872478,
 					"parameters": {
-						"key": "\"sentSoal\""
+						"key": "\"unsentSoal\""
 					}
 				},
 				{
@@ -211,7 +211,7 @@
 				},
 				{
 					"id": "set-size",
-					"objectClass": "SentSoal",
+					"objectClass": "unsentSoal",
 					"sid": 812902768660602,
 					"parameters": {
 						"width": "0",
@@ -452,9 +452,9 @@
 				{
 					"id": "on-item-exists",
 					"objectClass": "LocalStorage",
-					"sid": 171495680343855,
+					"sid": 204536319082243,
 					"parameters": {
-						"key": "\"sentSoal\""
+						"key": "\"unsentSoal\""
 					}
 				}
 			],
@@ -462,9 +462,9 @@
 				{
 					"id": "get-item",
 					"objectClass": "LocalStorage",
-					"sid": 916259547306754,
+					"sid": 831034627576227,
 					"parameters": {
-						"key": "\"sentSoal\""
+						"key": "\"unsentSoal\""
 					}
 				}
 			],
@@ -476,16 +476,16 @@
 				{
 					"id": "on-item-get",
 					"objectClass": "LocalStorage",
-					"sid": 361740603581290,
+					"sid": 352256721927556,
 					"parameters": {
-						"key": "\"sentSoal\""
+						"key": "\"unsentSoal\""
 					}
 				}
 			],
 			"actions": [
 				{
 					"id": "load",
-					"objectClass": "SentSoal",
+					"objectClass": "unsentSoal",
 					"sid": 848672395395120,
 					"parameters": {
 						"json": "LocalStorage.ItemValue"
