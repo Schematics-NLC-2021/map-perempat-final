@@ -669,6 +669,24 @@
 					"parameters": {
 						"visibility": "visible"
 					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 430734843562448,
+					"parameters": {
+						"type": "log",
+						"message": "\"Login gagal\""
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 844793058656365,
+					"parameters": {
+						"type": "log",
+						"message": "Response.ToBeautifiedString"
+					}
 				}
 			],
 			"sid": 690302166272867

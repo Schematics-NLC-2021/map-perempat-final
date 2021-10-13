@@ -73,6 +73,75 @@
 						"angle": 0,
 						"zElevation": 0
 					}
+				},
+				{
+					"type": "UiText",
+					"properties": {
+						"text": "99.99%",
+						"enable-bbcode": true,
+						"character-width": 37,
+						"character-height": 40,
+						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%",
+						"spacing-data": " [[8,\" \"],[7,\"'\"],[8,\"Il!|\"],[9,\"i.,;:\"],[12,\"`\"],[13,\"j\\\"[]\"],[14,\"r-()\"],[16,\"ft°\"],[17,\"Jcs*\"],[18,\"aehnuz1?+=<>\"],[19,\"EFLbdkpqy23579~\\/£\"],[20,\"Povx068_\"],[21,\"BZg4#$€\"],[22,\"CRS\"],[23,\"GKTU\"],[24,\"DHNX\"],[25,\"Y\"],[26,\"AOV&\"],[27,\"Qmw\"],[28,\"M\"],[33,\"@\"],[34,\"%\"],[35,\"W\"]]",
+						"scale": 1.1,
+						"character-spacing": 0,
+						"line-height": 0,
+						"horizontal-alignment": "center",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 339,
+					"instanceVariables": {
+						"id": 0
+					},
+					"behaviors": {},
+					"world": {
+						"x": 420.04393804230915,
+						"y": 542.8471866476849,
+						"width": 440,
+						"height": 43.207230562047016,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							0.9176470588235294,
+							0.7529411764705882,
+							0.396078431372549,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "loadScreen",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 2",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 340,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 559.1634525964483,
+						"y": 509.1896686041472,
+						"width": 175,
+						"height": 52,
+						"originX": 0.04,
+						"originY": 0.21153846153846154,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
 				}
 			],
 			"sid": 137119521546412,

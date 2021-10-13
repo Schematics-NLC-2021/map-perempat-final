@@ -1313,29 +1313,6 @@
 				{
 					"type": "script",
 					"script": "console.log(localVars.score)\nconsole.log(\"score soal diterima\")"
-				},
-				{
-					"id": "push",
-					"objectClass": "SentSoal",
-					"sid": 190642570605435,
-					"parameters": {
-						"where": "back",
-						"value": "curPos",
-						"axis": "x"
-					}
-				},
-				{
-					"id": "add-to-eventvar",
-					"objectClass": "System",
-					"sid": 690691421569987,
-					"parameters": {
-						"variable": "accumulatedScore",
-						"value": "score"
-					}
-				},
-				{
-					"callFunction": "save",
-					"sid": 993075613300141
 				}
 			],
 			"sid": 771383412548228,
@@ -1344,28 +1321,99 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "pick-by-comparison",
+							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 574106766341370,
+							"sid": 702774088729395,
 							"parameters": {
-								"object": "button",
-								"expression": "button.LayerName",
-								"comparison": 0,
-								"value": "\"soal\""
+								"variable": "curPos",
+								"comparison": 5,
+								"value": "1"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 426801161799131,
+							"parameters": {
+								"variable": "curPos",
+								"comparison": 3,
+								"value": "10"
 							}
 						}
 					],
 					"actions": [
 						{
-							"id": "set-visible",
-							"objectClass": "button",
-							"sid": 564952202189939,
+							"id": "push",
+							"objectClass": "SentSoal",
+							"sid": 190642570605435,
 							"parameters": {
-								"visibility": "visible"
+								"where": "back",
+								"value": "curPos",
+								"axis": "x"
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 690691421569987,
+							"parameters": {
+								"variable": "accumulatedScore",
+								"value": "score"
+							}
+						},
+						{
+							"callFunction": "save",
+							"sid": 993075613300141
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 636863747891996,
+							"parameters": {
+								"variable": "curPos",
+								"value": "0"
+							}
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 865154293050838,
+							"parameters": {
+								"type": "log",
+								"message": "\"Menyimpan pos jawaban\""
 							}
 						}
 					],
-					"sid": 985127909463950
+					"sid": 554415442183634,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-comparison",
+									"objectClass": "System",
+									"sid": 500839833798260,
+									"parameters": {
+										"object": "button",
+										"expression": "button.LayerName",
+										"comparison": 0,
+										"value": "\"soal\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "button",
+									"sid": 470537976940835,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 500416064528772
+						}
+					]
 				}
 			]
 		},
@@ -1389,38 +1437,7 @@
 			"actions": [
 				{
 					"type": "script",
-					"script": "console.log(localVars.score)\nconsole.log(\"score jawaban diterima\")"
-				},
-				{
-					"id": "add-to-eventvar",
-					"objectClass": "System",
-					"sid": 822798336970658,
-					"parameters": {
-						"variable": "accumulatedScore",
-						"value": "round(score)"
-					}
-				},
-				{
-					"id": "push",
-					"objectClass": "UnsentScores",
-					"sid": 193936422069246,
-					"parameters": {
-						"where": "back",
-						"value": "str(round(score) & \",\" & curPos-10)",
-						"axis": "x"
-					}
-				},
-				{
-					"callFunction": "save",
-					"sid": 125235582913505
-				},
-				{
-					"callFunction": "sendScoreToApi",
-					"sid": 895361395041562,
-					"parameters": [
-						"curPos-10",
-						"score"
-					]
+					"script": "console.log(localVars.score)\nconsole.log(\"score game diterima\")"
 				}
 			],
 			"sid": 340690638768288,
@@ -1429,28 +1446,98 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "pick-by-comparison",
+							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 623406778663730,
+							"sid": 608278488162675,
 							"parameters": {
-								"object": "button",
-								"expression": "button.LayerName",
-								"comparison": 0,
-								"value": "\"soalGame\""
+								"variable": "curPos",
+								"comparison": 5,
+								"value": "11"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 147624900551808,
+							"parameters": {
+								"variable": "curPos",
+								"comparison": 3,
+								"value": "15"
 							}
 						}
 					],
 					"actions": [
 						{
-							"id": "set-visible",
-							"objectClass": "button",
-							"sid": 226926554743063,
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 251699625439736,
 							"parameters": {
-								"visibility": "visible"
+								"variable": "accumulatedScore",
+								"value": "round(score)"
+							}
+						},
+						{
+							"id": "push",
+							"objectClass": "UnsentScores",
+							"sid": 694871230379802,
+							"parameters": {
+								"where": "back",
+								"value": "str(round(score) & \",\" & curPos-10)",
+								"axis": "x"
+							}
+						},
+						{
+							"callFunction": "save",
+							"sid": 519578037648865
+						},
+						{
+							"callFunction": "sendScoreToApi",
+							"sid": 390511195581123,
+							"parameters": [
+								"curPos-10",
+								"round(score)"
+							]
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 181355699119293,
+							"parameters": {
+								"variable": "curPos",
+								"value": "0"
 							}
 						}
 					],
-					"sid": 195185492863352
+					"sid": 663826668227892,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-comparison",
+									"objectClass": "System",
+									"sid": 358811659239029,
+									"parameters": {
+										"object": "button",
+										"expression": "button.LayerName",
+										"comparison": 0,
+										"value": "\"soalGame\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "button",
+									"sid": 528734915795508,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 508027317112911
+						}
+					]
 				}
 			]
 		},

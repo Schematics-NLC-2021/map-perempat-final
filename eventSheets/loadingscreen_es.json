@@ -500,20 +500,19 @@
 				{
 					"id": "every-x-seconds",
 					"objectClass": "System",
-					"sid": 718221425177646,
+					"sid": 943622255515749,
 					"parameters": {
-						"interval-seconds": "0.2"
+						"interval-seconds": "0.5"
 					}
 				}
 			],
 			"actions": [
 				{
-					"id": "log",
-					"objectClass": "Browser",
-					"sid": 373057697452680,
+					"id": "set-text",
+					"objectClass": "UiText",
+					"sid": 159360732852869,
 					"parameters": {
-						"type": "log",
-						"message": "loadingprogress"
+						"text": "round(loadingprogress*100)&\"%\""
 					}
 				}
 			],
