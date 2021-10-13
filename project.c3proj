@@ -383,7 +383,7 @@
 					"sid": 299754220958813
 				},
 				{
-					"name": "config.json",
+					"name": "game-config.json",
 					"type": "application/json",
 					"sid": 843590598385249
 				}
