@@ -77,7 +77,7 @@
 				{
 					"type": "UiText",
 					"properties": {
-						"text": "99.99%",
+						"text": "0%",
 						"enable-bbcode": true,
 						"character-width": 37,
 						"character-height": 40,

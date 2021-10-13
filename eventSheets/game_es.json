@@ -1140,7 +1140,7 @@
 									"actions": [
 										{
 											"type": "script",
-											"script": "sessionStorage.setItem(\"token\", runtime.globalVars.token);\nsessionStorage.setItem(\"curPos\", runtime.globalVars.curPos);\nsessionStorage.setItem(\"ApiBase\", runtime.globalVars.baseUrl);"
+											"script": "sessionStorage.setItem(\"token\", runtime.globalVars.token);\nsessionStorage.setItem(\"curPos\", runtime.globalVars.curPos);\nsessionStorage.setItem(\"apiBase\", runtime.globalVars.baseUrl);\nsessionStorage.setItem(\"team_id\", runtime.globalVars.id_team);"
 										},
 										{
 											"id": "set-layer-visible",
