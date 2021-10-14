@@ -203,7 +203,7 @@
 			"tooltip",
 			"Audio",
 			"posSign",
-			"Rain",
+			"rainOverlay",
 			"unsentSoal",
 			"sunOverlay",
 			"LoadingSpinner"

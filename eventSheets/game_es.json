@@ -177,24 +177,9 @@
 					}
 				},
 				{
-					"id": "play-at-object",
-					"objectClass": "Audio",
-					"sid": 219238183361994,
-					"parameters": {
-						"audio-file": "rain",
-						"loop": "looping",
-						"volume": "-2",
-						"object": "Rain",
-						"inner-angle": "360",
-						"outer-angle": "360",
-						"outer-gain": "0",
-						"tag-optional": "\"\""
-					}
-				},
-				{
 					"id": "set-listener-object",
 					"objectClass": "Audio",
-					"sid": 801009840586966,
+					"sid": 585592888715769,
 					"parameters": {
 						"object": "Player"
 					}
@@ -365,6 +350,37 @@
 						}
 					],
 					"sid": 599314790352021
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 558191905055446,
+							"parameters": {
+								"object": "rainOverlay"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "play-at-object",
+							"objectClass": "Audio",
+							"sid": 364562606068811,
+							"parameters": {
+								"audio-file": "rain",
+								"loop": "looping",
+								"volume": "-5",
+								"object": "rainOverlay",
+								"inner-angle": "360",
+								"outer-angle": "360",
+								"outer-gain": "0",
+								"tag-optional": "\"rain\""
+							}
+						}
+					],
+					"sid": 725308634324624
 				}
 			]
 		},
@@ -875,6 +891,33 @@
 								}
 							],
 							"sid": 597007181950271
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-comparison",
+									"objectClass": "System",
+									"sid": 598518093172593,
+									"parameters": {
+										"object": "UiText",
+										"expression": "UiText.id",
+										"comparison": 0,
+										"value": "5"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "UiText",
+									"sid": 168409278290426,
+									"parameters": {
+										"text": "\"Pos \"&(Pos.posGame ? \"Game \"&(Pos.id - 10) : \"Soal \"&Pos.id)"
+									}
+								}
+							],
+							"sid": 317324657539498
 						}
 					]
 				}
