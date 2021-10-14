@@ -179,16 +179,24 @@
 				{
 					"id": "play-at-object",
 					"objectClass": "Audio",
-					"sid": 449955300536642,
+					"sid": 219238183361994,
 					"parameters": {
 						"audio-file": "rain",
 						"loop": "looping",
-						"volume": "0",
+						"volume": "-2",
 						"object": "Rain",
 						"inner-angle": "360",
 						"outer-angle": "360",
 						"outer-gain": "0",
 						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "set-listener-object",
+					"objectClass": "Audio",
+					"sid": 801009840586966,
+					"parameters": {
+						"object": "Player"
 					}
 				}
 			],
@@ -2457,12 +2465,12 @@
 						{
 							"id": "play-by-name",
 							"objectClass": "Audio",
-							"sid": 118344166154231,
+							"sid": 257866646922396,
 							"parameters": {
 								"folder": "sounds",
 								"audio-file-name": "\"step\"&BG.AnimationFrame&choose(0,1,2)",
 								"loop": "not-looping",
-								"volume": "0",
+								"volume": "-20",
 								"tag-optional": "\"sfx\""
 							}
 						}

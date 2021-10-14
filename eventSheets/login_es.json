@@ -839,11 +839,11 @@
 				{
 					"id": "play",
 					"objectClass": "Audio",
-					"sid": 392585201392263,
+					"sid": 323414007613441,
 					"parameters": {
 						"audio-file": "music",
 						"loop": "looping",
-						"volume": "0",
+						"volume": "-10",
 						"tag-optional": "\"bgm\""
 					}
 				}
