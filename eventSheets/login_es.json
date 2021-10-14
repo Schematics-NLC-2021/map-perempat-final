@@ -272,6 +272,14 @@
 			"conditions": [],
 			"actions": [
 				{
+					"id": "set-visible",
+					"objectClass": "LoadingSpinner",
+					"sid": 163243937016213,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
 					"id": "set-default-color",
 					"objectClass": "UiText",
 					"sid": 475515605625693,
@@ -600,6 +608,14 @@
 			"conditions": [],
 			"actions": [
 				{
+					"id": "set-visible",
+					"objectClass": "LoadingSpinner",
+					"sid": 642298246321821,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
 					"id": "parse",
 					"objectClass": "Response",
 					"sid": 634661005265435,
@@ -746,11 +762,27 @@
 			"conditions": [],
 			"actions": [
 				{
+					"id": "set-visible",
+					"objectClass": "LoadingSpinner",
+					"sid": 518808693860343,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
 					"id": "parse",
 					"objectClass": "Response",
 					"sid": 471668712756855,
 					"parameters": {
 						"data": "AJAX.LastData"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "LoadingSpinner",
+					"sid": 308504429750922,
+					"parameters": {
+						"visibility": "invisible"
 					}
 				},
 				{

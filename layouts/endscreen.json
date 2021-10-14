@@ -59,7 +59,7 @@
 					"behaviors": {},
 					"world": {
 						"x": 702,
-						"y": 202,
+						"y": 146,
 						"width": 467,
 						"height": 127.20723056204702,
 						"originX": 0,
@@ -99,7 +99,7 @@
 					"behaviors": {},
 					"world": {
 						"x": 653,
-						"y": 335,
+						"y": 279,
 						"width": 561,
 						"height": 183.20723056204702,
 						"originX": 0,
@@ -108,6 +108,35 @@
 							0.9176470588235294,
 							0.7529411764705882,
 							0.396078431372549,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "LoadingSpinner",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Default",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 374,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 939,
+						"y": 524,
+						"width": 100,
+						"height": 100,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
 							1
 						],
 						"angle": 0,

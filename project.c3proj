@@ -205,7 +205,8 @@
 			"posSign",
 			"Rain",
 			"unsentSoal",
-			"sunOverlay"
+			"sunOverlay",
+			"LoadingSpinner"
 		],
 		"subfolders": [
 			{

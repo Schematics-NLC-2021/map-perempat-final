@@ -695,6 +695,14 @@
 					"parameters": {
 						"text": "\"Sinkronisasi dengan server selesai. Halaman game ini sudah bisa ditutup.\""
 					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "LoadingSpinner",
+					"sid": 682269092161147,
+					"parameters": {
+						"visibility": "invisible"
+					}
 				}
 			],
 			"sid": 501151716487964
