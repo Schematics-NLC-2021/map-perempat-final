@@ -246,15 +246,10 @@
 						{
 							"callFunction": "tryLogin",
 							"sid": 413336085360127,
-							"disabled": true,
 							"parameters": [
 								"Username.Text",
 								"Password.Text"
 							]
-						},
-						{
-							"callFunction": "loginSuccess",
-							"sid": 280978358264199
 						}
 					],
 					"sid": 478408423984391
