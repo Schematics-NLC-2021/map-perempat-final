@@ -110,7 +110,7 @@
       }
 
       #content {
-        display: none;
+        /* display: none; */
       }
 
       @keyframes ldio-lrl344qrunr {
@@ -153,11 +153,12 @@
         box-sizing: content-box;
       }
       #loading {
-        display: flex;
+        /* display: flex; */
         justify-content: center;
         align-items: center;
         width: 100%;
         height: 100%;
+        display: none;
       }
 
       .no-soal {
@@ -170,6 +171,15 @@
 
       .isi-soal {
         flex-basis: 90%;
+      }
+
+      .isi-soal p {
+        margin: 0 0 1em 0;
+        padding: 0 0.75em 0.75em 0.75em;
+      }
+
+      .no-soal h2 {
+        margin: 0 0 0.83em 0;
       }
 
       .jawab {
@@ -249,7 +259,9 @@
               <h2>Soal 1</h2>
             </div>
 
-            <div class="isi-soal" id="soal1"></div>
+            <div class="isi-soal" id="soal1">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique ut molestiae, blanditiis qui accusantium est architecto assumenda maxime numquam rem? Deleniti rem possimus autem, quam sapiente nisi? Similique, nihil libero.</p>
+            </div>
           </div>
 
           <div class="jawab">
@@ -305,231 +317,231 @@
         }
       }
 
-      function sendAnswer() {
-        event.preventDefault();
+      // function sendAnswer() {
+      //   event.preventDefault();
 
-        const jawaban1 = document.getElementById("jawaban1");
-        const jawaban2 = document.getElementById("jawaban2");
-        const result1 = document.getElementById("result1");
-        const result2 = document.getElementById("result2");
-        const warning = document.getElementById("warning");
-        const submitBtn = document.getElementById("submitBtn");
+      //   const jawaban1 = document.getElementById("jawaban1");
+      //   const jawaban2 = document.getElementById("jawaban2");
+      //   const result1 = document.getElementById("result1");
+      //   const result2 = document.getElementById("result2");
+      //   const warning = document.getElementById("warning");
+      //   const submitBtn = document.getElementById("submitBtn");
 
-        const link = `${baseUrl}/perempat/insert_jawaban_pos_soal`;
+      //   const link = `${baseUrl}/perempat/insert_jawaban_pos_soal`;
 
-        const request = {
-          team_id: team_id,
-          jawaban: [
-            {
-              soal_id: soal_id1,
-              isi_jawaban: jawaban1.value,
-            },
-            {
-              soal_id: soal_id2,
-              isi_jawaban: jawaban2.value,
-            },
-          ],
-        };
+      //   const request = {
+      //     team_id: team_id,
+      //     jawaban: [
+      //       {
+      //         soal_id: soal_id1,
+      //         isi_jawaban: jawaban1.value,
+      //       },
+      //       {
+      //         soal_id: soal_id2,
+      //         isi_jawaban: jawaban2.value,
+      //       },
+      //     ],
+      //   };
 
-        warning.innerHTML = "Sedang mengirim jawaban...";
-        submitBtn.style.display = "none";
-        jawaban1.disabled = true;
-        jawaban2.disabled = true;
+      //   warning.innerHTML = "Sedang mengirim jawaban...";
+      //   submitBtn.style.display = "none";
+      //   jawaban1.disabled = true;
+      //   jawaban2.disabled = true;
 
-        console.log("Mengirim jawaban");
+      //   console.log("Mengirim jawaban");
 
-        fetch(link, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "Accept": "application/json",
-            "Authorization": "Bearer " + token,
-          },
-          body: JSON.stringify(request),
-        })
-          .then((response) => {
-            if (!response.ok) {
-              throw new Error(`HTTP error! status: ${response.status}`);
-            }
+      //   fetch(link, {
+      //     method: "POST",
+      //     headers: {
+      //       "Content-Type": "application/json",
+      //       "Accept": "application/json",
+      //       "Authorization": "Bearer " + token,
+      //     },
+      //     body: JSON.stringify(request),
+      //   })
+      //     .then((response) => {
+      //       if (!response.ok) {
+      //         throw new Error(`HTTP error! status: ${response.status}`);
+      //       }
 
-            return response.json();
-          })
-          .then((responseBody) => {
-            console.log(responseBody);
+      //       return response.json();
+      //     })
+      //     .then((responseBody) => {
+      //       console.log(responseBody);
 
-            const score1 = responseBody.data[0].jawab_point;
-            const score2 = responseBody.data[1].jawab_point;
-            const totalScore = score1 + score2;
+      //       const score1 = responseBody.data[0].jawab_point;
+      //       const score2 = responseBody.data[1].jawab_point;
+      //       const totalScore = score1 + score2;
 
-            warning.innerHTML = "Jawaban berhasil dikirim";
+      //       warning.innerHTML = "Jawaban berhasil dikirim";
 
-            if (jawaban1.value == "") {
-              jawaban1.style.backgroundColor = getComputedStyle(
-                document.documentElement
-              ).getPropertyValue("--empty-fill");
-              jawaban1.style.border =
-                "2px solid " +
-                getComputedStyle(document.documentElement).getPropertyValue(
-                  "--empty-border"
-                );
-              jawaban1.style.color = "#f5f5f5";
+      //       if (jawaban1.value == "") {
+      //         jawaban1.style.backgroundColor = getComputedStyle(
+      //           document.documentElement
+      //         ).getPropertyValue("--empty-fill");
+      //         jawaban1.style.border =
+      //           "2px solid " +
+      //           getComputedStyle(document.documentElement).getPropertyValue(
+      //             "--empty-border"
+      //           );
+      //         jawaban1.style.color = "#f5f5f5";
 
-              result1.innerHTML = "TIDAK MENJAWAB";
-              result1.style.color = getComputedStyle(
-                document.documentElement
-              ).getPropertyValue("--empty-text");
-            } else {
-              if (score1 == benar1) {
-                jawaban1.style.backgroundColor = getComputedStyle(
-                  document.documentElement
-                ).getPropertyValue("--correct-fill");
-                jawaban1.style.border =
-                  "2px solid " +
-                  getComputedStyle(document.documentElement).getPropertyValue(
-                    "--correct-border"
-                  );
-                jawaban1.style.color = "#0f0f0f";
+      //         result1.innerHTML = "TIDAK MENJAWAB";
+      //         result1.style.color = getComputedStyle(
+      //           document.documentElement
+      //         ).getPropertyValue("--empty-text");
+      //       } else {
+      //         if (score1 == benar1) {
+      //           jawaban1.style.backgroundColor = getComputedStyle(
+      //             document.documentElement
+      //           ).getPropertyValue("--correct-fill");
+      //           jawaban1.style.border =
+      //             "2px solid " +
+      //             getComputedStyle(document.documentElement).getPropertyValue(
+      //               "--correct-border"
+      //             );
+      //           jawaban1.style.color = "#0f0f0f";
 
-                result1.innerHTML = "BENAR";
-                result1.style.color = getComputedStyle(
-                  document.documentElement
-                ).getPropertyValue("--correct-text");
-              } else {
-                jawaban1.style.backgroundColor = getComputedStyle(
-                  document.documentElement
-                ).getPropertyValue("--wrong-fill");
-                jawaban1.style.border =
-                  "2px solid " +
-                  getComputedStyle(document.documentElement).getPropertyValue(
-                    "--wrong-border"
-                  );
-                jawaban1.style.color = "#f5f5f5";
+      //           result1.innerHTML = "BENAR";
+      //           result1.style.color = getComputedStyle(
+      //             document.documentElement
+      //           ).getPropertyValue("--correct-text");
+      //         } else {
+      //           jawaban1.style.backgroundColor = getComputedStyle(
+      //             document.documentElement
+      //           ).getPropertyValue("--wrong-fill");
+      //           jawaban1.style.border =
+      //             "2px solid " +
+      //             getComputedStyle(document.documentElement).getPropertyValue(
+      //               "--wrong-border"
+      //             );
+      //           jawaban1.style.color = "#f5f5f5";
 
-                result1.innerHTML = "SALAH";
-                result1.style.color = getComputedStyle(
-                  document.documentElement
-                ).getPropertyValue("--wrong-text");
-              }
-            }
+      //           result1.innerHTML = "SALAH";
+      //           result1.style.color = getComputedStyle(
+      //             document.documentElement
+      //           ).getPropertyValue("--wrong-text");
+      //         }
+      //       }
 
-            if (jawaban2.value == "") {
-              jawaban2.style.backgroundColor = getComputedStyle(
-                document.documentElement
-              ).getPropertyValue("--empty-fill");
-              jawaban2.style.border =
-                "2px solid " +
-                getComputedStyle(document.documentElement).getPropertyValue(
-                  "--empty-border"
-                );
-              jawaban2.style.color = "#f5f5f5";
+      //       if (jawaban2.value == "") {
+      //         jawaban2.style.backgroundColor = getComputedStyle(
+      //           document.documentElement
+      //         ).getPropertyValue("--empty-fill");
+      //         jawaban2.style.border =
+      //           "2px solid " +
+      //           getComputedStyle(document.documentElement).getPropertyValue(
+      //             "--empty-border"
+      //           );
+      //         jawaban2.style.color = "#f5f5f5";
 
-              result2.innerHTML = "TIDAK MENJAWAB";
-              result2.style.color = getComputedStyle(
-                document.documentElement
-              ).getPropertyValue("--empty-text");
-            } else {
-              if (score2 == benar2) {
-                jawaban2.style.backgroundColor = getComputedStyle(
-                  document.documentElement
-                ).getPropertyValue("--correct-fill");
-                jawaban2.style.border =
-                  "2px solid " +
-                  getComputedStyle(document.documentElement).getPropertyValue(
-                    "--correct-border"
-                  );
-                jawaban2.style.color = "#0f0f0f";
+      //         result2.innerHTML = "TIDAK MENJAWAB";
+      //         result2.style.color = getComputedStyle(
+      //           document.documentElement
+      //         ).getPropertyValue("--empty-text");
+      //       } else {
+      //         if (score2 == benar2) {
+      //           jawaban2.style.backgroundColor = getComputedStyle(
+      //             document.documentElement
+      //           ).getPropertyValue("--correct-fill");
+      //           jawaban2.style.border =
+      //             "2px solid " +
+      //             getComputedStyle(document.documentElement).getPropertyValue(
+      //               "--correct-border"
+      //             );
+      //           jawaban2.style.color = "#0f0f0f";
 
-                result2.innerHTML = "BENAR";
-                result2.style.color = getComputedStyle(
-                  document.documentElement
-                ).getPropertyValue("--correct-text");
-              } else {
-                jawaban2.style.backgroundColor = getComputedStyle(
-                  document.documentElement
-                ).getPropertyValue("--wrong-fill");
-                jawaban2.style.border =
-                  "2px solid " +
-                  getComputedStyle(document.documentElement).getPropertyValue(
-                    "--wrong-border"
-                  );
-                jawaban2.style.color = "#f5f5f5";
+      //           result2.innerHTML = "BENAR";
+      //           result2.style.color = getComputedStyle(
+      //             document.documentElement
+      //           ).getPropertyValue("--correct-text");
+      //         } else {
+      //           jawaban2.style.backgroundColor = getComputedStyle(
+      //             document.documentElement
+      //           ).getPropertyValue("--wrong-fill");
+      //           jawaban2.style.border =
+      //             "2px solid " +
+      //             getComputedStyle(document.documentElement).getPropertyValue(
+      //               "--wrong-border"
+      //             );
+      //           jawaban2.style.color = "#f5f5f5";
 
-                result2.innerHTML = "SALAH";
-                result2.style.color = getComputedStyle(
-                  document.documentElement
-                ).getPropertyValue("--wrong-text");
-              }
-            }
+      //           result2.innerHTML = "SALAH";
+      //           result2.style.color = getComputedStyle(
+      //             document.documentElement
+      //           ).getPropertyValue("--wrong-text");
+      //         }
+      //       }
 
-            parent.c3_callFunction("answerSent", [
-              totalScore,
-              soal_id1,
-              soal_id2,
-            ]);
-          })
-          .catch((error) => {
-            console.error(error);
-            warning.innerHTML = "Gagal mengirim jawaban. Silahkan coba lagi";
-            submitBtn.style.display = "block";
-          });
-      }
+      //       parent.c3_callFunction("answerSent", [
+      //         totalScore,
+      //         soal_id1,
+      //         soal_id2,
+      //       ]);
+      //     })
+      //     .catch((error) => {
+      //       console.error(error);
+      //       warning.innerHTML = "Gagal mengirim jawaban. Silahkan coba lagi";
+      //       submitBtn.style.display = "block";
+      //     });
+      // }
 
-      function setSoal() {
-        baseUrl = sessionStorage.getItem("apiBase");
-        curPos = sessionStorage.getItem("curPos");
-        token = sessionStorage.getItem("token");
-        team_id = sessionStorage.getItem("team_id");
+      // function setSoal() {
+      //   baseUrl = sessionStorage.getItem("apiBase");
+      //   curPos = sessionStorage.getItem("curPos");
+      //   token = sessionStorage.getItem("token");
+      //   team_id = sessionStorage.getItem("team_id");
 
-        const link = `${baseUrl}/perempatsoal/pos/${curPos}`;
+      //   const link = `${baseUrl}/perempatsoal/pos/${curPos}`;
 
-        console.log("Mengambil soal");
+      //   console.log("Mengambil soal");
 
-        fetch(link, {
-          headers: {
-            "Content-Type": "application/json",
-            "Accept": "application/json",
-            "Authorization": "Bearer " + token,
-          },
-        })
-          .then((response) => {
-            if (!response.ok) {
-              throw new Error(`HTTP error! status: ${response.status}`);
-            }
+      //   fetch(link, {
+      //     headers: {
+      //       "Content-Type": "application/json",
+      //       "Accept": "application/json",
+      //       "Authorization": "Bearer " + token,
+      //     },
+      //   })
+      //     .then((response) => {
+      //       if (!response.ok) {
+      //         throw new Error(`HTTP error! status: ${response.status}`);
+      //       }
 
-            return response.json();
-          })
-          .then((data) => {
-            console.log(data);
-            const soal1 = document.getElementById("soal1");
-            const soal2 = document.getElementById("soal2");
-            const loading = document.getElementById("loading");
-            const content = document.getElementById("content");
+      //       return response.json();
+      //     })
+      //     .then((data) => {
+      //       console.log(data);
+      //       const soal1 = document.getElementById("soal1");
+      //       const soal2 = document.getElementById("soal2");
+      //       const loading = document.getElementById("loading");
+      //       const content = document.getElementById("content");
 
-            soal1.innerHTML = `
-					${data[0].isi_soal}
-					`;
+      //       soal1.innerHTML = `
+			// 		${data[0].isi_soal}
+			// 		`;
 
-            soal_id1 = data[0].id;
-            benar1 = data[0].poin_benar;
+      //       soal_id1 = data[0].id;
+      //       benar1 = data[0].poin_benar;
 
-            soal2.innerHTML = `
-					${data[1].isi_soal}
-					`;
+      //       soal2.innerHTML = `
+			// 		${data[1].isi_soal}
+			// 		`;
 
-            soal_id2 = data[1].id;
-            benar2 = data[1].poin_benar;
+      //       soal_id2 = data[1].id;
+      //       benar2 = data[1].poin_benar;
 
-            content.style.display = "block";
-            loading.style.display = "none";
+      //       content.style.display = "block";
+      //       loading.style.display = "none";
 
-            parent.c3_callFunction("setIdSoal", [soal_id1, soal_id2]);
-          })
-          .catch((error) => {
-            console.error(error);
-            console.log("Retrying in 10 seconds");
-            setTimeout(setSoal, 10000);
-          });
-      }
+      //       parent.c3_callFunction("setIdSoal", [soal_id1, soal_id2]);
+      //     })
+      //     .catch((error) => {
+      //       console.error(error);
+      //       console.log("Retrying in 10 seconds");
+      //       setTimeout(setSoal, 10000);
+      //     });
+      // }
     </script>
   </body>
 </html>

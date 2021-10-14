@@ -241,7 +241,8 @@
 			"Story",
 			"Login",
 			"LoadingScreen",
-			"EndScreen"
+			"EndScreen",
+			"StartScreen"
 		],
 		"subfolders": []
 	},
@@ -251,7 +252,8 @@
 			"Story_ES",
 			"Login_ES",
 			"LoadingScreen_ES",
-			"EndScreen_ES"
+			"EndScreen_ES",
+			"StartScreen_ES"
 		],
 		"subfolders": []
 	},

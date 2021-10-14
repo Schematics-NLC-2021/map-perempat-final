@@ -1,0 +1,149 @@
+{
+	"name": "StartScreen_ES",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 842234324199977
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 713101506365318,
+					"parameters": {
+						"variable": "timeDiffStart",
+						"value": "startTime- Date.Now"
+					}
+				}
+			],
+			"sid": 280004027977260
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 965874132810268,
+					"parameters": {
+						"variable": "timeDiffStart",
+						"comparison": 3,
+						"value": "0"
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 270442620354737
+				}
+			],
+			"actions": [],
+			"sid": 432409512287159,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 575005823612584,
+							"parameters": {
+								"variable": "curX",
+								"comparison": 1,
+								"value": "0"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 936529046313151,
+							"parameters": {
+								"variable": "curY",
+								"comparison": 1,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 815037232215896,
+							"parameters": {
+								"layout": "Game"
+							}
+						}
+					],
+					"sid": 976057355977133
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 114546901957056,
+							"parameters": {
+								"variable": "curX",
+								"comparison": 0,
+								"value": "0"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 815634417214035,
+							"parameters": {
+								"variable": "curY",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 138380268855335,
+							"parameters": {
+								"layout": "Story"
+							}
+						}
+					],
+					"sid": 808019131818316
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 804442209344700,
+					"parameters": {
+						"key": 36
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 589164418382144,
+					"parameters": {
+						"variable": "startTime",
+						"value": "0"
+					}
+				}
+			],
+			"sid": 264588795917687
+		}
+	],
+	"sid": 172087201777361
+}

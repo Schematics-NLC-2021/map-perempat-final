@@ -1,0 +1,154 @@
+{
+	"name": "StartScreen",
+	"layers": [
+		{
+			"name": "Layer 0",
+			"overriden": 0,
+			"instances": [
+				{
+					"type": "login",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 375,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 640,
+						"y": 360,
+						"width": 1280,
+						"height": 720,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "UiText",
+					"properties": {
+						"text": "Waktu permainan belum dimulai",
+						"enable-bbcode": true,
+						"character-width": 37,
+						"character-height": 40,
+						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%",
+						"spacing-data": " [[8,\" \"],[7,\"'\"],[8,\"Il!|\"],[9,\"i.,;:\"],[12,\"`\"],[13,\"j\\\"[]\"],[14,\"r-()\"],[16,\"ft°\"],[17,\"Jcs*\"],[18,\"aehnuz1?+=<>\"],[19,\"EFLbdkpqy23579~\\/£\"],[20,\"Povx068_\"],[21,\"BZg4#$€\"],[22,\"CRS\"],[23,\"GKTU\"],[24,\"DHNX\"],[25,\"Y\"],[26,\"AOV&\"],[27,\"Qmw\"],[28,\"M\"],[33,\"@\"],[34,\"%\"],[35,\"W\"]]",
+						"scale": 1.5,
+						"character-spacing": 0,
+						"line-height": 0,
+						"horizontal-alignment": "center",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 376,
+					"instanceVariables": {
+						"id": 0
+					},
+					"behaviors": {},
+					"world": {
+						"x": 702,
+						"y": 255,
+						"width": 467,
+						"height": 127.20723056204702,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							0.5098039215686274,
+							0.30196078431372547,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "UiText",
+					"properties": {
+						"text": "Silahkan tunggu beberapa saat",
+						"enable-bbcode": true,
+						"character-width": 37,
+						"character-height": 40,
+						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%",
+						"spacing-data": " [[8,\" \"],[7,\"'\"],[8,\"Il!|\"],[9,\"i.,;:\"],[12,\"`\"],[13,\"j\\\"[]\"],[14,\"r-()\"],[16,\"ft°\"],[17,\"Jcs*\"],[18,\"aehnuz1?+=<>\"],[19,\"EFLbdkpqy23579~\\/£\"],[20,\"Povx068_\"],[21,\"BZg4#$€\"],[22,\"CRS\"],[23,\"GKTU\"],[24,\"DHNX\"],[25,\"Y\"],[26,\"AOV&\"],[27,\"Qmw\"],[28,\"M\"],[33,\"@\"],[34,\"%\"],[35,\"W\"]]",
+						"scale": 1.1,
+						"character-spacing": 0,
+						"line-height": 0,
+						"horizontal-alignment": "center",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 377,
+					"instanceVariables": {
+						"id": 1
+					},
+					"behaviors": {},
+					"world": {
+						"x": 653,
+						"y": 388,
+						"width": 561,
+						"height": 77.20723056204702,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							0.9176470588235294,
+							0.7529411764705882,
+							0.396078431372549,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				}
+			],
+			"sid": 407121730723904,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
+				1
+			],
+			"isTransparent": false,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		}
+	],
+	"sid": 997851422996805,
+	"nonworld-instances": [],
+	"effectTypes": [],
+	"width": 1280,
+	"height": 720,
+	"unboundedScrolling": false,
+	"vpX": 0.5,
+	"vpY": 0.5,
+	"eventSheet": "StartScreen_ES"
+}

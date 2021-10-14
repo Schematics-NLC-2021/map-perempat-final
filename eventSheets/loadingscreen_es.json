@@ -12,6 +12,16 @@
 			"sid": 741199090880492
 		},
 		{
+			"eventType": "variable",
+			"name": "startTime",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 395008532779517
+		},
+		{
 			"functionName": "loadGame",
 			"functionDescription": "",
 			"functionCategory": "",
@@ -73,6 +83,15 @@
 					"parameters": {
 						"variable": "endTime",
 						"value": "Date.Parse(config.Get(\"end-time\"))"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 676628937340689,
+					"parameters": {
+						"variable": "startTime",
+						"value": "Date.Parse(config.Get(\"start-time\"))"
 					}
 				},
 				{

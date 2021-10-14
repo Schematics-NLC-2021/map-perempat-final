@@ -32,6 +32,16 @@
 			"sid": 478217504288104
 		},
 		{
+			"eventType": "variable",
+			"name": "timeDiffStart",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 620460633218931
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -236,10 +246,15 @@
 						{
 							"callFunction": "tryLogin",
 							"sid": 413336085360127,
+							"disabled": true,
 							"parameters": [
 								"Username.Text",
 								"Password.Text"
 							]
+						},
+						{
+							"callFunction": "loginSuccess",
+							"sid": 280978358264199
 						}
 					],
 					"sid": 478408423984391
@@ -683,20 +698,10 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 213455380185633,
+							"sid": 114192157745002,
 							"parameters": {
-								"variable": "curX",
-								"comparison": 1,
-								"value": "0"
-							}
-						},
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 714365549885264,
-							"parameters": {
-								"variable": "curY",
-								"comparison": 1,
+								"variable": "timeDiffStart",
+								"comparison": 4,
 								"value": "0"
 							}
 						}
@@ -705,13 +710,13 @@
 						{
 							"id": "go-to-layout",
 							"objectClass": "System",
-							"sid": 504600971359821,
+							"sid": 175034758303603,
 							"parameters": {
-								"layout": "Game"
+								"layout": "StartScreen"
 							}
 						}
 					],
-					"sid": 824447888703860
+					"sid": 417368984980065
 				},
 				{
 					"eventType": "block",
@@ -719,35 +724,90 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 850507147142075,
+							"sid": 229065085235109,
 							"parameters": {
-								"variable": "curX",
-								"comparison": 0,
+								"variable": "timeDiffStart",
+								"comparison": 3,
 								"value": "0"
 							}
+						}
+					],
+					"actions": [],
+					"sid": 583672283704748,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 213455380185633,
+									"parameters": {
+										"variable": "curX",
+										"comparison": 1,
+										"value": "0"
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 714365549885264,
+									"parameters": {
+										"variable": "curY",
+										"comparison": 1,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 504600971359821,
+									"parameters": {
+										"layout": "Game"
+									}
+								}
+							],
+							"sid": 824447888703860
 						},
 						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 909284105096971,
-							"parameters": {
-								"variable": "curY",
-								"comparison": 0,
-								"value": "0"
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 850507147142075,
+									"parameters": {
+										"variable": "curX",
+										"comparison": 0,
+										"value": "0"
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 909284105096971,
+									"parameters": {
+										"variable": "curY",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 666922669778358,
+									"parameters": {
+										"layout": "Story"
+									}
+								}
+							],
+							"sid": 467971685284139
 						}
-					],
-					"actions": [
-						{
-							"id": "go-to-layout",
-							"objectClass": "System",
-							"sid": 666922669778358,
-							"parameters": {
-								"layout": "Story"
-							}
-						}
-					],
-					"sid": 467971685284139
+					]
 				}
 			]
 		},
@@ -881,6 +941,28 @@
 				}
 			],
 			"sid": 743202175735957
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 419304610737563
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 341670978872138,
+					"parameters": {
+						"variable": "timeDiffStart",
+						"value": "startTime- Date.Now"
+					}
+				}
+			],
+			"sid": 888299471608408
 		}
 	],
 	"sid": 889062280607382
