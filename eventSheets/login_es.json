@@ -839,9 +839,9 @@
 				{
 					"id": "play",
 					"objectClass": "Audio",
-					"sid": 305795786813379,
+					"sid": 392585201392263,
 					"parameters": {
-						"audio-file": "placeholdermusic",
+						"audio-file": "music",
 						"loop": "looping",
 						"volume": "0",
 						"tag-optional": "\"bgm\""

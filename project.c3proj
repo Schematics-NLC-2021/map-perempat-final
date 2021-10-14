@@ -204,7 +204,8 @@
 			"Audio",
 			"posSign",
 			"Rain",
-			"unsentSoal"
+			"unsentSoal",
+			"sunOverlay"
 		],
 		"subfolders": [
 			{
@@ -270,34 +271,74 @@
 		"sound": {
 			"items": [
 				{
-					"name": "placeholder.webm",
+					"name": "music.webm",
 					"type": "audio/webm; codecs=opus",
-					"sid": 883058024811845
+					"sid": 809260316388633
 				},
 				{
-					"name": "placeholdermusic.webm",
+					"name": "step31.webm",
 					"type": "audio/webm; codecs=opus",
-					"sid": 333138491654965
+					"sid": 145691695929678
 				},
 				{
-					"name": "placeholder2.webm",
+					"name": "step30.webm",
 					"type": "audio/webm; codecs=opus",
-					"sid": 156964321753260
+					"sid": 378759745420325
 				},
 				{
-					"name": "placeholder3.webm",
+					"name": "step32.webm",
 					"type": "audio/webm; codecs=opus",
-					"sid": 388378558820306
+					"sid": 754079993499910
 				},
 				{
-					"name": "placeholder1.webm",
+					"name": "step00.webm",
 					"type": "audio/webm; codecs=opus",
-					"sid": 373070086589939
+					"sid": 911372217974833
 				},
 				{
-					"name": "placeholder0.webm",
+					"name": "step01.webm",
 					"type": "audio/webm; codecs=opus",
-					"sid": 249892511744701
+					"sid": 433666139108059
+				},
+				{
+					"name": "step10.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 249249465855394
+				},
+				{
+					"name": "rain.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 579348221719711
+				},
+				{
+					"name": "step11.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 342160422522746
+				},
+				{
+					"name": "step02.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 838586383630160
+				},
+				{
+					"name": "step21.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 485295817020463
+				},
+				{
+					"name": "step20.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 201901418610545
+				},
+				{
+					"name": "step12.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 620483132209127
+				},
+				{
+					"name": "step23.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 906853892296587
 				}
 			],
 			"subfolders": []

@@ -175,6 +175,21 @@
 						"layer": "\"UI\"",
 						"visibility": "visible"
 					}
+				},
+				{
+					"id": "play-at-object",
+					"objectClass": "Audio",
+					"sid": 449955300536642,
+					"parameters": {
+						"audio-file": "rain",
+						"loop": "looping",
+						"volume": "0",
+						"object": "Rain",
+						"inner-angle": "360",
+						"outer-angle": "360",
+						"outer-gain": "0",
+						"tag-optional": "\"\""
+					}
 				}
 			],
 			"sid": 856959149988460,
@@ -1273,6 +1288,14 @@
 					"parameters": {
 						"cursor-style": "hand"
 					}
+				},
+				{
+					"id": "set-default-color",
+					"objectClass": "button",
+					"sid": 354198704326353,
+					"parameters": {
+						"color": "rgbEx(140, 140, 140)"
+					}
 				}
 			],
 			"sid": 232520218456183
@@ -1297,6 +1320,14 @@
 					"sid": 791690060973156,
 					"parameters": {
 						"cursor-style": "normal"
+					}
+				},
+				{
+					"id": "set-default-color",
+					"objectClass": "button",
+					"sid": 631669603403979,
+					"parameters": {
+						"color": "rgbEx(110, 110, 110)"
 					}
 				}
 			],
@@ -2389,19 +2420,7 @@
 					"functionParameters": [],
 					"eventType": "function-block",
 					"conditions": [],
-					"actions": [
-						{
-							"id": "play",
-							"objectClass": "Audio",
-							"sid": 481697095585684,
-							"parameters": {
-								"audio-file": "placeholder",
-								"loop": "not-looping",
-								"volume": "0",
-								"tag-optional": "\"sfx\""
-							}
-						}
-					],
+					"actions": [],
 					"sid": 890032034505164
 				},
 				{
@@ -2413,19 +2432,7 @@
 					"functionParameters": [],
 					"eventType": "function-block",
 					"conditions": [],
-					"actions": [
-						{
-							"id": "play",
-							"objectClass": "Audio",
-							"sid": 517461067828440,
-							"parameters": {
-								"audio-file": "placeholder",
-								"loop": "not-looping",
-								"volume": "0",
-								"tag-optional": "\"sfx\""
-							}
-						}
-					],
+					"actions": [],
 					"sid": 251772977070872
 				},
 				{
@@ -2450,10 +2457,10 @@
 						{
 							"id": "play-by-name",
 							"objectClass": "Audio",
-							"sid": 590930628954337,
+							"sid": 118344166154231,
 							"parameters": {
 								"folder": "sounds",
-								"audio-file-name": "\"placeholder\"&BG.AnimationFrame",
+								"audio-file-name": "\"step\"&BG.AnimationFrame&choose(0,1,2)",
 								"loop": "not-looping",
 								"volume": "0",
 								"tag-optional": "\"sfx\""

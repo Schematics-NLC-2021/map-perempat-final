@@ -37,7 +37,7 @@
 				{
 					"type": "UiText",
 					"properties": {
-						"text": "Waktu permainan telah habis",
+						"text": "Waktu permainan telah habis.",
 						"enable-bbcode": true,
 						"character-width": 37,
 						"character-height": 40,
@@ -65,9 +65,9 @@
 						"originX": 0,
 						"originY": 0,
 						"color": [
-							0.9176470588235294,
-							0.7529411764705882,
-							0.396078431372549,
+							1,
+							0.5098039215686274,
+							0.30196078431372547,
 							1
 						],
 						"angle": 0,
