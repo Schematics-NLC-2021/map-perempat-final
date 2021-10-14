@@ -427,7 +427,7 @@
 						}
 					}
 
-					// parent.c3_callFunction("answerSent", [totalScore, soal_id1, soal_id2]);
+					parent.c3_callFunction("answerSent", [totalScore, soal_id1, soal_id2]);
 				})
 				.catch(error => {
 					console.error(error);
@@ -437,15 +437,10 @@
 		}
 
 		function setSoal() {
-			// baseUrl = sessionStorage.getItem("apiBase");
-			// curPos = sessionStorage.getItem("curPos");
-			// token = sessionStorage.getItem("token");
-			// team_id = sessionStorage.getItem("team_id");
-
-			baseUrl = 'https://sch-nlc-game-api-dev.herokuapp.com/nlc_api';
-			curPos = 9;
-			token = '3|DUV73ljm2YS0Q5pGpXE8X5gCPjNACe1sLoHW75Od';
-			team_id = 1;
+			baseUrl = sessionStorage.getItem("apiBase");
+			curPos = sessionStorage.getItem("curPos");
+			token = sessionStorage.getItem("token");
+			team_id = sessionStorage.getItem("team_id");
 
 			const link = `${baseUrl}/perempatsoal/pos/${curPos}`;
 
@@ -473,15 +468,15 @@
 					const content = document.getElementById("content");
 
 					soal1.innerHTML = `
-				${data[0].isi_soal}
-				`;
+					${data[0].isi_soal}
+					`;
 
 					soal_id1 = data[0].id;
 					benar1 = data[0].poin_benar;
 
 					soal2.innerHTML = `
-				${data[1].isi_soal}
-				`;
+					${data[1].isi_soal}
+					`;
 
 					soal_id2 = data[1].id;
 					benar2 = data[1].poin_benar;
@@ -489,7 +484,7 @@
 					content.style.display = 'block';
 					loading.style.display = 'none';
 
-					// parent.c3_callFunction("setIdSoal", [soal_id1, soal_id2]);
+					parent.c3_callFunction("setIdSoal", [soal_id1, soal_id2]);
 				})
 				.catch(error => {
 					console.error(error);
