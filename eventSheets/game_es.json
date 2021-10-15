@@ -652,6 +652,15 @@
 							"parameters": {
 								"interval-seconds": "0.39"
 							}
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Player",
+							"sid": 735091496033092,
+							"parameters": {
+								"object": "slipperyGround"
+							},
+							"isInverted": true
 						}
 					],
 					"actions": [
@@ -685,6 +694,81 @@
 					"sid": 235826669080876
 				}
 			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "Player",
+					"sid": 418762764275687,
+					"parameters": {
+						"object": "slipperyGround"
+					}
+				},
+				{
+					"id": "is-animation-playing",
+					"objectClass": "Player",
+					"sid": 683523335680568,
+					"parameters": {
+						"animation": "\"Run\""
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 547771700202628
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation-speed",
+					"objectClass": "Player",
+					"sid": 211805468321877,
+					"parameters": {
+						"speed": "0"
+					}
+				}
+			],
+			"sid": 490250180456813
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "Player",
+					"sid": 437742069719788,
+					"parameters": {
+						"object": "slipperyGround"
+					},
+					"isInverted": true
+				},
+				{
+					"id": "is-animation-playing",
+					"objectClass": "Player",
+					"sid": 105660021764533,
+					"parameters": {
+						"animation": "\"Run\""
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 301427426543911
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation-speed",
+					"objectClass": "Player",
+					"sid": 483901666425173,
+					"parameters": {
+						"speed": "16"
+					}
+				}
+			],
+			"sid": 123515652485575
 		},
 		{
 			"eventType": "block",
