@@ -1229,20 +1229,6 @@
 									}
 								},
 								{
-									"id": "push",
-									"objectClass": "PosVisited",
-									"sid": 675408290260634,
-									"parameters": {
-										"where": "back",
-										"value": "curPos",
-										"axis": "x"
-									}
-								},
-								{
-									"callFunction": "save",
-									"sid": 831453529524066
-								},
-								{
 									"callFunction": "playTap",
 									"sid": 649163505584479
 								}
@@ -1363,6 +1349,20 @@
 										}
 									],
 									"actions": [
+										{
+											"id": "push",
+											"objectClass": "PosVisited",
+											"sid": 518654389991106,
+											"parameters": {
+												"where": "back",
+												"value": "curPos",
+												"axis": "x"
+											}
+										},
+										{
+											"callFunction": "save",
+											"sid": 959269299981856
+										},
 										{
 											"type": "script",
 											"script": "sessionStorage.setItem(\"token\", runtime.globalVars.token);\nsessionStorage.setItem(\"curPos\", runtime.globalVars.curPos);\nsessionStorage.setItem(\"apiBase\", runtime.globalVars.baseUrl);\nsessionStorage.setItem(\"team_id\", runtime.globalVars.id_team);"
@@ -1758,6 +1758,20 @@
 				{
 					"type": "script",
 					"script": "console.log(localVars.score)\nconsole.log(\"score game diterima\")"
+				},
+				{
+					"id": "push",
+					"objectClass": "PosVisited",
+					"sid": 418082351953355,
+					"parameters": {
+						"where": "back",
+						"value": "curPos",
+						"axis": "x"
+					}
+				},
+				{
+					"callFunction": "save",
+					"sid": 502589062280793
 				}
 			],
 			"sid": 340690638768288,
@@ -2920,10 +2934,10 @@
 				{
 					"id": "log",
 					"objectClass": "Browser",
-					"sid": 914890100061736,
+					"sid": 543526174416246,
 					"parameters": {
 						"type": "log",
-						"message": "\"Removing \" & id & \" \" & score & \" from unsentScore\""
+						"message": "\"Removing \" & id & \" from unsentScore\""
 					}
 				},
 				{
@@ -2943,40 +2957,91 @@
 						"type": "log",
 						"message": "UnsentScores.AsJSON"
 					}
-				},
-				{
-					"id": "delete",
-					"objectClass": "UnsentScores",
-					"sid": 825702215438257,
-					"parameters": {
-						"index": "UnsentScores.IndexOf(str(score & \",\" & id))",
-						"axis": "x"
-					}
-				},
-				{
-					"id": "log",
-					"objectClass": "Browser",
-					"sid": 875846059293035,
-					"parameters": {
-						"type": "log",
-						"message": "\"After\""
-					}
-				},
-				{
-					"id": "log",
-					"objectClass": "Browser",
-					"sid": 126801892142351,
-					"parameters": {
-						"type": "log",
-						"message": "UnsentScores.AsJSON"
-					}
-				},
-				{
-					"callFunction": "save",
-					"sid": 826427348231134
 				}
 			],
-			"sid": 956743078588215
+			"sid": 956743078588215,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for",
+							"objectClass": "System",
+							"sid": 840589238230894,
+							"parameters": {
+								"name": "\"i\"",
+								"start-index": "0",
+								"end-index": "UnsentScores.Width - 1"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 593717928598509,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 738461425343319,
+									"parameters": {
+										"first-value": "int(right(UnsentScores.At(loopindex(\"i\")), 1))",
+										"comparison": 0,
+										"second-value": "id"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "delete",
+									"objectClass": "UnsentScores",
+									"sid": 988380218583647,
+									"parameters": {
+										"index": "loopindex(\"i\")",
+										"axis": "x"
+									}
+								},
+								{
+									"id": "stop-loop",
+									"objectClass": "System",
+									"sid": 441925427959399
+								}
+							],
+							"sid": 966511338233851
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 611446418445529,
+							"parameters": {
+								"type": "log",
+								"message": "\"After\""
+							}
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 584353679958135,
+							"parameters": {
+								"type": "log",
+								"message": "UnsentScores.AsJSON"
+							}
+						},
+						{
+							"callFunction": "save",
+							"sid": 287802454328530
+						}
+					],
+					"sid": 827899025050986
+				}
+			]
 		},
 		{
 			"eventType": "block",

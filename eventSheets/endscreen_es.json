@@ -689,6 +689,14 @@
 			],
 			"actions": [
 				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 362970575401464,
+					"parameters": {
+						"seconds": "random(1,2)"
+					}
+				},
+				{
 					"id": "set-text",
 					"objectClass": "UiText",
 					"sid": 351789443864048,
