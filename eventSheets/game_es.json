@@ -197,6 +197,15 @@
 					"parameters": {
 						"object": "Player"
 					}
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "Player",
+					"sid": 845472862458387,
+					"parameters": {
+						"animation": "\"Idle\"",
+						"from": "beginning"
+					}
 				}
 			],
 			"sid": 856959149988460,
@@ -2077,6 +2086,48 @@
 				}
 			],
 			"sid": 629205471817808
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "Player",
+					"sid": 812591743794177,
+					"parameters": {
+						"object": "slipperyGround"
+					}
+				},
+				{
+					"id": "is-animation-playing",
+					"objectClass": "Player",
+					"sid": 431678248544542,
+					"parameters": {
+						"animation": "\"Idle\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-acceleration",
+					"objectClass": "Player",
+					"sid": 533053746811925,
+					"behaviorType": "8Direction",
+					"parameters": {
+						"acceleration": "Self.normalAccel"
+					}
+				},
+				{
+					"id": "set-deceleration",
+					"objectClass": "Player",
+					"sid": 624432600972001,
+					"behaviorType": "8Direction",
+					"parameters": {
+						"deceleration": "Self.normalDeccel"
+					}
+				}
+			],
+			"sid": 723822171034701
 		},
 		{
 			"eventType": "block",
