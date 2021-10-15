@@ -59,7 +59,7 @@
 					"behaviors": {},
 					"world": {
 						"x": 702,
-						"y": 255,
+						"y": 223.5,
 						"width": 467,
 						"height": 127.20723056204702,
 						"originX": 0,
@@ -99,7 +99,47 @@
 					"behaviors": {},
 					"world": {
 						"x": 653,
-						"y": 388,
+						"y": 356.5,
+						"width": 561,
+						"height": 90.20723056204702,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							0.9176470588235294,
+							0.7529411764705882,
+							0.396078431372549,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "UiText",
+					"properties": {
+						"text": "00:00:00",
+						"enable-bbcode": true,
+						"character-width": 37,
+						"character-height": 40,
+						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%",
+						"spacing-data": " [[8,\" \"],[7,\"'\"],[8,\"Il!|\"],[9,\"i.,;:\"],[12,\"`\"],[13,\"j\\\"[]\"],[14,\"r-()\"],[16,\"ft°\"],[17,\"Jcs*\"],[18,\"aehnuz1?+=<>\"],[19,\"EFLbdkpqy23579~\\/£\"],[20,\"Povx068_\"],[21,\"BZg4#$€\"],[22,\"CRS\"],[23,\"GKTU\"],[24,\"DHNX\"],[25,\"Y\"],[26,\"AOV&\"],[27,\"Qmw\"],[28,\"M\"],[33,\"@\"],[34,\"%\"],[35,\"W\"]]",
+						"scale": 1.1,
+						"character-spacing": 0,
+						"line-height": 0,
+						"horizontal-alignment": "center",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 380,
+					"instanceVariables": {
+						"id": 2
+					},
+					"behaviors": {},
+					"world": {
+						"x": 653,
+						"y": 419.73641575961017,
 						"width": 561,
 						"height": 77.20723056204702,
 						"originX": 0,

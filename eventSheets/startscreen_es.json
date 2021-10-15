@@ -5,45 +5,28 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "every-tick",
-					"objectClass": "System",
-					"sid": 842234324199977
+					"id": "compare-instance-variable",
+					"objectClass": "UiText",
+					"sid": 933308929471227,
+					"parameters": {
+						"instance-variable": "id",
+						"comparison": 0,
+						"value": "2"
+					}
 				}
 			],
 			"actions": [
 				{
 					"id": "set-eventvar-value",
 					"objectClass": "System",
-					"sid": 713101506365318,
+					"sid": 250644460615081,
 					"parameters": {
 						"variable": "timeDiffStart",
 						"value": "startTime- Date.Now"
 					}
 				}
 			],
-			"sid": 280004027977260
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "compare-eventvar",
-					"objectClass": "System",
-					"sid": 965874132810268,
-					"parameters": {
-						"variable": "timeDiffStart",
-						"comparison": 3,
-						"value": "0"
-					}
-				},
-				{
-					"id": "trigger-once-while-true",
-					"objectClass": "System",
-					"sid": 270442620354737
-				}
-			],
-			"actions": [],
-			"sid": 432409512287159,
+			"sid": 711644403609341,
 			"children": [
 				{
 					"eventType": "block",
@@ -51,35 +34,25 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 575005823612584,
+							"sid": 110125437051355,
 							"parameters": {
-								"variable": "curX",
-								"comparison": 1,
-								"value": "0"
-							}
-						},
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 936529046313151,
-							"parameters": {
-								"variable": "curY",
-								"comparison": 1,
+								"variable": "timeDiffStart",
+								"comparison": 4,
 								"value": "0"
 							}
 						}
 					],
 					"actions": [
 						{
-							"id": "go-to-layout",
-							"objectClass": "System",
-							"sid": 815037232215896,
+							"id": "set-text",
+							"objectClass": "UiText",
+							"sid": 570485736643468,
 							"parameters": {
-								"layout": "Game"
+								"text": "Date.ToTimerHours(timeDiffStart) & \":\" & (Date.ToTimerMinutes(timeDiffStart) >= 10 ? Date.ToTimerMinutes(timeDiffStart) : \"0\"&Date.ToTimerMinutes(timeDiffStart)) & \":\" & (Date.ToTimerSeconds(timeDiffStart) >= 10 ? Date.ToTimerSeconds(timeDiffStart)  : \"0\"&Date.ToTimerSeconds(timeDiffStart) )"
 							}
 						}
 					],
-					"sid": 976057355977133
+					"sid": 917597955147536
 				},
 				{
 					"eventType": "block",
@@ -87,35 +60,99 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 114546901957056,
+							"sid": 173885659111392,
 							"parameters": {
-								"variable": "curX",
-								"comparison": 0,
-								"value": "0"
-							}
-						},
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 815634417214035,
-							"parameters": {
-								"variable": "curY",
-								"comparison": 0,
+								"variable": "timeDiffStart",
+								"comparison": 3,
 								"value": "0"
 							}
 						}
 					],
 					"actions": [
 						{
-							"id": "go-to-layout",
-							"objectClass": "System",
-							"sid": 138380268855335,
+							"id": "set-text",
+							"objectClass": "UiText",
+							"sid": 623032756711802,
 							"parameters": {
-								"layout": "Story"
+								"text": "\"Permainan akan dimulai\""
 							}
 						}
 					],
-					"sid": 808019131818316
+					"sid": 127630559599974,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 460631812512202,
+									"parameters": {
+										"variable": "curX",
+										"comparison": 1,
+										"value": "0"
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 599185865788997,
+									"parameters": {
+										"variable": "curY",
+										"comparison": 1,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 225958293340133,
+									"parameters": {
+										"layout": "Game"
+									}
+								}
+							],
+							"sid": 349718045420963
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 982506383242813,
+									"parameters": {
+										"variable": "curX",
+										"comparison": 0,
+										"value": "0"
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 644891659256265,
+									"parameters": {
+										"variable": "curY",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 952587986380347,
+									"parameters": {
+										"layout": "Story"
+									}
+								}
+							],
+							"sid": 133333779919382
+						}
+					]
 				}
 			]
 		},
@@ -125,7 +162,7 @@
 				{
 					"id": "on-key-pressed",
 					"objectClass": "Keyboard",
-					"sid": 804442209344700,
+					"sid": 801777416540556,
 					"parameters": {
 						"key": 36
 					}
@@ -135,14 +172,14 @@
 				{
 					"id": "set-eventvar-value",
 					"objectClass": "System",
-					"sid": 589164418382144,
+					"sid": 438075828489772,
 					"parameters": {
 						"variable": "startTime",
 						"value": "0"
 					}
 				}
 			],
-			"sid": 264588795917687
+			"sid": 974604511631481
 		}
 	],
 	"sid": 172087201777361
