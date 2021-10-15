@@ -403,9 +403,9 @@
 						{
 							"id": "for-each",
 							"objectClass": "System",
-							"sid": 459968145343412,
+							"sid": 756519375476601,
 							"parameters": {
-								"object": "rainOverlay"
+								"object": "rainSound"
 							}
 						}
 					],
@@ -413,11 +413,11 @@
 						{
 							"id": "play-at-object",
 							"objectClass": "Audio",
-							"sid": 133690193532726,
+							"sid": 247829376957608,
 							"parameters": {
 								"audio-file": "rain",
 								"loop": "looping",
-								"volume": "0",
+								"volume": "-20",
 								"object": "rainSound",
 								"inner-angle": "360",
 								"outer-angle": "360",
@@ -427,12 +427,6 @@
 						}
 					],
 					"sid": 860382151896655
-				},
-				{
-					"eventType": "block",
-					"conditions": [],
-					"actions": [],
-					"sid": 455809425495041
 				}
 			]
 		},
@@ -2051,6 +2045,14 @@
 					"sid": 246338537965932,
 					"parameters": {
 						"object": "slipperyGround"
+					}
+				},
+				{
+					"id": "is-animation-playing",
+					"objectClass": "Player",
+					"sid": 762775445644965,
+					"parameters": {
+						"animation": "\"Run\""
 					}
 				}
 			],
