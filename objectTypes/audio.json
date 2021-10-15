@@ -11,10 +11,10 @@
 			"latency-hint": "interactive",
 			"panning-model": "hrtf",
 			"distance-model": "inverse",
-			"listener-z-height": 300,
-			"reference-distance": 300,
-			"maximum-distance": 10000,
-			"roll-off-factor": 1
+			"listener-z-height": 200,
+			"reference-distance": 200,
+			"maximum-distance": 100000,
+			"roll-off-factor": 2
 		},
 		"uid": 80
 	}
