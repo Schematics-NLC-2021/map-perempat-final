@@ -122,6 +122,16 @@
 			"sid": 854479984333584
 		},
 		{
+			"eventType": "variable",
+			"name": "isRequestingScore",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 246636678203824
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -175,6 +185,10 @@
 						"layer": "\"UI\"",
 						"visibility": "visible"
 					}
+				},
+				{
+					"callFunction": "getScoreFromApi",
+					"sid": 746428310620541
 				},
 				{
 					"id": "set-listener-object",
@@ -1644,6 +1658,10 @@
 				{
 					"type": "script",
 					"script": "console.log(localVars.score)\nconsole.log(\"score soal diterima\")\nconsole.log(localVars.soal_id1)\nconsole.log(localVars.soal_id2)\nconsole.log(\"id_soal diterima\")"
+				},
+				{
+					"callFunction": "getScoreFromApi",
+					"sid": 118494695025353
 				}
 			],
 			"sid": 771383412548228,
@@ -1680,15 +1698,6 @@
 								"soal_id1",
 								"soal_id2"
 							]
-						},
-						{
-							"id": "add-to-eventvar",
-							"objectClass": "System",
-							"sid": 690691421569987,
-							"parameters": {
-								"variable": "accumulatedScore",
-								"value": "score"
-							}
 						},
 						{
 							"callFunction": "save",
@@ -1801,15 +1810,6 @@
 						}
 					],
 					"actions": [
-						{
-							"id": "add-to-eventvar",
-							"objectClass": "System",
-							"sid": 251699625439736,
-							"parameters": {
-								"variable": "accumulatedScore",
-								"value": "round(score)"
-							}
-						},
 						{
 							"id": "push",
 							"objectClass": "UnsentScores",
@@ -1994,6 +1994,15 @@
 						"comparison": 0,
 						"value": "4"
 					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 964272820044577,
+					"parameters": {
+						"variable": "isRequestingScore"
+					},
+					"isInverted": true
 				}
 			],
 			"actions": [
@@ -2605,15 +2614,6 @@
 						"key": "\"curPosition\"",
 						"value": "curX & \" \" & curY "
 					}
-				},
-				{
-					"id": "set-item",
-					"objectClass": "LocalStorage",
-					"sid": 564111523596848,
-					"parameters": {
-						"key": "\"accumulatedScore\"",
-						"value": "accumulatedScore"
-					}
 				}
 			],
 			"sid": 735925645552628
@@ -2851,6 +2851,10 @@
 						"variable": "sendingScore",
 						"value": "false"
 					}
+				},
+				{
+					"callFunction": "getScoreFromApi",
+					"sid": 335444840858291
 				}
 			],
 			"sid": 340813722527204
@@ -3107,6 +3111,241 @@
 				}
 			],
 			"sid": 637881965308487
+		},
+		{
+			"functionName": "getScoreFromApi",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 887436063537560,
+					"parameters": {
+						"type": "log",
+						"message": "\"Requesting Score\""
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 529864083224098,
+					"parameters": {
+						"variable": "isRequestingScore",
+						"value": "true"
+					}
+				},
+				{
+					"id": "parse",
+					"objectClass": "Request",
+					"sid": 693815447829300,
+					"parameters": {
+						"data": "\"{}\""
+					}
+				},
+				{
+					"id": "set-request-header",
+					"objectClass": "AJAX",
+					"sid": 756192657053210,
+					"parameters": {
+						"header": "\"Accept\"",
+						"value": "\"application/json\""
+					}
+				},
+				{
+					"id": "set-request-header",
+					"objectClass": "AJAX",
+					"sid": 470426469325381,
+					"parameters": {
+						"header": "\"Content-Type\"",
+						"value": "\"application/json\""
+					}
+				},
+				{
+					"id": "set-request-header",
+					"objectClass": "AJAX",
+					"sid": 895398894056198,
+					"parameters": {
+						"header": "\"Authorization\"",
+						"value": "\"Bearer \"&token"
+					}
+				},
+				{
+					"id": "post-to-url",
+					"objectClass": "AJAX",
+					"sid": 725723071108701,
+					"parameters": {
+						"tag": "\"getScore\"",
+						"url": "baseUrl&\"/perempat/get_score_team/\"&id_team",
+						"data": "Request.ToCompactString",
+						"method": "\"GET\""
+					}
+				}
+			],
+			"sid": 384477685119004,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "UiText",
+							"sid": 101709494669728,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "4"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "UiText",
+							"sid": 774769254586957,
+							"parameters": {
+								"text": "\"Mengupdate skor...\""
+							}
+						}
+					],
+					"sid": 419331540253030
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-completed",
+					"objectClass": "AJAX",
+					"sid": 984633414083641,
+					"parameters": {
+						"tag": "\"getScore\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "parse",
+					"objectClass": "Response",
+					"sid": 327055772895199,
+					"parameters": {
+						"data": "AJAX.LastData"
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 256774141900445,
+					"parameters": {
+						"type": "log",
+						"message": "\"Request Score Berhasil\""
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 950006729712206,
+					"parameters": {
+						"type": "log",
+						"message": "Response.ToBeautifiedString"
+					}
+				},
+				{
+					"callFunction": "deleteFromUnsentScore",
+					"sid": 830385561424885,
+					"parameters": [
+						"Response.Get(\"data.game_id\")",
+						"Response.Get(\"data.game_point\")"
+					]
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 310804087040883,
+					"parameters": {
+						"variable": "isRequestingScore",
+						"value": "false"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 275199547521057,
+					"parameters": {
+						"variable": "accumulatedScore",
+						"value": "Response.Get(\"data.skor.total_skor\")"
+					}
+				}
+			],
+			"sid": 733434533464783
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-error",
+					"objectClass": "AJAX",
+					"sid": 223287267956931,
+					"parameters": {
+						"tag": "\"getScore\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "UiText",
+					"sid": 374322366450993,
+					"parameters": {
+						"text": "\"Update skor gagal. Mencoba lagi...\""
+					}
+				},
+				{
+					"id": "parse",
+					"objectClass": "Response",
+					"sid": 868007187539379,
+					"parameters": {
+						"data": "AJAX.LastData"
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 359910124318814,
+					"parameters": {
+						"type": "log",
+						"message": "\"SendScoreGame Gagal\""
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 616363538722922,
+					"parameters": {
+						"type": "log",
+						"message": "Response.ToBeautifiedString"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 679945779702004,
+					"parameters": {
+						"seconds": "1.0"
+					}
+				},
+				{
+					"callFunction": "getScoreFromApi",
+					"sid": 546843173388420
+				}
+			],
+			"sid": 563071311878099
 		}
 	],
 	"sid": 249019606169262

@@ -154,19 +154,6 @@
 					"id": "wait-for-previous-actions",
 					"objectClass": "System",
 					"sid": 664692320730146
-				},
-				{
-					"id": "check-item-exists",
-					"objectClass": "LocalStorage",
-					"sid": 385826997498650,
-					"parameters": {
-						"key": "\"accumulatedScore\""
-					}
-				},
-				{
-					"id": "wait-for-previous-actions",
-					"objectClass": "System",
-					"sid": 684724080920533
 				}
 			],
 			"sid": 970983155378013
@@ -415,55 +402,6 @@
 				}
 			],
 			"sid": 323320943057455
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-item-exists",
-					"objectClass": "LocalStorage",
-					"sid": 387289728857575,
-					"parameters": {
-						"key": "\"accumulatedScore\""
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "get-item",
-					"objectClass": "LocalStorage",
-					"sid": 436010284947762,
-					"parameters": {
-						"key": "\"accumulatedScore\""
-					}
-				}
-			],
-			"sid": 590798213335635
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-item-get",
-					"objectClass": "LocalStorage",
-					"sid": 871568791327288,
-					"parameters": {
-						"key": "\"accumulatedScore\""
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 104987743875783,
-					"parameters": {
-						"variable": "accumulatedScore",
-						"value": "LocalStorage.ItemValue"
-					}
-				}
-			],
-			"sid": 228405616121762
 		},
 		{
 			"eventType": "block",
