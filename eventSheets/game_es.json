@@ -175,14 +175,6 @@
 						"layer": "\"UI\"",
 						"visibility": "visible"
 					}
-				},
-				{
-					"id": "set-listener-object",
-					"objectClass": "Audio",
-					"sid": 585592888715769,
-					"parameters": {
-						"object": "Player"
-					}
 				}
 			],
 			"sid": 856959149988460,
@@ -399,7 +391,7 @@
 						{
 							"id": "play-at-object",
 							"objectClass": "Audio",
-							"sid": 405715630092432,
+							"sid": 480902854055568,
 							"parameters": {
 								"audio-file": "rain",
 								"loop": "looping",
@@ -407,12 +399,27 @@
 								"object": "rainSound",
 								"inner-angle": "360",
 								"outer-angle": "360",
-								"outer-gain": "0",
+								"outer-gain": "10",
 								"tag-optional": "\"rain\""
 							}
 						}
 					],
 					"sid": 860382151896655
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-listener-object",
+							"objectClass": "Audio",
+							"sid": 146345853970570,
+							"parameters": {
+								"object": "Player"
+							}
+						}
+					],
+					"sid": 455809425495041
 				}
 			]
 		},
