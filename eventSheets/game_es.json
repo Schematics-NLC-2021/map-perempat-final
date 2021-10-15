@@ -1131,6 +1131,33 @@
 									"eventType": "block",
 									"conditions": [
 										{
+											"id": "pick-by-comparison",
+											"objectClass": "System",
+											"sid": 263071491835759,
+											"parameters": {
+												"object": "Pos",
+												"expression": "Pos.id",
+												"comparison": 0,
+												"value": "curPos"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation-frame",
+											"objectClass": "Pos",
+											"sid": 498440758928264,
+											"parameters": {
+												"frame-number": "Pos.AnimationFrame+4"
+											}
+										}
+									],
+									"sid": 620699708493571
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
 											"id": "compare-eventvar",
 											"objectClass": "System",
 											"sid": 812828633899746,

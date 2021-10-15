@@ -63,8 +63,8 @@
 					"conditions": [
 						{
 							"id": "pick-by-unique-id",
-							"objectClass": "StoryText",
-							"sid": 189676748500581,
+							"objectClass": "Story",
+							"sid": 356078488978975,
 							"parameters": {
 								"unique-id": "uid"
 							}
@@ -73,16 +73,16 @@
 					"actions": [
 						{
 							"id": "set-opacity",
-							"objectClass": "StoryText",
-							"sid": 864754531641317,
+							"objectClass": "Story",
+							"sid": 901512721694072,
 							"parameters": {
 								"opacity": "0"
 							}
 						},
 						{
 							"id": "tween-one-property",
-							"objectClass": "StoryText",
-							"sid": 434219769202286,
+							"objectClass": "Story",
+							"sid": 135442095210464,
 							"behaviorType": "Tween",
 							"parameters": {
 								"tags": "\"fadeIn\"",
@@ -137,8 +137,8 @@
 					"conditions": [
 						{
 							"id": "pick-by-unique-id",
-							"objectClass": "StoryText",
-							"sid": 692516425923147,
+							"objectClass": "Story",
+							"sid": 704664030376651,
 							"parameters": {
 								"unique-id": "uid"
 							}
@@ -147,16 +147,16 @@
 					"actions": [
 						{
 							"id": "set-opacity",
-							"objectClass": "StoryText",
-							"sid": 443680989665465,
+							"objectClass": "Story",
+							"sid": 822669423048388,
 							"parameters": {
 								"opacity": "100"
 							}
 						},
 						{
 							"id": "tween-one-property",
-							"objectClass": "StoryText",
-							"sid": 736637277503754,
+							"objectClass": "Story",
+							"sid": 590673440269315,
 							"behaviorType": "Tween",
 							"parameters": {
 								"tags": "\"fadeOut\"",
@@ -207,11 +207,11 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 823959089497045,
+							"sid": 312551505772410,
 							"parameters": {
 								"variable": "storyProg",
-								"comparison": 0,
-								"value": "1"
+								"comparison": 1,
+								"value": "13"
 							}
 						}
 					],
@@ -219,7 +219,53 @@
 						{
 							"id": "create-object",
 							"objectClass": "System",
-							"sid": 682604205046327,
+							"sid": 377058088575746,
+							"parameters": {
+								"object-to-create": "Story",
+								"layer": "\"UI\"",
+								"x": "640",
+								"y": "360",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Story",
+							"sid": 710505702856099,
+							"parameters": {
+								"frame-number": "storyProg-1"
+							}
+						},
+						{
+							"callFunction": "fadeIn",
+							"sid": 993385071204360,
+							"parameters": [
+								"Story.UID",
+								"1"
+							]
+						}
+					],
+					"sid": 101593537300472
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 701438482897178,
+							"parameters": {
+								"variable": "storyProg",
+								"comparison": 0,
+								"value": "2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 171225268294012,
 							"parameters": {
 								"object-to-create": "StoryText",
 								"layer": "\"UI\"",
@@ -231,21 +277,22 @@
 						{
 							"id": "set-text",
 							"objectClass": "StoryText",
-							"sid": 828009591769229,
+							"sid": 920661066424841,
 							"parameters": {
-								"text": "\"narasi 1\""
+								"text": "\"narasi 2\""
 							}
 						},
 						{
 							"callFunction": "fadeIn",
-							"sid": 919173612576064,
+							"sid": 609691716440839,
 							"parameters": [
 								"StoryText.UID",
 								"1"
 							]
 						}
 					],
-					"sid": 101593537300472
+					"sid": 114277821612982,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -291,7 +338,8 @@
 							]
 						}
 					],
-					"sid": 205061364637333
+					"sid": 205061364637333,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -337,7 +385,8 @@
 							]
 						}
 					],
-					"sid": 450013656501761
+					"sid": 450013656501761,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -345,11 +394,11 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 762873369791753,
+							"sid": 812981766682311,
 							"parameters": {
 								"variable": "storyProg",
 								"comparison": 0,
-								"value": "4"
+								"value": "12"
 							}
 						}
 					],
@@ -372,8 +421,8 @@
 			"conditions": [
 				{
 					"id": "on-tweens-finished",
-					"objectClass": "StoryText",
-					"sid": 938316291677986,
+					"objectClass": "Story",
+					"sid": 919317338960422,
 					"behaviorType": "Tween",
 					"parameters": {
 						"tags": "\"fadeIn\""
@@ -384,16 +433,16 @@
 				{
 					"id": "wait",
 					"objectClass": "System",
-					"sid": 922046663661680,
+					"sid": 574250700430936,
 					"parameters": {
-						"seconds": "0.5"
+						"seconds": "5"
 					}
 				},
 				{
 					"callFunction": "fadeOut",
-					"sid": 268221014886051,
+					"sid": 346901828084209,
 					"parameters": [
-						"StoryText.UID",
+						"Story.UID",
 						"1"
 					]
 				}
@@ -405,8 +454,8 @@
 			"conditions": [
 				{
 					"id": "on-tweens-finished",
-					"objectClass": "StoryText",
-					"sid": 423512918398712,
+					"objectClass": "Story",
+					"sid": 277746623643662,
 					"behaviorType": "Tween",
 					"parameters": {
 						"tags": "\"fadeOut\""
@@ -431,11 +480,6 @@
 				}
 			],
 			"actions": [
-				{
-					"id": "destroy",
-					"objectClass": "StoryText",
-					"sid": 252459259186498
-				},
 				{
 					"callFunction": "showNextStory",
 					"sid": 440233616587037
