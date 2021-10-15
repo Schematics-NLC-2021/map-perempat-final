@@ -207,7 +207,8 @@
 			"unsentSoal",
 			"sunOverlay",
 			"LoadingSpinner",
-			"Story"
+			"Story",
+			"rainSound"
 		],
 		"subfolders": [
 			{

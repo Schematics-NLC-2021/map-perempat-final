@@ -277,6 +277,38 @@
 						{
 							"id": "for-each",
 							"objectClass": "System",
+							"sid": 805923602707417,
+							"parameters": {
+								"object": "Pos"
+							}
+						},
+						{
+							"id": "contains-value",
+							"objectClass": "PosVisited",
+							"sid": 904114531295616,
+							"parameters": {
+								"value": "Pos.id"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Pos",
+							"sid": 562330258736838,
+							"parameters": {
+								"frame-number": "Pos.AnimationFrame+4"
+							}
+						}
+					],
+					"sid": 732872806885706
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
 							"sid": 645255925749189,
 							"parameters": {
 								"object": "Pos"
@@ -357,9 +389,9 @@
 						{
 							"id": "for-each",
 							"objectClass": "System",
-							"sid": 558191905055446,
+							"sid": 240138141531947,
 							"parameters": {
-								"object": "rainOverlay"
+								"object": "rainSound"
 							}
 						}
 					],
@@ -367,12 +399,12 @@
 						{
 							"id": "play-at-object",
 							"objectClass": "Audio",
-							"sid": 364562606068811,
+							"sid": 405715630092432,
 							"parameters": {
 								"audio-file": "rain",
 								"loop": "looping",
-								"volume": "-5",
-								"object": "rainOverlay",
+								"volume": "(rainSound.id = 1) ? -50 : ((rainSound.id = 2) ? -40 : -30)",
+								"object": "rainSound",
 								"inner-angle": "360",
 								"outer-angle": "360",
 								"outer-gain": "0",
@@ -380,7 +412,7 @@
 							}
 						}
 					],
-					"sid": 725308634324624
+					"sid": 860382151896655
 				}
 			]
 		},
@@ -609,9 +641,9 @@
 						{
 							"id": "every-x-seconds",
 							"objectClass": "System",
-							"sid": 193051243260398,
+							"sid": 998736897718997,
 							"parameters": {
-								"interval-seconds": "0.33"
+								"interval-seconds": "0.39"
 							}
 						}
 					],
@@ -2535,13 +2567,13 @@
 						{
 							"id": "play-by-name",
 							"objectClass": "Audio",
-							"sid": 257866646922396,
+							"sid": 492285404442533,
 							"parameters": {
 								"folder": "sounds",
 								"audio-file-name": "\"step\"&BG.AnimationFrame&choose(0,1,2)",
 								"loop": "not-looping",
 								"volume": "-20",
-								"tag-optional": "\"sfx\""
+								"tag-optional": "\"step\""
 							}
 						}
 					],
