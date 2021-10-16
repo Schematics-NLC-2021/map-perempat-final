@@ -249,6 +249,7 @@
 							"id": "log",
 							"objectClass": "Browser",
 							"sid": 726561713584438,
+							"disabled": true,
 							"parameters": {
 								"type": "log",
 								"message": "config.Get(\"game-\"&loopindex(\"i\"))"
@@ -1577,7 +1578,8 @@
 			"actions": [
 				{
 					"type": "script",
-					"script": "console.log(localVars.soal_id1)\nconsole.log(localVars.soal_id2)\nconsole.log(\"id_soal diterima\")"
+					"script": "console.log(localVars.soal_id1)\nconsole.log(localVars.soal_id2)\nconsole.log(\"id_soal diterima\")",
+					"disabled": true
 				}
 			],
 			"sid": 905015116567262,
@@ -1660,7 +1662,8 @@
 			"actions": [
 				{
 					"type": "script",
-					"script": "console.log(localVars.score)\nconsole.log(\"score soal diterima\")\nconsole.log(localVars.soal_id1)\nconsole.log(localVars.soal_id2)\nconsole.log(\"id_soal diterima\")"
+					"script": "console.log(localVars.score)\nconsole.log(\"score soal diterima\")\nconsole.log(localVars.soal_id1)\nconsole.log(localVars.soal_id2)\nconsole.log(\"id_soal diterima\")",
+					"disabled": true
 				},
 				{
 					"callFunction": "getScoreFromApi",
@@ -1769,7 +1772,8 @@
 			"actions": [
 				{
 					"type": "script",
-					"script": "console.log(localVars.score)\nconsole.log(\"score game diterima\")"
+					"script": "console.log(localVars.score)\nconsole.log(\"score game diterima\")",
+					"disabled": true
 				},
 				{
 					"id": "push",
@@ -2794,6 +2798,7 @@
 					"id": "log",
 					"objectClass": "Browser",
 					"sid": 766994420829511,
+					"disabled": true,
 					"parameters": {
 						"type": "log",
 						"message": "\"Sending score game\""
@@ -2803,6 +2808,7 @@
 					"id": "log",
 					"objectClass": "Browser",
 					"sid": 697105109364200,
+					"disabled": true,
 					"parameters": {
 						"type": "log",
 						"message": "Request.ToBeautifiedString"
@@ -2874,6 +2880,7 @@
 					"id": "log",
 					"objectClass": "Browser",
 					"sid": 243066220565487,
+					"disabled": true,
 					"parameters": {
 						"type": "log",
 						"message": "\"SendScoreGame Berhasil\""
@@ -2883,6 +2890,7 @@
 					"id": "log",
 					"objectClass": "Browser",
 					"sid": 103192700532472,
+					"disabled": true,
 					"parameters": {
 						"type": "log",
 						"message": "Response.ToBeautifiedString"
@@ -2892,8 +2900,7 @@
 					"callFunction": "deleteFromUnsentScore",
 					"sid": 735599884686397,
 					"parameters": [
-						"Response.Get(\"data.game_id\")",
-						"Response.Get(\"data.game_point\")"
+						"Response.Get(\"data.game_id\")"
 					]
 				},
 				{
@@ -2976,13 +2983,6 @@
 					"initialValue": "0",
 					"comment": "",
 					"sid": 663303466315566
-				},
-				{
-					"name": "score",
-					"type": "number",
-					"initialValue": "0",
-					"comment": "",
-					"sid": 609740131938489
 				}
 			],
 			"eventType": "function-block",
@@ -2992,6 +2992,7 @@
 					"id": "log",
 					"objectClass": "Browser",
 					"sid": 543526174416246,
+					"disabled": true,
 					"parameters": {
 						"type": "log",
 						"message": "\"Removing \" & id & \" from unsentScore\""
@@ -3001,6 +3002,7 @@
 					"id": "log",
 					"objectClass": "Browser",
 					"sid": 954946122334053,
+					"disabled": true,
 					"parameters": {
 						"type": "log",
 						"message": "\"Before\""
@@ -3010,6 +3012,7 @@
 					"id": "log",
 					"objectClass": "Browser",
 					"sid": 763171576225747,
+					"disabled": true,
 					"parameters": {
 						"type": "log",
 						"message": "UnsentScores.AsJSON"
@@ -3077,6 +3080,7 @@
 							"id": "log",
 							"objectClass": "Browser",
 							"sid": 611446418445529,
+							"disabled": true,
 							"parameters": {
 								"type": "log",
 								"message": "\"After\""
@@ -3086,6 +3090,7 @@
 							"id": "log",
 							"objectClass": "Browser",
 							"sid": 584353679958135,
+							"disabled": true,
 							"parameters": {
 								"type": "log",
 								"message": "UnsentScores.AsJSON"
@@ -3179,6 +3184,7 @@
 					"id": "log",
 					"objectClass": "Browser",
 					"sid": 887436063537560,
+					"disabled": true,
 					"parameters": {
 						"type": "log",
 						"message": "\"Requesting Score\""
@@ -3295,6 +3301,7 @@
 					"id": "log",
 					"objectClass": "Browser",
 					"sid": 256774141900445,
+					"disabled": true,
 					"parameters": {
 						"type": "log",
 						"message": "\"Request Score Berhasil\""
@@ -3304,6 +3311,7 @@
 					"id": "log",
 					"objectClass": "Browser",
 					"sid": 950006729712206,
+					"disabled": true,
 					"parameters": {
 						"type": "log",
 						"message": "Response.ToBeautifiedString"
@@ -3313,8 +3321,7 @@
 					"callFunction": "deleteFromUnsentScore",
 					"sid": 830385561424885,
 					"parameters": [
-						"Response.Get(\"data.game_id\")",
-						"Response.Get(\"data.game_point\")"
+						"Response.Get(\"data.game_id\")"
 					]
 				},
 				{

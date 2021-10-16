@@ -5,7 +5,7 @@
 			"eventType": "variable",
 			"name": "baseUrl",
 			"type": "string",
-			"initialValue": "https://sch-nlc-game-api-dev.herokuapp.com/nlc_api",
+			"initialValue": "https://schematics.its.ac.id/nlc_api",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,

@@ -40,6 +40,7 @@
 					"id": "log",
 					"objectClass": "Browser",
 					"sid": 938008563377200,
+					"disabled": true,
 					"parameters": {
 						"type": "log",
 						"message": "\"Sending score game\""
@@ -49,6 +50,7 @@
 					"id": "log",
 					"objectClass": "Browser",
 					"sid": 725013553939725,
+					"disabled": true,
 					"parameters": {
 						"type": "log",
 						"message": "Request.ToBeautifiedString"
@@ -120,6 +122,7 @@
 					"id": "log",
 					"objectClass": "Browser",
 					"sid": 745012510302871,
+					"disabled": true,
 					"parameters": {
 						"type": "log",
 						"message": "\"SendScoreGame Berhasil\""
@@ -129,6 +132,7 @@
 					"id": "log",
 					"objectClass": "Browser",
 					"sid": 271385528724797,
+					"disabled": true,
 					"parameters": {
 						"type": "log",
 						"message": "Response.ToBeautifiedString"
@@ -138,8 +142,7 @@
 					"callFunction": "deleteFromUnsentScore",
 					"sid": 405974017814949,
 					"parameters": [
-						"Response.Get(\"data.game_id\")",
-						"Response.Get(\"data.game_point\")"
+						"Response.Get(\"data.game_id\")"
 					]
 				},
 				{
@@ -407,6 +410,7 @@
 					"id": "log",
 					"objectClass": "Browser",
 					"sid": 243090132924724,
+					"disabled": true,
 					"parameters": {
 						"type": "log",
 						"message": "\"Mengirim Jawaban Soal\""
@@ -416,6 +420,7 @@
 					"id": "log",
 					"objectClass": "Browser",
 					"sid": 999605694084948,
+					"disabled": true,
 					"parameters": {
 						"type": "log",
 						"message": "Request.ToBeautifiedString"
@@ -487,6 +492,7 @@
 					"id": "log",
 					"objectClass": "Browser",
 					"sid": 716817474163484,
+					"disabled": true,
 					"parameters": {
 						"type": "log",
 						"message": "\"SendJawabanSoal Berhasil\""
@@ -496,6 +502,7 @@
 					"id": "log",
 					"objectClass": "Browser",
 					"sid": 270608796994002,
+					"disabled": true,
 					"parameters": {
 						"type": "log",
 						"message": "Response.ToBeautifiedString"
@@ -601,6 +608,7 @@
 					"id": "log",
 					"objectClass": "Browser",
 					"sid": 816432975514429,
+					"disabled": true,
 					"parameters": {
 						"type": "log",
 						"message": "\"Removing \" & id_soal1 & \" \" & id_soal2 & \" from unsentSoal\""
@@ -610,6 +618,7 @@
 					"id": "log",
 					"objectClass": "Browser",
 					"sid": 141654970602014,
+					"disabled": true,
 					"parameters": {
 						"type": "log",
 						"message": "\"Before\""
@@ -619,6 +628,7 @@
 					"id": "log",
 					"objectClass": "Browser",
 					"sid": 965014545638394,
+					"disabled": true,
 					"parameters": {
 						"type": "log",
 						"message": "unsentSoal.AsJSON"
@@ -637,6 +647,7 @@
 					"id": "log",
 					"objectClass": "Browser",
 					"sid": 618413184048180,
+					"disabled": true,
 					"parameters": {
 						"type": "log",
 						"message": "\"After\""
@@ -646,6 +657,7 @@
 					"id": "log",
 					"objectClass": "Browser",
 					"sid": 150843647240533,
+					"disabled": true,
 					"parameters": {
 						"type": "log",
 						"message": "unsentSoal.AsJSON"
