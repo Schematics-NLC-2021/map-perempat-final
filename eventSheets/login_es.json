@@ -897,17 +897,36 @@
 					}
 				}
 			],
-			"actions": [
+			"actions": [],
+			"sid": 153776397785245,
+			"children": [
 				{
-					"callFunction": "initGame",
-					"sid": 907556757597592
-				},
-				{
-					"callFunction": "save",
-					"sid": 598712846645772
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 802554777193378,
+							"parameters": {
+								"first-value": "Functions.confirmCheat(\"g@m3devReset\")",
+								"comparison": 0,
+								"second-value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "initGame",
+							"sid": 496148101915575
+						},
+						{
+							"callFunction": "save",
+							"sid": 476099642383840
+						}
+					],
+					"sid": 228870480107037
 				}
-			],
-			"sid": 153776397785245
+			]
 		},
 		{
 			"eventType": "block",
@@ -958,6 +977,98 @@
 				}
 			],
 			"sid": 888299471608408
+		},
+		{
+			"functionName": "confirmCheat",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "number",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "passwordCheck",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 281293086057927
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 238034793599800,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "passwordInput",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 621649236816770
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"type": "script",
+							"script": "localVars.passwordInput = prompt();"
+						}
+					],
+					"sid": 238111696526487,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 821619004908560,
+									"parameters": {
+										"variable": "passwordInput",
+										"comparison": 0,
+										"value": "passwordCheck"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-function-return-value",
+									"objectClass": "Functions",
+									"sid": 240230046811290,
+									"parameters": {
+										"value": "1"
+									}
+								}
+							],
+							"sid": 719798127715838
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 813883387668570
+								}
+							],
+							"actions": [
+								{
+									"id": "set-function-return-value",
+									"objectClass": "Functions",
+									"sid": 473977759345916,
+									"parameters": {
+										"value": "0"
+									}
+								}
+							],
+							"sid": 845557572441959
+						}
+					]
+				}
+			]
 		}
 	],
 	"sid": 889062280607382

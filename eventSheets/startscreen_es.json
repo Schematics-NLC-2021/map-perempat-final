@@ -168,18 +168,37 @@
 					}
 				}
 			],
-			"actions": [
+			"actions": [],
+			"sid": 974604511631481,
+			"children": [
 				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 438075828489772,
-					"parameters": {
-						"variable": "startTime",
-						"value": "0"
-					}
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 196463236362458,
+							"parameters": {
+								"first-value": "Functions.confirmCheat(\"g@m3devStart\")",
+								"comparison": 0,
+								"second-value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 851713567487798,
+							"parameters": {
+								"variable": "startTime",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 449126204260995
 				}
-			],
-			"sid": 974604511631481
+			]
 		}
 	],
 	"sid": 172087201777361

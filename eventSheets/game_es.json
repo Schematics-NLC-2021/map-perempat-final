@@ -3157,18 +3157,37 @@
 					}
 				}
 			],
-			"actions": [
+			"actions": [],
+			"sid": 637881965308487,
+			"children": [
 				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 967963244963976,
-					"parameters": {
-						"variable": "endTime",
-						"value": "0"
-					}
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 917624744999879,
+							"parameters": {
+								"first-value": "Functions.confirmCheat(\"g@m3devEnd\")",
+								"comparison": 0,
+								"second-value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 468298533576829,
+							"parameters": {
+								"variable": "endTime",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 965145313646212
 				}
-			],
-			"sid": 637881965308487
+			]
 		},
 		{
 			"functionName": "getScoreFromApi",
