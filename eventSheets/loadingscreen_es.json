@@ -107,6 +107,7 @@
 					"id": "check-item-exists",
 					"objectClass": "LocalStorage",
 					"sid": 202512766706572,
+					"disabled": true,
 					"parameters": {
 						"key": "\"posVisited\""
 					}
@@ -114,12 +115,14 @@
 				{
 					"id": "wait-for-previous-actions",
 					"objectClass": "System",
-					"sid": 137751618904908
+					"sid": 137751618904908,
+					"disabled": true
 				},
 				{
 					"id": "check-item-exists",
 					"objectClass": "LocalStorage",
 					"sid": 312749529104822,
+					"disabled": true,
 					"parameters": {
 						"key": "\"unsentScores\""
 					}
@@ -127,12 +130,14 @@
 				{
 					"id": "wait-for-previous-actions",
 					"objectClass": "System",
-					"sid": 919771571367973
+					"sid": 919771571367973,
+					"disabled": true
 				},
 				{
 					"id": "check-item-exists",
 					"objectClass": "LocalStorage",
 					"sid": 666739168872478,
+					"disabled": true,
 					"parameters": {
 						"key": "\"unsentSoal\""
 					}
@@ -140,12 +145,14 @@
 				{
 					"id": "wait-for-previous-actions",
 					"objectClass": "System",
-					"sid": 329932876978201
+					"sid": 329932876978201,
+					"disabled": true
 				},
 				{
 					"id": "check-item-exists",
 					"objectClass": "LocalStorage",
 					"sid": 813818435833995,
+					"disabled": true,
 					"parameters": {
 						"key": "\"curPosition\""
 					}
@@ -153,7 +160,8 @@
 				{
 					"id": "wait-for-previous-actions",
 					"objectClass": "System",
-					"sid": 664692320730146
+					"sid": 664692320730146,
+					"disabled": true
 				}
 			],
 			"sid": 970983155378013
@@ -245,6 +253,15 @@
 				{
 					"callFunction": "loadGame",
 					"sid": 850503090131580
+				},
+				{
+					"id": "request-fullscreen",
+					"objectClass": "Browser",
+					"sid": 421361518160071,
+					"parameters": {
+						"mode": "stretch-letterbox-scale",
+						"navigation-ui": "hide"
+					}
 				}
 			],
 			"sid": 740959044691722
@@ -497,8 +514,17 @@
 					"id": "go-to-layout",
 					"objectClass": "System",
 					"sid": 638904189757838,
+					"disabled": true,
 					"parameters": {
 						"layout": "Login"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 884527545776227,
+					"parameters": {
+						"layout": "Story"
 					}
 				}
 			],

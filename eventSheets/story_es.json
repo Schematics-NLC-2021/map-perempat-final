@@ -156,7 +156,7 @@
 						{
 							"id": "tween-one-property",
 							"objectClass": "Story",
-							"sid": 590673440269315,
+							"sid": 857548218531990,
 							"behaviorType": "Tween",
 							"parameters": {
 								"tags": "\"fadeOut\"",
@@ -164,7 +164,7 @@
 								"end-value": "0",
 								"time": "duration",
 								"ease": "easeoutsine",
-								"destroy-on-complete": "no",
+								"destroy-on-complete": "yes",
 								"loop": "no",
 								"ping-pong": "no"
 							}
@@ -431,20 +431,15 @@
 			],
 			"actions": [
 				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 744683060895793,
+					"id": "start-timer",
+					"objectClass": "Story",
+					"sid": 270060094274726,
+					"behaviorType": "Timer",
 					"parameters": {
-						"seconds": "4"
+						"duration": "4",
+						"type": "once",
+						"tag": "\"FadeOutWaitTime\""
 					}
-				},
-				{
-					"callFunction": "fadeOut",
-					"sid": 346901828084209,
-					"parameters": [
-						"Story.UID",
-						"1"
-					]
 				}
 			],
 			"sid": 602543683622750
@@ -481,11 +476,84 @@
 			],
 			"actions": [
 				{
+					"id": "destroy",
+					"objectClass": "Story",
+					"sid": 637790990641871
+				},
+				{
 					"callFunction": "showNextStory",
 					"sid": 440233616587037
 				}
 			],
 			"sid": 301687424833473
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-timer",
+					"objectClass": "Story",
+					"sid": 179588435096554,
+					"behaviorType": "Timer",
+					"parameters": {
+						"tag": "\"FadeOutWaitTime\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "fadeOut",
+					"sid": 789519520336081,
+					"parameters": [
+						"Story.UID",
+						"1"
+					]
+				}
+			],
+			"sid": 579357959199970,
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 411153318417182,
+					"parameters": {
+						"key": 32
+					}
+				},
+				{
+					"id": "is-timer-running",
+					"objectClass": "Story",
+					"sid": 960107542644948,
+					"behaviorType": "Timer",
+					"parameters": {
+						"tag": "\"FadeOutWaitTime\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "stop-timer",
+					"objectClass": "Story",
+					"sid": 843000456745520,
+					"behaviorType": "Timer",
+					"parameters": {
+						"tag": "\"FadeOutWaitTime\""
+					}
+				},
+				{
+					"callFunction": "fadeOut",
+					"sid": 337675240642399,
+					"parameters": [
+						"Story.UID",
+						"1"
+					]
+				}
+			],
+			"sid": 606016560178195
 		}
 	],
 	"sid": 721022730895950

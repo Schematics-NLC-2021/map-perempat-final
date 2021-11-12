@@ -1709,6 +1709,7 @@
 			"scaleRate": 1,
 			"forceOwnTexture": false,
 			"renderingMode": "3d",
+			"drawOrder": "z-order",
 			"useRenderCells": false,
 			"blendMode": "normal",
 			"zElevation": 0,
@@ -12194,6 +12195,7 @@
 			"scaleRate": 1,
 			"forceOwnTexture": false,
 			"renderingMode": "3d",
+			"drawOrder": "z-order",
 			"useRenderCells": false,
 			"blendMode": "normal",
 			"zElevation": 0,
@@ -12776,6 +12778,7 @@
 			"scaleRate": 1,
 			"forceOwnTexture": false,
 			"renderingMode": "3d",
+			"drawOrder": "z-order",
 			"useRenderCells": false,
 			"blendMode": "normal",
 			"zElevation": 0,
@@ -12794,12 +12797,12 @@
 						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 21,
+					"uid": 431,
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
 						"x": 0,
-						"y": 0,
+						"y": -171,
 						"width": 385.99999999999994,
 						"height": 115.05851649902743,
 						"originX": 0,
@@ -12832,14 +12835,14 @@
 						"initially-visible": true,
 						"origin": "top-left"
 					},
-					"uid": 91,
+					"uid": 432,
 					"instanceVariables": {
 						"id": 2
 					},
 					"behaviors": {},
 					"world": {
 						"x": 13,
-						"y": 8,
+						"y": -163,
 						"width": 584,
 						"height": 55,
 						"originX": 0,
@@ -12872,14 +12875,14 @@
 						"initially-visible": true,
 						"origin": "top-left"
 					},
-					"uid": 24,
+					"uid": 433,
 					"instanceVariables": {
 						"id": 4
 					},
 					"behaviors": {},
 					"world": {
 						"x": 13,
-						"y": 64.58811974168317,
+						"y": -106,
 						"width": 589,
 						"height": 55,
 						"originX": 0,
@@ -12903,12 +12906,12 @@
 						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 29,
+					"uid": 434,
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 1281.892291588457,
-						"y": -0.019818070459974746,
+						"x": 1282,
+						"y": -171,
 						"width": -385.99999999999994,
 						"height": 57.99999999999999,
 						"originX": 0,
@@ -12941,14 +12944,14 @@
 						"initially-visible": true,
 						"origin": "top-left"
 					},
-					"uid": 79,
+					"uid": 435,
 					"instanceVariables": {
 						"id": 3
 					},
 					"behaviors": {},
 					"world": {
-						"x": 741.3102181365327,
-						"y": 7.980181929540025,
+						"x": 741,
+						"y": -163,
 						"width": 523,
 						"height": 55,
 						"originX": 0,
@@ -12985,6 +12988,7 @@
 			"scaleRate": 1,
 			"forceOwnTexture": false,
 			"renderingMode": "3d",
+			"drawOrder": "z-order",
 			"useRenderCells": false,
 			"blendMode": "normal",
 			"zElevation": 0,
@@ -13151,6 +13155,7 @@
 			"scaleRate": 1,
 			"forceOwnTexture": false,
 			"renderingMode": "3d",
+			"drawOrder": "z-order",
 			"useRenderCells": false,
 			"blendMode": "normal",
 			"zElevation": 0,
@@ -13264,7 +13269,7 @@
 						"horizontal-alignment": "left",
 						"vertical-alignment": "top",
 						"wrapping": "word",
-						"initially-visible": true,
+						"initially-visible": false,
 						"origin": "top-left"
 					},
 					"uid": 369,
@@ -13449,6 +13454,7 @@
 			"scaleRate": 1,
 			"forceOwnTexture": false,
 			"renderingMode": "3d",
+			"drawOrder": "z-order",
 			"useRenderCells": false,
 			"blendMode": "normal",
 			"zElevation": 0,
@@ -13562,7 +13568,7 @@
 						"horizontal-alignment": "left",
 						"vertical-alignment": "top",
 						"wrapping": "word",
-						"initially-visible": true,
+						"initially-visible": false,
 						"origin": "top-left"
 					},
 					"uid": 372,
@@ -13747,6 +13753,7 @@
 			"scaleRate": 1,
 			"forceOwnTexture": false,
 			"renderingMode": "3d",
+			"drawOrder": "z-order",
 			"useRenderCells": false,
 			"blendMode": "normal",
 			"zElevation": 0,
@@ -13802,6 +13809,16 @@
 			},
 			"uid": 338,
 			"instanceVariables": {}
+		},
+		{
+			"type": "maxScore",
+			"properties": {
+				"width": 10,
+				"height": 1,
+				"depth": 1
+			},
+			"uid": 24,
+			"instanceVariables": {}
 		}
 	],
 	"effectTypes": [],
@@ -13810,5 +13827,6 @@
 	"unboundedScrolling": false,
 	"vpX": 0.5,
 	"vpY": 0.5,
+	"projection": "perspective",
 	"eventSheet": "Game_ES"
 }

@@ -95,7 +95,8 @@
 					}
 				}
 			],
-			"sid": 781073404957264
+			"sid": 781073404957264,
+			"disabled": true
 		},
 		{
 			"eventType": "block",
@@ -246,7 +247,8 @@
 					]
 				}
 			],
-			"sid": 136310155624024
+			"sid": 136310155624024,
+			"disabled": true
 		},
 		{
 			"eventType": "variable",
@@ -301,7 +303,8 @@
 					]
 				}
 			],
-			"sid": 594038466489030
+			"sid": 594038466489030,
+			"disabled": true
 		},
 		{
 			"functionName": "sendJawabanSoalToApi",
@@ -465,7 +468,8 @@
 					}
 				}
 			],
-			"sid": 265184211357351
+			"sid": 265184211357351,
+			"disabled": true
 		},
 		{
 			"eventType": "block",
@@ -676,17 +680,20 @@
 				{
 					"id": "is-empty",
 					"objectClass": "UnsentScores",
-					"sid": 677612192951979
+					"sid": 677612192951979,
+					"disabled": true
 				},
 				{
 					"id": "is-empty",
 					"objectClass": "unsentSoal",
-					"sid": 109609631083159
+					"sid": 109609631083159,
+					"disabled": true
 				},
 				{
 					"id": "trigger-once-while-true",
 					"objectClass": "System",
-					"sid": 538779590949985
+					"sid": 538779590949985,
+					"disabled": true
 				},
 				{
 					"id": "compare-instance-variable",

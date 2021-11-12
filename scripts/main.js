@@ -13,6 +13,7 @@ runOnStartup(async runtime =>
 	  e.preventDefault();
 	  e.returnValue = '';
 	});
+	
 });
 
 async function OnBeforeProjectStart(runtime)
@@ -22,6 +23,7 @@ async function OnBeforeProjectStart(runtime)
 	// instances are created and available to use here.
 	
 	runtime.addEventListener("tick", () => Tick(runtime));
+// 	document.domain = 'schematics-nlc-2021.github.io';
 }
 
 function Tick(runtime)

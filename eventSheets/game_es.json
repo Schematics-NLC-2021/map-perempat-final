@@ -206,6 +206,24 @@
 						"animation": "\"Idle\"",
 						"from": "beginning"
 					}
+				},
+				{
+					"id": "set-size",
+					"objectClass": "maxScore",
+					"sid": 328327947128998,
+					"parameters": {
+						"width": "5",
+						"height": "1",
+						"depth": "1"
+					}
+				},
+				{
+					"id": "clear",
+					"objectClass": "maxScore",
+					"sid": 102672664187129,
+					"parameters": {
+						"value": "0"
+					}
 				}
 			],
 			"sid": 856959149988460,
@@ -305,107 +323,133 @@
 							"parameters": {
 								"object": "Pos"
 							}
-						},
-						{
-							"id": "contains-value",
-							"objectClass": "PosVisited",
-							"sid": 904114531295616,
-							"parameters": {
-								"value": "Pos.id"
-							}
 						}
 					],
-					"actions": [
+					"actions": [],
+					"sid": 732872806885706,
+					"children": [
 						{
-							"id": "set-animation-frame",
-							"objectClass": "Pos",
-							"sid": 562330258736838,
-							"parameters": {
-								"frame-number": "Pos.AnimationFrame+4"
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "contains-value",
+									"objectClass": "PosVisited",
+									"sid": 173815656737296,
+									"parameters": {
+										"value": "Pos.id"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Pos",
+									"sid": 514509823961051,
+									"parameters": {
+										"frame-number": "Pos.AnimationFrame+4"
+									}
+								}
+							],
+							"sid": 837331843624311
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "Pos",
+									"sid": 160167877283642,
+									"parameters": {
+										"object": "BG"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 847210568036903,
+									"parameters": {
+										"object-to-create": "posSign",
+										"layer": "\"Game\"",
+										"x": "Pos.X-Pos.Width/2 + 13",
+										"y": "Pos.Y-10",
+										"create-hierarchy": false
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "posSign",
+									"sid": 679825895844944,
+									"parameters": {
+										"frame-number": "(Pos.posGame) ? 0 : (1 + BG.AnimationFrame*3 +((Pos.difficultySoal1 = \"Easy\") ? 0 : (Pos.difficultySoal1 = \"Medium\") ? 1 : 2))"
+									}
+								},
+								{
+									"id": "set-scale",
+									"objectClass": "posSign",
+									"sid": 234317034114488,
+									"parameters": {
+										"scale": "0.6"
+									}
+								},
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 478865756749946,
+									"parameters": {
+										"object-to-create": "posSign",
+										"layer": "\"Game\"",
+										"x": "Pos.X-Pos.Width/2 + 13",
+										"y": "Pos.Y + 18",
+										"create-hierarchy": false
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "posSign",
+									"sid": 586818130890997,
+									"parameters": {
+										"frame-number": "(Pos.posGame) ? 0 : (1 + BG.AnimationFrame*3 +((Pos.difficultySoal2 = \"Easy\") ? 0 : (Pos.difficultySoal2 = \"Medium\") ? 1 : 2))"
+									}
+								},
+								{
+									"id": "set-scale",
+									"objectClass": "posSign",
+									"sid": 578607872336832,
+									"parameters": {
+										"scale": "0.6"
+									}
+								}
+							],
+							"sid": 980898713585804
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "Pos",
+									"sid": 805664684873604,
+									"parameters": {
+										"instance-variable": "posGame"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Pos",
+									"sid": 565638974848084,
+									"parameters": {
+										"frame-number": "Pos.AnimationFrame+4"
+									}
+								}
+							],
+							"sid": 216273192858489
 						}
-					],
-					"sid": 732872806885706
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "for-each",
-							"objectClass": "System",
-							"sid": 645255925749189,
-							"parameters": {
-								"object": "Pos"
-							}
-						},
-						{
-							"id": "is-overlapping-another-object",
-							"objectClass": "Pos",
-							"sid": 642323908151174,
-							"parameters": {
-								"object": "BG"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "create-object",
-							"objectClass": "System",
-							"sid": 390627325119028,
-							"parameters": {
-								"object-to-create": "posSign",
-								"layer": "\"Game\"",
-								"x": "Pos.X-Pos.Width/2 + 13",
-								"y": "Pos.Y-10",
-								"create-hierarchy": false
-							}
-						},
-						{
-							"id": "set-animation-frame",
-							"objectClass": "posSign",
-							"sid": 627254162551009,
-							"parameters": {
-								"frame-number": "(Pos.posGame) ? 0 : (1 + BG.AnimationFrame*3 +((Pos.difficultySoal1 = \"Easy\") ? 0 : (Pos.difficultySoal1 = \"Medium\") ? 1 : 2))"
-							}
-						},
-						{
-							"id": "set-scale",
-							"objectClass": "posSign",
-							"sid": 627204865205578,
-							"parameters": {
-								"scale": "0.6"
-							}
-						},
-						{
-							"id": "create-object",
-							"objectClass": "System",
-							"sid": 454123656990369,
-							"parameters": {
-								"object-to-create": "posSign",
-								"layer": "\"Game\"",
-								"x": "Pos.X-Pos.Width/2 + 13",
-								"y": "Pos.Y + 18",
-								"create-hierarchy": false
-							}
-						},
-						{
-							"id": "set-animation-frame",
-							"objectClass": "posSign",
-							"sid": 981126125395726,
-							"parameters": {
-								"frame-number": "(Pos.posGame) ? 0 : (1 + BG.AnimationFrame*3 +((Pos.difficultySoal2 = \"Easy\") ? 0 : (Pos.difficultySoal2 = \"Medium\") ? 1 : 2))"
-							}
-						},
-						{
-							"id": "set-scale",
-							"objectClass": "posSign",
-							"sid": 885726519834379,
-							"parameters": {
-								"scale": "0.6"
-							}
-						}
-					],
-					"sid": 599314790352021
+					]
 				},
 				{
 					"eventType": "block",
@@ -945,6 +989,7 @@
 						}
 					],
 					"sid": 621631110311017,
+					"disabled": true,
 					"children": [
 						{
 							"eventType": "block",
@@ -969,7 +1014,8 @@
 									}
 								}
 							],
-							"sid": 810881409941323
+							"sid": 810881409941323,
+							"disabled": true
 						},
 						{
 							"eventType": "block",
@@ -995,7 +1041,8 @@
 									}
 								}
 							],
-							"sid": 201152129904411
+							"sid": 201152129904411,
+							"disabled": true
 						},
 						{
 							"eventType": "block",
@@ -1030,7 +1077,8 @@
 									}
 								}
 							],
-							"sid": 597007181950271
+							"sid": 597007181950271,
+							"disabled": true
 						},
 						{
 							"eventType": "block",
@@ -1057,7 +1105,143 @@
 									}
 								}
 							],
-							"sid": 317324657539498
+							"sid": 317324657539498,
+							"disabled": true
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "layer-is-visible",
+							"objectClass": "System",
+							"sid": 947093928365817,
+							"parameters": {
+								"layer": "\"konfirmasi\""
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-overlapping-at-offset",
+							"objectClass": "Player",
+							"sid": 882272083178359,
+							"parameters": {
+								"object": "Pos",
+								"offset-x": "0",
+								"offset-y": "-20"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Pos",
+							"sid": 316469623034978,
+							"parameters": {
+								"instance-variable": "posGame"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 923363362347684,
+							"parameters": {
+								"layer": "\"konfirmasi\"",
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 496036261770843,
+							"parameters": {
+								"variable": "curPos",
+								"value": "Pos.id"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "tooltip",
+							"sid": 641600784366861
+						},
+						{
+							"callFunction": "playInteraction",
+							"sid": 688812399879122
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 730443292376009,
+							"parameters": {
+								"variable": "link",
+								"value": "Pos.game"
+							}
+						}
+					],
+					"sid": 506247968016981,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-comparison",
+									"objectClass": "System",
+									"sid": 271512576441974,
+									"parameters": {
+										"object": "UiText",
+										"expression": "UiText.id",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "UiText",
+									"sid": 570513638940813,
+									"parameters": {
+										"text": "\"Kamu yakin ingin \" & (Pos.posGame ? \"main game\" : \"mengerjakan soal\") & \" di pos ini?\""
+									}
+								},
+								{
+									"id": "append-text",
+									"objectClass": "UiText",
+									"sid": 961523569398039,
+									"parameters": {
+										"text": "Pos.posGame ? \"\" : (newline & \"Tingkat kesulitan soal: \" & Pos.difficultySoal1 & (Pos.difficultySoal1 <> Pos.difficultySoal2 ? (\" dan \" & Pos.difficultySoal2) : \"\"))"
+									}
+								}
+							],
+							"sid": 764944247026057
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-comparison",
+									"objectClass": "System",
+									"sid": 564121560653407,
+									"parameters": {
+										"object": "UiText",
+										"expression": "UiText.id",
+										"comparison": 0,
+										"value": "5"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "UiText",
+									"sid": 410692383954123,
+									"parameters": {
+										"text": "\"Pos \"&(Pos.posGame ? \"Game \"&(Pos.id - 10) : \"Soal \"&Pos.id)"
+									}
+								}
+							],
+							"sid": 536244153373247
 						}
 					]
 				}
@@ -1278,7 +1462,8 @@
 											}
 										}
 									],
-									"sid": 620699708493571
+									"sid": 620699708493571,
+									"disabled": true
 								},
 								{
 									"eventType": "block",
@@ -1313,44 +1498,7 @@
 											}
 										}
 									],
-									"sid": 391896200416041,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "pick-all",
-													"objectClass": "System",
-													"sid": 383081545720635,
-													"parameters": {
-														"object": "button"
-													}
-												},
-												{
-													"id": "pick-by-comparison",
-													"objectClass": "System",
-													"sid": 544570329363925,
-													"parameters": {
-														"object": "button",
-														"expression": "button.LayerName",
-														"comparison": 0,
-														"value": "\"soalGame\""
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "set-visible",
-													"objectClass": "button",
-													"sid": 950332089877543,
-													"parameters": {
-														"visibility": "invisible"
-													}
-												}
-											],
-											"sid": 770906507658345
-										}
-									]
+									"sid": 391896200416041
 								},
 								{
 									"eventType": "block",
@@ -1404,43 +1552,7 @@
 										}
 									],
 									"sid": 473287512800895,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "pick-all",
-													"objectClass": "System",
-													"sid": 334089862773078,
-													"parameters": {
-														"object": "button"
-													}
-												},
-												{
-													"id": "pick-by-comparison",
-													"objectClass": "System",
-													"sid": 491640324367099,
-													"parameters": {
-														"object": "button",
-														"expression": "button.LayerName",
-														"comparison": 0,
-														"value": "\"soal\""
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "set-visible",
-													"objectClass": "button",
-													"sid": 992556323622436,
-													"parameters": {
-														"visibility": "invisible"
-													}
-												}
-											],
-											"sid": 966171938870653
-										}
-									]
+									"disabled": true
 								}
 							]
 						},
@@ -1788,6 +1900,15 @@
 				{
 					"callFunction": "save",
 					"sid": 502589062280793
+				},
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 401962515324152,
+					"parameters": {
+						"variable": "accumulatedScore",
+						"value": "score"
+					}
 				}
 			],
 			"sid": 340690638768288,
@@ -1900,6 +2021,7 @@
 				}
 			],
 			"sid": 132606374472769,
+			"disabled": true,
 			"children": [
 				{
 					"eventType": "block",
@@ -1925,7 +2047,8 @@
 							}
 						}
 					],
-					"sid": 469732161934196
+					"sid": 469732161934196,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -1959,7 +2082,8 @@
 							}
 						}
 					],
-					"sid": 221699555133077
+					"sid": 221699555133077,
+					"disabled": true
 				}
 			]
 		},
@@ -1990,6 +2114,157 @@
 			"sid": 735348433631109
 		},
 		{
+			"functionName": "CalculateScore",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": true,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 959986094693444,
+					"parameters": {
+						"variable": "accumulatedScore",
+						"value": "0"
+					}
+				}
+			],
+			"sid": 552812824497914,
+			"disabled": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for",
+							"objectClass": "System",
+							"sid": 338627446271630,
+							"parameters": {
+								"name": "\"i\"",
+								"start-index": "1",
+								"end-index": "5"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 963452263434097,
+					"disabled": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for-each-element",
+									"objectClass": "UnsentScores",
+									"sid": 247448873064418,
+									"parameters": {
+										"axes": "x"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 301862407836309,
+							"disabled": true,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 633031074065203,
+											"parameters": {
+												"first-value": "right(UnsentScores.CurValue, 1)",
+												"comparison": 0,
+												"second-value": "str(loopindex(\"i\"))"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 265117583181849,
+									"disabled": true,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 755241582543298,
+													"parameters": {
+														"first-value": "float(left(UnsentScores.CurValue, len(UnsentScores.CurValue)-2))",
+														"comparison": 4,
+														"second-value": "maxScore.At(loopindex(\"i\")-1)"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-at-x",
+													"objectClass": "maxScore",
+													"sid": 176130540103583,
+													"parameters": {
+														"x": "loopindex(\"i\")-1",
+														"value": "float(left(UnsentScores.CurValue, len(UnsentScores.CurValue)-2))"
+													}
+												}
+											],
+											"sid": 103589216790836,
+											"disabled": true
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 723791852721593
+												}
+											],
+											"actions": [
+												{
+													"id": "delete",
+													"objectClass": "UnsentScores",
+													"sid": 640669664215131,
+													"parameters": {
+														"index": "UnsentScores.CurX",
+														"axis": "x"
+													}
+												}
+											],
+											"sid": 489965806902639,
+											"disabled": true
+										}
+									]
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 249345717184964,
+									"parameters": {
+										"variable": "accumulatedScore",
+										"value": "maxScore.At(loopindex(\"i\")-1)"
+									}
+								}
+							],
+							"sid": 437195577916083,
+							"disabled": true
+						}
+					]
+				}
+			]
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -2006,6 +2281,7 @@
 					"id": "compare-boolean-eventvar",
 					"objectClass": "System",
 					"sid": 964272820044577,
+					"disabled": true,
 					"parameters": {
 						"variable": "isRequestingScore"
 					},
@@ -2014,15 +2290,25 @@
 			],
 			"actions": [
 				{
+					"callFunction": "CalculateScore",
+					"sid": 122269470110922
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 796786295192955
+				},
+				{
 					"id": "set-text",
 					"objectClass": "UiText",
-					"sid": 970915095267681,
+					"sid": 754824835665021,
 					"parameters": {
-						"text": "\"Skor: \" & accumulatedScore "
+						"text": "\"Skor: \" & accumulatedScore"
 					}
 				}
 			],
-			"sid": 856443742139762
+			"sid": 856443742139762,
+			"disabled": true
 		},
 		{
 			"eventType": "block",
@@ -2407,9 +2693,122 @@
 					"id": "trigger-once-while-true",
 					"objectClass": "System",
 					"sid": 245934412717663
+				},
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "Pos",
+					"sid": 656278083645575,
+					"parameters": {
+						"instance-variable": "posGame"
+					}
 				}
 			],
-			"actions": [],
+			"actions": [
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 652377179439807,
+					"parameters": {
+						"object-to-create": "tooltip",
+						"layer": "\"topGame\"",
+						"x": "Pos.X",
+						"y": "Pos.Y - Pos.Height + 30",
+						"create-hierarchy": false
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 454026547551065,
+					"parameters": {
+						"variable": "mainTooltipX",
+						"value": "tooltip.X"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 613052252162706,
+					"parameters": {
+						"variable": "mainTooltipY",
+						"value": "tooltip.Y"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 849714135390634,
+					"parameters": {
+						"variable": "mainTooltipHeight",
+						"value": "tooltip.Height"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 614684609335223,
+					"parameters": {
+						"variable": "mainTooltipWidth",
+						"value": "tooltip.Width"
+					}
+				},
+				{
+					"id": "set-animation-frame",
+					"objectClass": "tooltip",
+					"sid": 344775640258704,
+					"parameters": {
+						"frame-number": "0"
+					}
+				},
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 674840395493585,
+					"parameters": {
+						"object-to-create": "tooltip",
+						"layer": "\"topGame\"",
+						"x": "mainTooltipX-(mainTooltipWidth/2)",
+						"y": "mainTooltipY-(mainTooltipHeight/2) -10",
+						"create-hierarchy": false
+					}
+				},
+				{
+					"id": "set-animation-frame",
+					"objectClass": "tooltip",
+					"sid": 667505903578974,
+					"parameters": {
+						"frame-number": "(Pos.posGame) ? 8 : (2+((Pos.difficultySoal1=\"Easy\")?0:((Pos.difficultySoal1=\"Medium\") ? 1 : 2)))"
+					}
+				},
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 123122143018244,
+					"parameters": {
+						"object-to-create": "tooltip",
+						"layer": "\"topGame\"",
+						"x": "mainTooltipX+(mainTooltipWidth/2)",
+						"y": "mainTooltipY-(mainTooltipHeight/2) -10",
+						"create-hierarchy": false
+					}
+				},
+				{
+					"id": "set-animation-frame",
+					"objectClass": "tooltip",
+					"sid": 977638433317169,
+					"parameters": {
+						"frame-number": "(Pos.posGame) ? 9 : (5 + ((Pos.difficultySoal2=\"Easy\")?0:((Pos.difficultySoal2=\"Medium\") ? 1 : 2)))"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 752145437469811,
+					"parameters": {
+						"seconds": "0.01"
+					}
+				}
+			],
 			"sid": 674194614606998,
 			"children": [
 				{
@@ -2454,7 +2853,9 @@
 							}
 						}
 					],
-					"sid": 446843934186166
+					"sid": 446843934186166,
+					"disabled": true,
+					"isOrBlock": true
 				},
 				{
 					"eventType": "block",
@@ -2575,7 +2976,8 @@
 							}
 						}
 					],
-					"sid": 455062117542800
+					"sid": 455062117542800,
+					"disabled": true
 				}
 			]
 		},
@@ -2673,7 +3075,8 @@
 					}
 				}
 			],
-			"sid": 735925645552628
+			"sid": 735925645552628,
+			"disabled": true
 		},
 		{
 			"eventType": "group",
@@ -2853,7 +3256,8 @@
 					}
 				}
 			],
-			"sid": 970094357133100
+			"sid": 970094357133100,
+			"disabled": true
 		},
 		{
 			"eventType": "block",
@@ -2917,7 +3321,8 @@
 					"sid": 335444840858291
 				}
 			],
-			"sid": 340813722527204
+			"sid": 340813722527204,
+			"disabled": true
 		},
 		{
 			"eventType": "block",
@@ -2968,7 +3373,8 @@
 					}
 				}
 			],
-			"sid": 626147899549761
+			"sid": 626147899549761,
+			"disabled": true
 		},
 		{
 			"functionName": "deleteFromUnsentScore",
@@ -3020,6 +3426,7 @@
 				}
 			],
 			"sid": 956743078588215,
+			"disabled": true,
 			"children": [
 				{
 					"eventType": "block",
@@ -3037,6 +3444,7 @@
 					],
 					"actions": [],
 					"sid": 593717928598509,
+					"disabled": true,
 					"children": [
 						{
 							"eventType": "block",
@@ -3068,7 +3476,8 @@
 									"sid": 441925427959399
 								}
 							],
-							"sid": 966511338233851
+							"sid": 966511338233851,
+							"disabled": true
 						}
 					]
 				},
@@ -3101,7 +3510,8 @@
 							"sid": 287802454328530
 						}
 					],
-					"sid": 827899025050986
+					"sid": 827899025050986,
+					"disabled": true
 				}
 			]
 		},
@@ -3143,7 +3553,8 @@
 					]
 				}
 			],
-			"sid": 283802424474115
+			"sid": 283802424474115,
+			"disabled": true
 		},
 		{
 			"eventType": "block",
@@ -3159,6 +3570,7 @@
 			],
 			"actions": [],
 			"sid": 637881965308487,
+			"disabled": true,
 			"children": [
 				{
 					"eventType": "block",
@@ -3185,7 +3597,8 @@
 							}
 						}
 					],
-					"sid": 965145313646212
+					"sid": 965145313646212,
+					"disabled": true
 				}
 			]
 		},
@@ -3266,6 +3679,7 @@
 				}
 			],
 			"sid": 384477685119004,
+			"disabled": true,
 			"children": [
 				{
 					"eventType": "block",
@@ -3291,7 +3705,8 @@
 							}
 						}
 					],
-					"sid": 419331540253030
+					"sid": 419331540253030,
+					"disabled": true
 				}
 			]
 		},
@@ -3362,7 +3777,8 @@
 					}
 				}
 			],
-			"sid": 733434533464783
+			"sid": 733434533464783,
+			"disabled": true
 		},
 		{
 			"eventType": "block",
@@ -3424,7 +3840,8 @@
 					"sid": 546843173388420
 				}
 			],
-			"sid": 563071311878099
+			"sid": 563071311878099,
+			"disabled": true
 		}
 	],
 	"sid": 249019606169262
